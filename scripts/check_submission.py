@@ -61,7 +61,7 @@ def main():
             'audit_references_verified':len(set(linked)),'qa_cases':20,'ab_pairs':8,'validation_probes':8,
             'unit_tests':reports['http_smoke.json']['unit_tests'],'judge_comparison':ab['winner'],
             'gold_reference_comparison':ab['gold_reference_comparison'],
-            'candidate_only_fields':'Identity/contact and independent personal reflections remain explicitly marked.'}
+            'candidate_review':'Personal details, disclosures and independent-reflection compliance are the candidate’s responsibility.'}
     print(json.dumps(result,indent=2))
 
 if __name__=='__main__': main()

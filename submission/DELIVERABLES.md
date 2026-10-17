@@ -10,4 +10,4 @@
 - **Problem 2 exact prompt / raw response / usage**: artifacts/llm_audit.jsonl; main.py replay REQUEST_ID
 - **Architecture / screenshots**: docs/*.mmd; artifacts/*_architecture.png; artifacts/evidence.html; evidence PNGs
 - **Original template populated**: submission/completed_submission.docx; artifacts/template_validation.json
-- **Candidate-only remaining fields**: Identity/contact verification; personal time; independent mandatory reflections. No questions were asked; no personal experience was invented.
+- **Candidate review**: Verify personal details, reported personal work and compliance with the template's independent-reflection requirement. The edited Word document is preserved when creating the archive.

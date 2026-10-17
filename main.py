@@ -23,6 +23,7 @@ def main():
     commands.add_parser('pair-sanity')
     p = commands.add_parser('evaluate'); p.add_argument('part', choices=['rag', 'generate-ab', 'bias', 'ablation', 'all'], default='all', nargs='?')
     commands.add_parser('package')
+    commands.add_parser('archive')
     commands.add_parser('verify')
     p = commands.add_parser('replay'); p.add_argument('request_id'); p.add_argument('--rerun', action='store_true')
     commands.add_parser('costs')
@@ -88,6 +89,9 @@ def main():
     elif args.command == 'package':
         from scripts.package_submission import main as package
         package()
+    elif args.command == 'archive':
+        from scripts.archive_submission import main as archive
+        archive()
     elif args.command == 'verify':
         from scripts.verify_project import main as verify
         verify()

@@ -4,11 +4,11 @@ Two runnable projects for the Applied AI / ML Engineering assignment. Python,
 sqlite-vec, MiniLM embeddings, Qwen2.5-0.5B generation, and SmolLM2-1.7B judging.
 Models run locally with llama.cpp on CPU. No paid service or API key is required.
 
-The original brief and template are in `submission/source/`. The populated Word
+The original brief and template are in `submission/source/`. The current edited Word
 document is `submission/completed_submission.docx`. Reports contain real model
 outputs, not simulated scores. Synthetic test documents and labels are explicitly
-identified. The template's mandatory personal reflections must be completed by the
-candidate without AI help; those fields are clearly marked. This implementation,
+identified. The candidate is responsible for accurate personal details, disclosures
+and the template's requirement for independently written reflections. This implementation,
 technical write-up, fixtures and artifact preparation were AI-assisted by Codex.
 
 ## Quick start (Windows PowerShell)
@@ -19,7 +19,14 @@ for the environment, CPU runtime and models. The verified runtime here is Python
 Download time depends on the connection; the models total about 1.5 GB. A cached
 installation starts in seconds. Full evaluation takes longer than the quickstart.
 
-From the extracted `gen-ai-assignment` folder:
+Clone the repository, or open an extracted copy of the project:
+
+```powershell
+git clone https://github.com/Tapish19/genAI.git gen-ai-assignment
+cd gen-ai-assignment
+```
+
+Then run:
 
 ```powershell
 python scripts/bootstrap.py
@@ -102,7 +109,7 @@ validated; semantic support is evaluated independently, not guaranteed by JSON.
 ```powershell
 .\.venv\Scripts\python.exe main.py test
 .\.venv\Scripts\python.exe main.py evaluate all
-.\.venv\Scripts\python.exe main.py package
+.\.venv\Scripts\python.exe main.py archive
 .\.venv\Scripts\python.exe main.py check-submission
 ```
 
@@ -257,8 +264,11 @@ bundle with the implementation history; inspect it with
 extracted project folder. The archive itself includes the complete measured
 artifacts and Word document in addition to that source-history snapshot.
 
-`main.py package` refreshes the technical submission from existing results. It
-does not overwrite candidate reflection text with invented personal experience.
+`main.py archive` refreshes the local ZIP and file manifest while preserving the
+edited Word document. ZIP files and model weights are excluded from GitHub; GitHub's
+Download ZIP also provides the tracked source, evidence and current Word document.
+`main.py package` regenerates the technical template from the original template;
+use it only for a new technical draft, because it can replace manually edited fields.
 The source archive excludes model weights, virtual environments, caches and secrets.
 Evidence capture uses Python Playwright and either its Chromium or an installed
 Chrome browser, with a fresh headless profile. On a machine without either browser,
