@@ -7,7 +7,7 @@ from unittest.mock import patch
 
 from src.config import Settings
 from src.ingestion import chunk_words, extract
-from src.judge import Judge, VerdictError, parse_object, aggregate, load_suite
+from src.judge import Judge, VerdictError, parse_object, aggregate, load_suite, declare_winner
 from src.metrics import retrieval_metrics, answer_metrics, kappa, percentile, binary_validation
 from src.rag import RAG, ABSTENTION
 from src.store import Store
@@ -118,6 +118,10 @@ class IngestionTests(unittest.TestCase):
         self.assertTrue(result['abstained'])
 
 class JudgeTests(unittest.TestCase):
+    def test_all_disagreements_are_inconclusive_not_a_tie(self):
+        self.assertEqual(declare_winner([{'status':'ok','winner':'abstain'}]),'inconclusive')
+        self.assertEqual(declare_winner([{'status':'ok','winner':'B'}]),'B')
+        self.assertEqual(declare_winner([{'status':'ok','winner':'tie'}]),'tie')
     def test_json_repairs(self):
         for raw in ['```json\n{"a": 1}\n```', 'prefix {"a":1} suffix', '{"a":1,}', "{'a': 1}"]:
             self.assertEqual(parse_object(raw)[0], {'a':1})

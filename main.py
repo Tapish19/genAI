@@ -20,11 +20,13 @@ def main():
     p = commands.add_parser('serve'); p.add_argument('--port', type=int, default=8080)
     p = commands.add_parser('judge'); p.add_argument('suite'); p.add_argument('--output', default='artifacts/suite_report.json'); p.add_argument('--uncalibrated', action='store_true')
     p = commands.add_parser('compare'); p.add_argument('suite', nargs='?', default='data/comparison_suite.json'); p.add_argument('--output', default='artifacts/ab_comparison.json')
+    commands.add_parser('pair-sanity')
     p = commands.add_parser('evaluate'); p.add_argument('part', choices=['rag', 'generate-ab', 'bias', 'ablation', 'all'], default='all', nargs='?')
     commands.add_parser('package')
     commands.add_parser('verify')
     p = commands.add_parser('replay'); p.add_argument('request_id'); p.add_argument('--rerun', action='store_true')
     commands.add_parser('costs')
+    commands.add_parser('check-submission')
     args = parser.parse_args()
     if args.command == 'stop-evaluation':
         import os
@@ -63,6 +65,13 @@ def main():
     elif args.command == 'serve':
         from src.service import serve
         serve(args.port)
+    elif args.command == 'pair-sanity':
+        from src.judge import Judge
+        from src.llm import ModelClient
+        pair={'input':'What is 2 + 2?', 'system_prompt':'Answer accurately.', 'expected_output':'4', 'model_output':'5', 'output_b':'4'}
+        result=Judge(generator_family=ModelClient('generator').family).pairwise(pair,True,'sanity:pair')
+        (ROOT/'artifacts/pair_sanity.json').write_text(json.dumps(result,indent=2),encoding='utf-8')
+        print_json(result)
     elif args.command in ('judge', 'compare', 'evaluate'):
         from src import evaluation as ev
         if args.command == 'judge':
@@ -85,6 +94,9 @@ def main():
     elif args.command == 'costs':
         from scripts.costs import calculate
         print_json(calculate())
+    elif args.command == 'check-submission':
+        from scripts.check_submission import main as check
+        check()
     elif args.command == 'replay':
         from src.llm import ModelClient
         import os

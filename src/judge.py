@@ -168,3 +168,10 @@ def aggregate(verdicts):
             'pass_rate': sum(v.get('passed', False) for v in verdicts) / len(verdicts) if verdicts else 0,
             'mean_score': statistics.mean(v['overall'] for v in valid) if valid else None,
             'per_criterion': {name: statistics.mean(v[name]['score'] for v in valid if name in v) for name in RUBRIC if any(name in v for v in valid)}}
+
+def declare_winner(pair_verdicts):
+    accepted=[v['winner'] for v in pair_verdicts if v.get('status')=='ok' and v.get('winner')!='abstain']
+    if not accepted:
+        return 'inconclusive'
+    a,b=accepted.count('A'),accepted.count('B')
+    return 'A' if a>b else 'B' if b>a else 'tie'

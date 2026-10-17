@@ -103,6 +103,7 @@ validated; semantic support is evaluated independently, not guaranteed by JSON.
 .\.venv\Scripts\python.exe main.py test
 .\.venv\Scripts\python.exe main.py evaluate all
 .\.venv\Scripts\python.exe main.py package
+.\.venv\Scripts\python.exe main.py check-submission
 ```
 
 Or run components:
@@ -233,8 +234,13 @@ The A/B experiment generates 8 pairs from one fixed question per support documen
 Qwen with an ungrounded prompt (A) and a context-grounded prompt (B). Both actual
 outputs are frozen in `data/comparison_suite.json`; they can be rejudged without
 regeneration. Reports give pass rates, mean scores, two-order consensus win rates,
-flip rates and a declared winner (or an honest tie). Win-rate denominator is all
+flip rates and a declared winner (or an honest tie/inconclusive result). If all
+pairs disagree between orders, the result is inconclusive; no equivalence is claimed.
+Win-rate denominator is all
 pairs, including ties/disagreements, not only decisive pairs.
+When gold references exist, a separate exact-match/F1 comparison names a secondary
+winner only when both lexical metrics improve. This result is clearly separated
+from the LLM verdict; an inconclusive judge result is never disguised as a win.
 
 ## Repository and artifacts
 

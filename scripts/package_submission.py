@@ -167,7 +167,7 @@ def make_document(rag, ab, val, costs, ablation):
         (96,'Prerequisites',prerequisites),(97,'Environment variables',variables),
         (107,'Judge & generator configured independently?','Yes. Separate GENERATOR_* and JUDGE_* URL, model, family and optional key settings. Same declared family is rejected.'),
         (111,'Judging mode used','Pointwise reference-based scoring plus pairwise A/B in both orders. Missing references are supported but do not establish factual truth.'),
-        (125,'Declared winner + one-line justification',f'{ab["winner"]}: higher consensus pairwise wins across all 8 generated pairs; disagreements abstain and ties earn neither a win. A={pct(ab["A"]["win_rate_all_pairs"])}, B={pct(ab["B"]["win_rate_all_pairs"])}.')]:
+        (125,'Declared winner + one-line justification',f'LLM judge: {ab["winner"]}; zero accepted comparisons cannot name a winner. Independent gold-reference winner: {ab["gold_reference_comparison"]["winner"]}, because both exact match and token F1 improve (see artifacts/ab_comparison.json). The gold check is separate from the judge verdict.')]:
         paragraphs[index].text=prefix+'  '+value
     fill_table(tables[23],[[install]])
     fill_table(tables[26],[['.\\.venv\\Scripts\\python.exe main.py ingest corpus\n# PDF/HTML/MD; defaults: 120 words, overlap 24.\n# Change both explicitly: main.py ingest corpus --chunk-size 60 --overlap 12']])
@@ -336,7 +336,15 @@ staff labor, taxes or equal availability. No 10M-vector latency claim is made.
         text+=f'| {label}: {name} | {pct(ab[label]["pass_rate"])} | {fmt(ab[label]["mean_score"])} | {pct(ab[label]["win_rate_all_pairs"])} |\n'
     text+=f'''
 Declared winner: **{ab['winner']}**, using higher two-order consensus win count.
-Ties/disagreements earn neither config a win; the rule never forces a winner.
+Ties/disagreements earn neither config a win. When all pairs are rejected for
+order disagreement, the result is inconclusive; no actual equivalence is claimed.
+
+The independent gold-reference check favors **{ab['gold_reference_comparison']['winner']}**:
+A exact match {pct(ab['gold_reference_comparison']['A']['em'])}, F1 {fmt(ab['gold_reference_comparison']['A']['f1'])};
+B exact match {pct(ab['gold_reference_comparison']['B']['em'])}, F1 {fmt(ab['gold_reference_comparison']['B']['f1'])}.
+This secondary lexical check uses the same eight frozen outputs and references.
+It does not replace or disguise the inconclusive LLM verdict, and lexical overlap
+does not establish every rubric dimension.
 
 | Bias / validation metric | Before | After |
 |---|---:|---:|
@@ -392,6 +400,12 @@ def main():
     ablation=read('artifacts/chunk_ablation.json')
     if 'summary' not in rag or 'winner' not in ab or 'test_retest' not in val:
         raise RuntimeError('Complete main.py evaluate all before packaging')
+    from src.judge import declare_winner
+    ab['winner']=declare_winner([row['mitigated'] for row in ab['cases']])
+    ab['winner_rule']='Higher two-order consensus win count. If every pair abstains, declare inconclusive. No winner is fabricated.'
+    from src.evaluation import gold_comparison
+    ab['gold_reference_comparison']=gold_comparison(read('data/comparison_suite.json')['cases'])
+    (ART/'ab_comparison.json').write_text(pretty(ab),encoding='utf-8')
     if (ROOT/'.runtime/manifest.json').exists():
         shutil.copy2(ROOT/'.runtime/manifest.json',ART/'model_manifest.json')
         shutil.copy2(ROOT/'.runtime/manifest.json',ROOT/'configs/runtime.lock.json')

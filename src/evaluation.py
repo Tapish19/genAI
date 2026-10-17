@@ -9,7 +9,7 @@ import statistics
 import time
 
 from .config import ROOT, Settings
-from .judge import Judge, aggregate, load_suite
+from .judge import Judge, aggregate, load_suite, declare_winner
 from .llm import ModelClient
 from .metrics import retrieval_metrics, answer_metrics, percentile, mean, normalize, kappa, binary_validation
 from .rag import RAG
@@ -21,6 +21,18 @@ def save(path, data):
     temporary = path.with_suffix(path.suffix + '.tmp')
     temporary.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding='utf-8')
     temporary.replace(path)
+
+def gold_comparison(cases):
+    if not cases or not all(isinstance(c.get('expected_output'),str) for c in cases):
+        return None
+    scores={label:[answer_metrics(c[key],c['expected_output']) for c in cases]
+            for label,key in [('A','model_output'),('B','output_b')]}
+    summary={label:{metric:mean([v[metric] for v in values]) for metric in ['em','f1']}
+             for label,values in scores.items()}
+    a,b=summary['A'],summary['B']
+    winner='B' if b['em']>a['em'] and b['f1']>a['f1'] else 'A' if a['em']>b['em'] and a['f1']>b['f1'] else 'inconclusive'
+    return {**summary,'winner':winner,'n':len(cases),
+            'method':'Secondary exact-match and token-F1 gold-reference check. Both metrics must improve to name a winner. This is not an LLM-judge verdict.'}
 
 def provenance():
     import psutil
@@ -155,9 +167,9 @@ def compare(path, output):
         'disagreements': sum(row[mode]['flipped'] is True for row in rows),
         'valid_pairs': sum(row[mode]['status'] == 'ok' for row in rows),
         'consensus_coverage': sum(row[mode]['winner'] != 'abstain' for row in rows) / len(rows)} for mode in ['baseline', 'mitigated']}
-    wins_a, wins_b = (report[label]['win_rate_all_pairs'] for label in ['A', 'B'])
-    report['winner'] = 'A' if wins_a > wins_b else 'B' if wins_b > wins_a else 'tie'
-    report['winner_rule'] = 'Higher two-order consensus win count; ties and disagreements earn neither config a win. No winner forced.'
+    report['winner'] = declare_winner([row['mitigated'] for row in rows])
+    report['winner_rule'] = 'Higher two-order consensus win count; ties and disagreements earn neither config a win. If no pair has consensus, declare inconclusive rather than a tie.'
+    report['gold_reference_comparison']=gold_comparison(cases)
     report['usage'], report['calls'] = judge.client.tokens, judge.client.calls
     save(output, report)
     return report
