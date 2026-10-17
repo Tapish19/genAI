@@ -1,0 +1,14 @@
+flowchart TD
+  S[JSON / YAML suite] --> I[Validate input; strip model provenance]
+  I --> P[Explicit rubric; labeled question/answer/reference; anchors]
+  P --> O[Pointwise OR pairwise both orders]
+  O --> J[Independent SmolLM2 judge]
+  J --> L[Audit exact prompt + raw response + usage]
+  J --> V{Parse + validate structured verdict}
+  V -->|Malformed| F[Repair fences/commas/literals; one model retry]
+  F --> V2{Valid after retry?}
+  V2 -->|No| E[Explicit error; count in denominator]
+  V2 -->|Yes| A[Aggregate per-criterion and overall scores]
+  V -->|Valid| A
+  A --> M[Remap A/B labels; disagree -> abstain; report coverage]
+  M --> R[Suite report; A/B winner; bias/gold/retest validation]

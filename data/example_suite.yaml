@@ -1,0 +1,7 @@
+cases:
+  - id: sample
+    input: What is 2 + 2?
+    system_prompt: Answer accurately.
+    model_output: "4"
+    expected_output: "4"
+    criteria: [correctness, completeness]

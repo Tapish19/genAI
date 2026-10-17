@@ -1,0 +1,14 @@
+flowchart TD
+  F[PDF / HTML / MD] --> X[Extract text; preserve PDF page]
+  X --> C[120 word chunks; 24 word overlap]
+  C --> E[MiniLM-L6-v2; 384 float32 dimensions]
+  E --> V[(sqlite-vec + source/page/category metadata)]
+  Q[POST /query] --> QE[Query embedding]
+  QE --> R[Top-k exact cosine retrieval; category prefilter]
+  V --> R
+  R --> T{Similarity >= 0.38?}
+  T -->|No| N[Deterministic abstention; zero generator tokens]
+  T -->|Yes| L[Qwen grounded structured answer + source indices]
+  L --> P{Valid citation bounds?}
+  P -->|No| N
+  P -->|Yes| A[Answer with chunk/source/page citations + latency + tokens]

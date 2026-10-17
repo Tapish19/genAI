@@ -1,0 +1,177 @@
+{
+  "description": "Frozen synthetic benchmark: 16 answerable + 4 negative queries. Evidence annotations are authored fixtures, not human labels.",
+  "cases": [
+    {
+      "id": "q01",
+      "question": "How long do I have to request a refund after my first paid subscription?",
+      "expected_output": "14 days",
+      "source": "refunds.md",
+      "evidence": "within 14 days",
+      "category": "billing",
+      "answerable": true
+    },
+    {
+      "id": "q02",
+      "question": "How long does an approved refund take to reach my payment method?",
+      "expected_output": "5 business days",
+      "source": "refunds.md",
+      "evidence": "within 5 business days",
+      "category": "billing",
+      "answerable": true
+    },
+    {
+      "id": "q03",
+      "question": "What is the monthly per-user price of the Team plan?",
+      "expected_output": "12 dollars per user per month",
+      "source": "plans.html",
+      "evidence": "12 dollars per user",
+      "category": "billing",
+      "answerable": true
+    },
+    {
+      "id": "q04",
+      "question": "How many shared notebooks are included in the Starter plan?",
+      "expected_output": "3 shared notebooks",
+      "source": "plans.html",
+      "evidence": "3 shared notebooks",
+      "category": "billing",
+      "answerable": true
+    },
+    {
+      "id": "q05",
+      "question": "Which encryption protects workspace data at rest?",
+      "expected_output": "AES-256",
+      "source": "security.pdf",
+      "evidence": "AES-256",
+      "category": "security",
+      "answerable": true
+    },
+    {
+      "id": "q06",
+      "question": "Which plan includes SAML single sign-on?",
+      "expected_output": "Enterprise plan",
+      "source": "security.pdf",
+      "evidence": "Enterprise plan",
+      "category": "security",
+      "answerable": true
+    },
+    {
+      "id": "q07",
+      "question": "For how many days are automatic workspace backups retained?",
+      "expected_output": "30 days",
+      "source": "backups.md",
+      "evidence": "30 days",
+      "category": "operations",
+      "answerable": true
+    },
+    {
+      "id": "q08",
+      "question": "What is the recovery point objective for a standard workspace?",
+      "expected_output": "24 hours",
+      "source": "backups.md",
+      "evidence": "24 hours",
+      "category": "operations",
+      "answerable": true
+    },
+    {
+      "id": "q09",
+      "question": "What is the public API rate limit for each workspace?",
+      "expected_output": "120 requests per minute",
+      "source": "api.html",
+      "evidence": "120 requests per minute",
+      "category": "developer",
+      "answerable": true
+    },
+    {
+      "id": "q10",
+      "question": "When should an API client retry after an HTTP 429 response?",
+      "expected_output": "After the Retry-After header interval",
+      "source": "api.html",
+      "evidence": "Retry-After header interval",
+      "category": "developer",
+      "answerable": true
+    },
+    {
+      "id": "q11",
+      "question": "How large can a single uploaded file be?",
+      "expected_output": "25 megabytes",
+      "source": "uploads.pdf",
+      "evidence": "25 megabytes",
+      "category": "product",
+      "answerable": true
+    },
+    {
+      "id": "q12",
+      "question": "Which file formats are accepted for workspace imports?",
+      "expected_output": "CSV, Markdown, and plain text",
+      "source": "uploads.pdf",
+      "evidence": "CSV, Markdown, and plain text",
+      "category": "product",
+      "answerable": true
+    },
+    {
+      "id": "q13",
+      "question": "What are the standard support hours?",
+      "expected_output": "Monday through Friday from 09:00 to 18:00 UTC",
+      "source": "support.md",
+      "evidence": "09:00 to 18:00 UTC",
+      "category": "operations",
+      "answerable": true
+    },
+    {
+      "id": "q14",
+      "question": "What is the first response target for critical Enterprise incidents?",
+      "expected_output": "1 hour",
+      "source": "support.md",
+      "evidence": "1 hour",
+      "category": "operations",
+      "answerable": true
+    },
+    {
+      "id": "q15",
+      "question": "How long is the recovery window after account deletion?",
+      "expected_output": "7 days",
+      "source": "retention.html",
+      "evidence": "7 day recovery window",
+      "category": "security",
+      "answerable": true
+    },
+    {
+      "id": "q16",
+      "question": "What format is used when owners export workspace notes?",
+      "expected_output": "A ZIP archive containing Markdown files",
+      "source": "retention.html",
+      "evidence": "ZIP archive containing Markdown files",
+      "category": "security",
+      "answerable": true
+    },
+    {
+      "id": "q17",
+      "question": "What is the orbital period of the planet Neptune?",
+      "expected_output": "I could not find relevant context in the supplied documents.",
+      "category": null,
+      "answerable": false
+    },
+    {
+      "id": "q18",
+      "question": "What were the results of the 2026 Martian football championship?",
+      "expected_output": "I could not find relevant context in the supplied documents.",
+      "category": null,
+      "answerable": false
+    },
+    {
+      "id": "q19",
+      "question": "What is the Team plan price?",
+      "expected_output": "I could not find relevant context in the supplied documents.",
+      "category": "nonexistent-category",
+      "answerable": false
+    },
+    {
+      "id": "q20",
+      "question": "What is the password of the CEO?",
+      "expected_output": "I could not find relevant context in the supplied documents.",
+      "category": "nonexistent-category",
+      "answerable": false
+    }
+  ]
+}
