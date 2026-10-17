@@ -9,6 +9,7 @@ import subprocess
 import urllib.request
 import venv
 import zipfile
+import zlib
 
 ROOT = Path(__file__).resolve().parents[1]
 RUNTIME = ROOT / '.runtime'
@@ -33,6 +34,26 @@ def download(url, destination):
     return {'url': url, 'file': str(destination.relative_to(ROOT)),
             'bytes': destination.stat().st_size, 'sha256': digest}
 
+def extract_runtime(archive_path):
+    destination=RUNTIME/'llama'
+    destination.mkdir(exist_ok=True)
+    with zipfile.ZipFile(archive_path) as archive:
+        for info in archive.infolist():
+            target=(destination/info.filename).resolve()
+            if not target.is_relative_to(destination.resolve()):
+                raise RuntimeError('Unsafe path in runtime archive')
+            if info.is_dir():
+                target.mkdir(parents=True,exist_ok=True)
+                continue
+            # Do not overwrite DLLs loaded by running local servers on Windows.
+            if target.exists() and target.stat().st_size==info.file_size:
+                if zlib.crc32(target.read_bytes()) & 0xffffffff == info.CRC:
+                    continue
+            try:
+                archive.extract(info,destination)
+            except PermissionError as exc:
+                raise RuntimeError('Stop local models before replacing a changed runtime: main.py models stop') from exc
+
 def main():
     os.chdir(ROOT)
     RUNTIME.mkdir(exist_ok=True)
@@ -50,8 +71,7 @@ def main():
             if info['sha256'] != item['sha256']:
                 raise RuntimeError('Checksum mismatch: ' + item['file'])
             if destination.suffix == '.zip':
-                with zipfile.ZipFile(destination) as archive:
-                    archive.extractall(RUNTIME / 'llama')
+                extract_runtime(destination)
         (RUNTIME / 'manifest.json').write_text(json.dumps(manifest, indent=2), encoding='utf-8')
         print('Pinned runtime/model setup complete.', flush=True)
         return
@@ -69,8 +89,7 @@ def main():
             raise RuntimeError('Runtime checksum mismatch')
         manifest['llama_cpp_release'] = release['tag_name']
         manifest['downloads'].append(info)
-        with zipfile.ZipFile(RUNTIME / asset['name']) as archive:
-            archive.extractall(RUNTIME / 'llama')
+        extract_runtime(RUNTIME / asset['name'])
     repositories = [('Qwen/Qwen2.5-0.5B-Instruct-GGUF', 'generator.gguf'),
                     ('HuggingFaceTB/SmolLM2-1.7B-Instruct-GGUF', 'judge.gguf')]
     tasks = []

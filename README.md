@@ -13,7 +13,7 @@ technical write-up, fixtures and artifact preparation were AI-assisted by Codex.
 
 ## Quick start (Windows PowerShell)
 
-Requires Python 3.11–3.13, Windows x64, about 4 GB free RAM and 5 GB free disk
+Requires Python 3.13, Windows x64, about 4 GB free RAM and 5 GB free disk
 for the environment, CPU runtime and models. The verified runtime here is Python
 3.13. Internet is needed for initial downloads; inference is local afterwards.
 Download time depends on the connection; the models total about 1.5 GB. A cached
@@ -198,6 +198,13 @@ keys are logged. Local model revisions and SHA256 checksums are recorded in the
 runtime manifest and copied into the submission. There is no mocked inference
 in the reported evaluation. Test-only stub outputs appear only in unit tests.
 
+Inspect an audited request with `main.py replay REQUEST_ID`; add `--rerun` to
+send the exact saved prompt, schema, temperature and seed to the configured local
+endpoint again. Timing and model output may vary with runtime versions, hardware,
+prompt-cache state and scheduling; the original response is always retained.
+Test stubs do not make real model calls, and new test runs do not write stub
+predictions into the production query log.
+
 Bias controls and measurements:
 
 - **Position:** judge each pair in both orders, map displayed labels back to
@@ -238,8 +245,18 @@ pairs, including ties/disagreements, not only decisive pairs.
 - `artifacts/`: reports, logs, screenshots, diagrams, source hashes and test results.
 - `submission/`: populated template, source brief/template and submission archive.
 
+The workspace contains a local Git repository. The archive also includes a Git
+bundle with the implementation history; inspect it with
+`git clone submission/project-history.bundle implementation-history` from the
+extracted project folder. The archive itself includes the complete measured
+artifacts and Word document in addition to that source-history snapshot.
+
 `main.py package` refreshes the technical submission from existing results. It
 does not overwrite candidate reflection text with invented personal experience.
 The source archive excludes model weights, virtual environments, caches and secrets.
+Evidence capture uses Python Playwright and either its Chromium or an installed
+Chrome browser, with a fresh headless profile. On a machine without either browser,
+run `.\.venv\Scripts\python.exe -m playwright install chromium --only-shell`
+before regenerating screenshots. Existing screenshots are included in the archive.
 To regenerate corpus fixtures deliberately, run `main.py prepare`; ordinary
 evaluation uses the frozen files without changing them.

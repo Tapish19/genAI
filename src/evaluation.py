@@ -11,7 +11,7 @@ import time
 from .config import ROOT, Settings
 from .judge import Judge, aggregate, load_suite
 from .llm import ModelClient
-from .metrics import retrieval_metrics, answer_metrics, percentile, mean, normalize, kappa
+from .metrics import retrieval_metrics, answer_metrics, percentile, mean, normalize, kappa, binary_validation
 from .rag import RAG
 from .store import Store
 
@@ -173,12 +173,10 @@ def bias_validate(output='artifacts/judge_validation.json'):
         report['cases'].append({'id': case['id'], 'gold_pass': case['gold_pass'], 'baseline': baseline, 'mitigated': mitigated})
         save(output, report)
     for mode in ['baseline', 'mitigated']:
-        predictions = [row[mode].get('passed', False) for row in report['cases']]
         gold = [row['gold_pass'] for row in report['cases']]
         scores = [row[mode]['overall'] for row in report['cases'] if row[mode].get('overall') is not None]
-        report[mode] = {'agreement': mean([float(a == b) for a, b in zip(predictions, gold)]),
-                        'cohens_kappa': kappa(predictions, gold), 'score_stddev': statistics.pstdev(scores) if scores else None,
-                        'errors': sum(row[mode]['status'] == 'error' for row in report['cases'])}
+        report[mode] = {**binary_validation([row[mode] for row in report['cases']],gold),
+                        'score_stddev': statistics.pstdev(scores) if scores else None}
     # Same factual content with neutral padding: measure absolute score drift before/after.
     clean = cases[2]
     padded = {**clean, 'model_output': clean['model_output'] + ' For clarity, this is my complete response. ' * 5}

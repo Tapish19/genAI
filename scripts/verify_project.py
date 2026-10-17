@@ -1,6 +1,7 @@
 """Run tests and exercise the actual HTTP service and local generator."""
 import json
 import os
+import re
 from pathlib import Path
 import subprocess
 import sys
@@ -13,6 +14,8 @@ def main():
     result = subprocess.run([sys.executable, 'main.py', 'test'], cwd=ROOT, text=True, capture_output=True)
     (ROOT/'artifacts/test_results.txt').write_text(result.stdout + result.stderr, encoding='utf-8')
     if result.returncode: raise SystemExit('Unit tests failed; see artifacts/test_results.txt')
+    match=re.search(r'Ran (\d+) tests',result.stdout+result.stderr)
+    test_count=int(match.group(1)) if match else None
     port = 8095
     log = (ROOT/'artifacts/http_service.log').open('wb')
     kwargs = {'creationflags': subprocess.CREATE_NO_WINDOW} if os.name == 'nt' else {}
@@ -32,7 +35,10 @@ def main():
         else: raise RuntimeError('HTTP service did not start')
         positive = post({'question':'Which encryption protects workspace data at rest?', 'category':'security', 'k':3})
         assert positive['chunk_count'] > 0 and positive['usage']['total_tokens'] > 0
-        assert positive['citations'] and all(c['source'] == 'security.pdf' for c in positive['citations'])
+        assert positive['citations'] and any(c['source'] == 'security.pdf' for c in positive['citations'])
+        cited_ids = {c['chunk_id'] for c in positive['citations']}
+        assert cited_ids <= {c['id'] for c in positive['chunks']}
+        assert any(c['id'] in cited_ids and 'AES-256' in c['text'] for c in positive['chunks'])
         assert 'AES-256' in positive['answer']
         negative = post({'question':'Unpublished secret?', 'category':'missing'})
         assert negative['abstained'] and negative['usage']['total_tokens'] == 0
@@ -40,10 +46,10 @@ def main():
         try: post({'question':'x', 'k':0})
         except urllib.error.HTTPError as exc: invalid_status = exc.code
         assert invalid_status == 400
-        report = {'status':'passed', 'unit_tests':19, 'health':health, 'positive':positive,
+        report = {'status':'passed', 'unit_tests':test_count, 'health':health, 'positive':positive,
                   'negative':negative, 'invalid_k_http_status': invalid_status}
         (ROOT/'artifacts/http_smoke.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
-        print('19 tests passed; real HTTP positive, no-context and invalid-input checks passed.', flush=True)
+        print(f'{test_count} tests passed; real HTTP positive, no-context and invalid-input checks passed.', flush=True)
     finally:
         process.terminate()
         try: process.wait(timeout=10)

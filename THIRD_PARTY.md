@@ -9,6 +9,7 @@ third-party components retain their respective licenses; no ownership is claimed
 - [llama.cpp](https://github.com/ggml-org/llama.cpp): MIT.
 - [sqlite-vec](https://github.com/asg017/sqlite-vec): MIT / Apache-2.0.
 - [FastEmbed](https://github.com/qdrant/fastembed): Apache-2.0.
+- [Playwright](https://github.com/microsoft/playwright-python): Apache-2.0; used for local evidence screenshots.
 - Python packages: see installed package metadata and pinned requirements.
 
 Model weights, inference binaries and virtual environments are excluded from the

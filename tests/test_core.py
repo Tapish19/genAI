@@ -3,11 +3,12 @@ import math
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 
 from src.config import Settings
 from src.ingestion import chunk_words, extract
 from src.judge import Judge, VerdictError, parse_object, aggregate, load_suite
-from src.metrics import retrieval_metrics, answer_metrics, kappa, percentile
+from src.metrics import retrieval_metrics, answer_metrics, kappa, percentile, binary_validation
 from src.rag import RAG, ABSTENTION
 from src.store import Store
 
@@ -43,6 +44,10 @@ class MetricsTests(unittest.TestCase):
     def test_kappa_and_quantile(self):
         self.assertEqual(kappa([True,False],[True,False]), 1)
         self.assertAlmostEqual(percentile([0,10], 95), 9.5)
+    def test_parse_failure_never_agrees_with_negative_gold(self):
+        result = binary_validation([{'status':'error','passed':False}], [False])
+        self.assertEqual(result['agreement'], 0)
+        self.assertEqual(result['errors'], 1)
 
 class IngestionTests(unittest.TestCase):
     def setUp(self):
@@ -100,14 +105,16 @@ class IngestionTests(unittest.TestCase):
         (self.corpus/'a.md').write_text('Category: billing\nHello')
         self.store.ingest(self.corpus)
         client = StubClient([])
-        result = RAG(self.store, client).query('unknown', category='missing')
+        with patch('src.rag.append_jsonl'):
+            result = RAG(self.store, client).query('unknown', category='missing')
         self.assertEqual(result['answer'], ABSTENTION)
         self.assertEqual(result['usage']['total_tokens'], 0)
         self.assertEqual(client.messages, [])
     def test_invalid_citation_is_rejected(self):
         (self.corpus/'a.md').write_text('Category: billing\nHello')
         self.store.ingest(self.corpus)
-        result = RAG(self.store, StubClient(['{"answer":"Invented", "citations":[99]}'])).query('hello')
+        with patch('src.rag.append_jsonl'):
+            result = RAG(self.store, StubClient(['{"answer":"Invented", "citations":[99]}'])).query('hello')
         self.assertTrue(result['abstained'])
 
 class JudgeTests(unittest.TestCase):

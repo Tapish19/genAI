@@ -44,3 +44,11 @@ def kappa(predicted, gold):
 def mean(values):
     return statistics.mean(values) if values else None
 
+def binary_validation(verdicts, gold):
+    if not gold or len(verdicts) != len(gold):
+        raise ValueError('Validation needs equal, nonempty verdict and gold lists')
+    predictions = [v.get('passed', False) if v.get('status') == 'ok' else 'error' for v in verdicts]
+    return {'agreement': sum(a == b for a,b in zip(predictions,gold)) / len(gold),
+            'cohens_kappa': kappa(predictions,gold),
+            'errors': sum(v.get('status') != 'ok' for v in verdicts)}
+

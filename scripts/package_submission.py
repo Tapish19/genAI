@@ -91,7 +91,10 @@ def build_evidence(rag, ab, validation, idempotency):
     auditview = {'request_id':record['request_id'], 'tag':record['tag'], 'model':record['model'],
                  'messages':record['request']['messages'], 'raw_response':json.loads(record['raw_response']), 'latency_ms':record['latency_ms']}
     case = ab['cases'][0]
-    positionview = {'case_id':case['id'], 'baseline':case['baseline'], 'mitigated':case['mitigated'], 'suite_position_bias':ab['position_bias']}
+    pair=case['mitigated']
+    compact=lambda verdict:{key:verdict[key] for key in ['winner','canonical_winner','rationale','request_ids'] if key in verdict}
+    positionview = {'case_id':case['id'], 'forward':compact(pair['forward']), 'reverse':compact(pair['reverse']),
+                    'flipped':pair['flipped'], 'consensus_winner':pair['winner'], 'suite_position_bias':ab['position_bias']}
     adversarial = next(c for c in validation['cases'] if c['id'] == 'verbose-wrong')
     cards=[('query','End-to-end RAG query',queryview,'artifacts/rag_results.json'),
            ('idempotency','Idempotent re-ingestion',idempotency,'artifacts/idempotency.json'),
@@ -103,7 +106,7 @@ def build_evidence(rag, ab, validation, idempotency):
         content+=f'<section id="{id}"><h1>{html.escape(title)}</h1><div class="meta">Screenshot of measured records · source: {html.escape(source)} · values shown without alteration</div><pre>{html.escape(pretty(data))}</pre></section>'
     content+='</html>'
     (ART/'evidence.html').write_text(content,encoding='utf-8')
-    result=subprocess.run(['node',str(ROOT/'scripts/capture_evidence.cjs')],cwd=ROOT,text=True,capture_output=True)
+    result=subprocess.run([sys.executable,str(ROOT/'scripts/capture_evidence.py')],cwd=ROOT,text=True,capture_output=True)
     (ART/'screenshot_capture.txt').write_text(result.stdout+result.stderr,encoding='utf-8')
     if result.returncode:
         if not all((ART/(id+'.png')).exists() for id,*_ in cards):
@@ -129,6 +132,15 @@ def image_cell(table, path, caption):
 
 def make_document(rag, ab, val, costs, ablation):
     source=SUB/'source/submission_template.docx'
+    candidate_overrides={}
+    existing=SUB/'completed_submission.docx'
+    if existing.exists():
+        prior=Document(existing)
+        for index,element in enumerate(list(prior.element.body)):
+            if index in (77,81,152,156) and element.tag.endswith('}tbl'):
+                text=Table(element,prior).cell(0,0).text
+                if text.strip() and 'Candidate-written reflection required' not in text and 'Candidate interpretation required' not in text:
+                    candidate_overrides[index]=text
     document=Document(source)
     elements=list(document.element.body)
     tables={i:Table(element,document) for i,element in enumerate(elements) if element.tag.endswith('}tbl')}
@@ -136,7 +148,7 @@ def make_document(rag, ab, val, costs, ablation):
     summary=rag['summary']; retrieval=summary['retrieval']; quality=summary['answer_quality']; latency=summary['latency']
     env=rag['environment']
     variables='RAG_DB, EMBEDDING_MODEL, CHUNK_SIZE, CHUNK_OVERLAP, MIN_SIMILARITY, TOP_K, GENERATOR_BASE_URL, GENERATOR_MODEL, GENERATOR_FAMILY, GENERATOR_API_KEY, JUDGE_BASE_URL, JUDGE_MODEL, JUDGE_FAMILY, JUDGE_API_KEY, LLM_TIMEOUT, MODEL_THREADS, AUDIT_LOG, QUERY_LOG. Defaults in .env.example; no keys needed locally.'
-    prerequisites=f'Python 3.11–3.13; Windows x64 automatic setup; 4 GB free RAM and 5 GB disk recommended; initial Internet download. Tested Python {env["python"]}, {env["ram_gib"]} GiB total RAM, {env["logical_cpus"]} logical CPUs; CPU inference, four threads/server. Linux/macOS can use independently configured local llama.cpp endpoints.'
+    prerequisites=f'Python 3.13; Windows x64 automatic setup; 4 GB free RAM and 5 GB disk recommended; initial Internet download. Tested Python {env["python"]}, {env["ram_gib"]} GiB total RAM, {env["logical_cpus"]} logical CPUs; CPU inference, four threads/server. Linux/macOS can use independently configured local llama.cpp endpoints.'
     install='From the extracted project folder (local repository included; no public URL was supplied):\npython scripts/bootstrap.py\n.\\.venv\\Scripts\\python.exe main.py models start\nInitial models are about 1.5 GB; download time depends on the connection. Cached setup is fast; full evaluation takes longer than setup.'
     disclosure='Codex (OpenAI coding assistant) generated and revised the implementation, synthetic fixtures, technical documentation, tests, evaluation harness and submission artifacts. Real local Qwen/SmolLM model calls produced the measured results. No candidate-authored implementation or personal reflection is claimed. The candidate must independently review the work and write the required reflections.'
     personal='Candidate-written reflection required. The template explicitly requires this answer without AI assistance. No personal account has been fabricated; the candidate must write this section before submitting.'
@@ -231,6 +243,8 @@ def make_document(rag, ab, val, costs, ablation):
     fill_table(tables[152],[[personal]])
     fill_table(tables[156],[[pretty(adversarial)+'\n\nCandidate interpretation required without AI assistance. The recorded verdict above is actual pipeline output; it is not a personal reflection.']])
     fill_table(tables[160],[[disclosure]])
+    for index,text in candidate_overrides.items():
+        fill_table(tables[index],[[text]])
     # Let the filled tables grow with their content instead of inheriting empty-box heights.
     for table in document.tables:
         for row in table.rows:
