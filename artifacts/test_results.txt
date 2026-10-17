@@ -1,0 +1,26 @@
+test_changed_embedding_model_rejected (test_core.IngestionTests.test_changed_embedding_model_rejected) ... ok
+test_failure_leaves_previous_document_intact (test_core.IngestionTests.test_failure_leaves_previous_document_intact) ... ok
+test_html_excludes_scripts_and_has_no_joined_words (test_core.IngestionTests.test_html_excludes_scripts_and_has_no_joined_words) ... ok
+test_idempotence_replacement_and_metadata_prefilter (test_core.IngestionTests.test_idempotence_replacement_and_metadata_prefilter) ... ok
+test_invalid_citation_is_rejected (test_core.IngestionTests.test_invalid_citation_is_rejected) ... ok
+test_no_context_does_not_call_llm (test_core.IngestionTests.test_no_context_does_not_call_llm) ... ok
+test_overlap_and_no_duplicate_tail (test_core.IngestionTests.test_overlap_and_no_duplicate_tail) ... ok
+test_sql_like_filter_is_literal (test_core.IngestionTests.test_sql_like_filter_is_literal) ... ok
+test_all_disagreements_are_inconclusive_not_a_tie (test_core.JudgeTests.test_all_disagreements_are_inconclusive_not_a_tie) ... ok
+test_boolean_is_not_integer_score (test_core.JudgeTests.test_boolean_is_not_integer_score) ... ok
+test_failures_count_in_pass_denominator (test_core.JudgeTests.test_failures_count_in_pass_denominator) ... ok
+test_invalid_score_retries_then_errors (test_core.JudgeTests.test_invalid_score_retries_then_errors) ... ok
+test_json_repairs (test_core.JudgeTests.test_json_repairs) ... ok
+test_provenance_not_in_prompt (test_core.JudgeTests.test_provenance_not_in_prompt) ... ok
+test_same_family_guard (test_core.JudgeTests.test_same_family_guard) ... ok
+test_swap_identity_mapping_and_disagreement_abstention (test_core.JudgeTests.test_swap_identity_mapping_and_disagreement_abstention) ... ok
+test_kappa_and_quantile (test_core.MetricsTests.test_kappa_and_quantile) ... ok
+test_multiset_f1_does_not_double_count (test_core.MetricsTests.test_multiset_f1_does_not_double_count) ... ok
+test_parse_failure_never_agrees_with_negative_gold (test_core.MetricsTests.test_parse_failure_never_agrees_with_negative_gold) ... ok
+test_rank_metrics_known_example (test_core.MetricsTests.test_rank_metrics_known_example) ... ok
+test_unanswerable_not_in_positive_denominator (test_core.MetricsTests.test_unanswerable_not_in_positive_denominator) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.443s
+
+OK

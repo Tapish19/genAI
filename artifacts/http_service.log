@@ -1,0 +1,5 @@
+RAG API ready at http://127.0.0.1:8095 (16 chunks)
+127.0.0.1 - - [17/Oct/2026 13:25:15] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [17/Oct/2026 13:25:17] "POST /query HTTP/1.1" 200 -
+127.0.0.1 - - [17/Oct/2026 13:25:17] "POST /query HTTP/1.1" 200 -
+127.0.0.1 - - [17/Oct/2026 13:25:17] "POST /query HTTP/1.1" 400 -

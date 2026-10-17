@@ -1,0 +1,9 @@
+{
+  "calls": 16,
+  "usage": {
+    "prompt_tokens": 2057,
+    "completion_tokens": 753,
+    "total_tokens": 2810
+  },
+  "model": "qwen2.5-0.5b-instruct-q4_k_m"
+}

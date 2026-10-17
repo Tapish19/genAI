@@ -1,0 +1,21 @@
+{
+  "first": {
+    "processed": 0,
+    "skipped": 8,
+    "inserted_chunks": 0,
+    "replaced_chunks": 0,
+    "before": 16,
+    "after": 16,
+    "latency_ms": 35.84050002973527
+  },
+  "second": {
+    "processed": 0,
+    "skipped": 8,
+    "inserted_chunks": 0,
+    "replaced_chunks": 0,
+    "before": 16,
+    "after": 16,
+    "latency_ms": 29.708399903029203
+  },
+  "unchanged": true
+}

@@ -1,0 +1,53 @@
+{
+  "environment": {
+    "time": "2026-10-17T07:14:43.175680+00:00",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "python": "3.13.14",
+    "logical_cpus": 10,
+    "ram_gib": 15.55,
+    "cpu": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+    "model_threads": 4
+  },
+  "judge_model": "smollm2-1.7b-instruct-q4_k_m",
+  "calibrated": true,
+  "summary": {
+    "cases": 1,
+    "valid_cases": 1,
+    "errors": 0,
+    "pass_rate": 0.0,
+    "mean_score": 2.666666666666667,
+    "per_criterion": {
+      "correctness": 4,
+      "completeness": 0
+    }
+  },
+  "cases": [
+    {
+      "id": "sample",
+      "verdict": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate correctly stated that 2 + 2 equals 4, which matches the reference answer."
+        },
+        "completeness": {
+          "score": 0,
+          "rationale": "No additional information was provided to cover every requested part."
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "42c78c73ae1849b7a46bb52d423e85cd"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 2.666666666666667,
+        "passed": false
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 366,
+    "completion_tokens": 71,
+    "total_tokens": 437
+  },
+  "calls": 1
+}

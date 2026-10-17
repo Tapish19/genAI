@@ -1,0 +1,92 @@
+{
+  "status": "passed",
+  "unit_tests": 21,
+  "health": {
+    "status": "ok",
+    "chunks": 16
+  },
+  "positive": {
+    "query_id": "2f757d78edc54194af790e905b9ae26a",
+    "question": "Which encryption protects workspace data at rest?",
+    "category": "security",
+    "chunk_count": 2,
+    "chunks": [
+      {
+        "rowid": 11,
+        "id": "33d7137681d81680a78f",
+        "document_id": "ccee5e9cfb34b5cb5706dce126185910e1ad9e49f8c2ef0ca71d7d3a1903ea51",
+        "source": "security.pdf",
+        "page": 1,
+        "ordinal": 0,
+        "category": "security",
+        "text": "Workspace security Category: security Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Workspace security applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. All workspace data is encrypted at rest using AES-256. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. Single sign-on with SAML is available only on the Enterprise plan. The service dashboard records the relevant activity so workspace",
+        "similarity": 0.5407752692699432
+      },
+      {
+        "rowid": 10,
+        "id": "44545b1a1f311fd33ca5",
+        "document_id": "651161bd0da4c159707073695ce6686adc68f2eab36c2b87bd92091cee4aabae",
+        "source": "retention.html",
+        "page": 1,
+        "ordinal": 1,
+        "category": "security",
+        "text": "silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. Workspace owners can export their notes as a ZIP archive containing Markdown files. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+        "similarity": 0.4074009656906128
+      }
+    ],
+    "embedding_ms": 4.002499976195395,
+    "vector_search_ms": 6.168900057673454,
+    "retrieval_ms": 10.176799958571792,
+    "usage": {
+      "completion_tokens": 33,
+      "prompt_tokens": 399,
+      "total_tokens": 432,
+      "prompt_tokens_details": {
+        "cached_tokens": 398
+      }
+    },
+    "generator_model": "qwen2.5-0.5b-instruct-q4_k_m",
+    "citations": [
+      {
+        "label": 1,
+        "chunk_id": "33d7137681d81680a78f",
+        "source": "security.pdf",
+        "page": 1
+      },
+      {
+        "label": 2,
+        "chunk_id": "44545b1a1f311fd33ca5",
+        "source": "retention.html",
+        "page": 1
+      }
+    ],
+    "answer": "AES-256 [1] [2]",
+    "abstained": false,
+    "generation_ms": 1440.6544000376016,
+    "model_request_id": "55c19f983352461f9500330afbab4320",
+    "raw_generated_answer": "AES-256 [1] [2]",
+    "end_to_end_ms": 1452.3570000892505
+  },
+  "negative": {
+    "query_id": "be04b488ae1a4e8096c5aef47f36b4f5",
+    "question": "Unpublished secret?",
+    "category": "missing",
+    "chunk_count": 0,
+    "chunks": [],
+    "embedding_ms": 6.140699959360063,
+    "vector_search_ms": 6.796499947085977,
+    "retrieval_ms": 12.94619997497648,
+    "usage": {
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0
+    },
+    "generator_model": "qwen2.5-0.5b-instruct-q4_k_m",
+    "citations": [],
+    "answer": "I could not find relevant context in the supplied documents.",
+    "abstained": true,
+    "reason": "no_relevant_context",
+    "end_to_end_ms": 13.036000076681376
+  },
+  "invalid_k_http_status": 400
+}

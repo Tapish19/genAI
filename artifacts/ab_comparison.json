@@ -1,0 +1,1049 @@
+{
+  "environment": {
+    "time": "2026-10-17T07:32:06.967206+00:00",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "python": "3.13.14",
+    "logical_cpus": 10,
+    "ram_gib": 15.55,
+    "cpu": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+    "model_threads": 4
+  },
+  "judge_model": "smollm2-1.7b-instruct-q4_k_m",
+  "cases": [
+    {
+      "id": "q01",
+      "A": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate correctly states that the timeframe for requesting a refund after the first paid subscription can vary, as"
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate correctly states that the timeframe for requesting a refund after the first paid subscription can vary, as"
+        },
+        "completeness": {
+          "score": 4,
+          "rationale": "The candidate correctly states that the timeframe for requesting a refund after the first paid subscription can vary, as"
+        },
+        "instruction_following": {
+          "score": 4,
+          "rationale": "The candidate correctly states that the timeframe for requesting a refund after the first paid subscription can vary, as"
+        },
+        "answer_relevance": {
+          "score": 4,
+          "rationale": "The candidate correctly states that the timeframe for requesting a refund after the first paid subscription can vary, as"
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate correctly states that the timeframe for requesting a refund after the first paid subscription can vary, as"
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "6f814743e8d54a6a88d19e7a8dad1982"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 4.0,
+        "passed": true
+      },
+      "B": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate answer correctly states the reference fact: '14 days'."
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate answer is supported by the context/reference: '14 days'."
+        },
+        "completeness": {
+          "score": 0,
+          "rationale": "The candidate answer does not cover every requested part."
+        },
+        "instruction_following": {
+          "score": 4,
+          "rationale": "The candidate answer obeys the supplied system prompt and user constraints."
+        },
+        "answer_relevance": {
+          "score": 0,
+          "rationale": "The candidate answer does not directly address the user question."
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate answer is clear, respectful, and safe."
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "d3fe570c0f8b41cea9040f27cb1044a1"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 2.8,
+        "passed": false
+      },
+      "baseline": {
+        "status": "ok",
+        "forward": {
+          "winner": "A",
+          "rationale": "The timeframe for requesting a refund after your first paid subscription can vary depending on the specific terms of your subscription agreement and the platform or service you are",
+          "parse_method": "json",
+          "request_ids": [
+            "c1a359600b5c4b92a641d8b66e4a3195"
+          ],
+          "retries": 0,
+          "canonical_winner": "A"
+        },
+        "reverse": {
+          "winner": "A",
+          "rationale": "The timeframe for requesting a refund after your first paid subscription can vary depending on the specific terms of your subscription agreement and the platform or service you are",
+          "parse_method": "json",
+          "request_ids": [
+            "1a1c6f5b5434488b91cbd1d5948ade9d"
+          ],
+          "retries": 0,
+          "canonical_winner": "B"
+        },
+        "flipped": true,
+        "winner": "abstain"
+      },
+      "mitigated": {
+        "status": "ok",
+        "forward": {
+          "winner": "A",
+          "rationale": "The correct answer is A. The timeframe for requesting a refund after your first paid subscription can vary depending on the specific terms of your subscription agreement and the 14",
+          "parse_method": "json",
+          "request_ids": [
+            "71ccffeebfd0499c9db08d4cc2b9f0b1"
+          ],
+          "retries": 0,
+          "canonical_winner": "A"
+        },
+        "reverse": {
+          "winner": "A",
+          "rationale": "The correct answer is A, as it is the only answer that is directly related to the question and the published product policy. The other answer, B, is not supported by the published ",
+          "parse_method": "json",
+          "request_ids": [
+            "69fbe45bac364175ae05faefd1106473"
+          ],
+          "retries": 0,
+          "canonical_winner": "B"
+        },
+        "flipped": true,
+        "winner": "abstain"
+      }
+    },
+    {
+      "id": "q03",
+      "A": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate answer correctly states that the monthly per-user price of the Team plan is $100, which is the reference."
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate answer correctly states that the pricing is based on the number of users in the team, which is the same as"
+        },
+        "completeness": {
+          "score": 0,
+          "rationale": "The candidate answer does not cover the entire requested part, as it only mentions the monthly per-user price, but does"
+        },
+        "instruction_following": {
+          "score": 4,
+          "rationale": "The candidate answer follows the system prompt and user constraints, as it correctly states the monthly per-user price"
+        },
+        "answer_relevance": {
+          "score": 0,
+          "rationale": "The candidate answer does not directly address the user question, as it only mentions the monthly per-user price, but"
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate answer has a clear, respectful, and safe tone, as it correctly states the monthly per-user price"
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "fc2f327ec3774c54b73fc8c391393683"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 2.8,
+        "passed": false
+      },
+      "B": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate answer correctly states that the monthly per-user price of the Team plan is 12 dollars per user per month."
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate answer correctly references the reference answer, which is 12 dollars per user per month."
+        },
+        "completeness": {
+          "score": 0,
+          "rationale": "The candidate answer does not cover the entire question, as it only addresses the monthly per-user price of the Teamplan"
+        },
+        "instruction_following": {
+          "score": 0,
+          "rationale": "The candidate answer does not follow the instructions to answer accurately using the published product policy."
+        },
+        "answer_relevance": {
+          "score": 0,
+          "rationale": "The candidate answer does not directly address the user question, as it only mentions the monthly price."
+        },
+        "tone_safety": {
+          "score": 0,
+          "rationale": "The candidate answer does not have a respectful and safe tone."
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "e612b64f43a14916a4867c44c2bf4c10"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 2.2,
+        "passed": false
+      },
+      "baseline": {
+        "status": "ok",
+        "forward": {
+          "winner": "A",
+          "rationale": "The monthly per-user price of the Team plan is $100. This pricing is based on the number of users in your team.",
+          "parse_method": "json",
+          "request_ids": [
+            "88faa93937904d919ea333de684577a1"
+          ],
+          "retries": 0,
+          "canonical_winner": "A"
+        },
+        "reverse": {
+          "winner": "A",
+          "rationale": "The monthly per-user price of the Team plan is 12 dollars per user per month.",
+          "parse_method": "json",
+          "request_ids": [
+            "36026d16d52f477ea6b95abf87472b9d"
+          ],
+          "retries": 0,
+          "canonical_winner": "B"
+        },
+        "flipped": true,
+        "winner": "abstain"
+      },
+      "mitigated": {
+        "status": "ok",
+        "forward": {
+          "winner": "A",
+          "rationale": "The monthly per-user price of the Team plan is $100. This pricing is based on the number of users in your team.",
+          "parse_method": "json",
+          "request_ids": [
+            "56452f60873b418689bfb5684ee8344b"
+          ],
+          "retries": 0,
+          "canonical_winner": "A"
+        },
+        "reverse": {
+          "winner": "A",
+          "rationale": "The monthly per-user price of the Team plan is 12 dollars per user per month. The monthly per-user price of the Team plan is 12 dollars per user per month. The monthly per-user is ",
+          "parse_method": "json",
+          "request_ids": [
+            "0225bc1deaf549ca9170d6841a1c0a2c"
+          ],
+          "retries": 0,
+          "canonical_winner": "B"
+        },
+        "flipped": true,
+        "winner": "abstain"
+      }
+    },
+    {
+      "id": "q05",
+      "A": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate correctly states that the encryption that protects workspace data at rest is typically referred to as 'AES"
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate correctly states that AES-256 is the specific encryption method used and provides a reference to it"
+        },
+        "completeness": {
+          "score": 0,
+          "rationale": "The candidate does not provide any additional information about the encryption method"
+        },
+        "instruction_following": {
+          "score": 0,
+          "rationale": "The candidate does not follow the instructions to answer accurately using the published product policy"
+        },
+        "answer_relevance": {
+          "score": 0,
+          "rationale": "The candidate does not directly address the user question without irrelevant claims"
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate uses a respectful and safe tone"
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "419484c71d824e35ad317c2598b9d322"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 2.4,
+        "passed": false
+      },
+      "B": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate correctly states that AES-256 is used to protect workspace data at rest. The reference answer also states "
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate correctly states that AES-256 is used to protect workspace data at rest. The reference answer also states "
+        },
+        "completeness": {
+          "score": 4,
+          "rationale": "The candidate correctly states that AES-256 is used to protect workspace data at rest. The reference answer also states "
+        },
+        "instruction_following": {
+          "score": 4,
+          "rationale": "The candidate correctly states that AES-256 is used to protect workspace data at rest. The reference answer also states "
+        },
+        "answer_relevance": {
+          "score": 4,
+          "rationale": "The candidate correctly states that AES-256 is used to protect workspace data at rest. The reference answer also states "
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate provides a clear, respectful, and safe answer. The tone is confident and assertive."
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "e1fe701ff9b643848cbfcce7efe458e9"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 4.0,
+        "passed": true
+      },
+      "baseline": {
+        "status": "ok",
+        "forward": {
+          "winner": "A",
+          "rationale": "AES-256 is the encryption method that protects workspace data at rest. It is a widely used encryption algorithm that provides strong security and is widely used in various fields.",
+          "parse_method": "json",
+          "request_ids": [
+            "4fb9d9a8c5e44b949fbf2522a59cc460"
+          ],
+          "retries": 0,
+          "canonical_winner": "A"
+        },
+        "reverse": {
+          "winner": "A",
+          "rationale": "AES-256 is the encryption method used to protect workspace data at rest. It is a widely used encryption algorithm that provides strong security and is widely used in various fields",
+          "parse_method": "json",
+          "request_ids": [
+            "aa5390e15c6b42cdb6a4fb41060443b1"
+          ],
+          "retries": 0,
+          "canonical_winner": "B"
+        },
+        "flipped": true,
+        "winner": "abstain"
+      },
+      "mitigated": {
+        "status": "ok",
+        "forward": {
+          "winner": "A",
+          "rationale": "AES-256 is the correct answer because it is the encryption method used to protect workspace data at rest according to the published product policy. AES-256 is a widely used and aes",
+          "parse_method": "json",
+          "request_ids": [
+            "d5f8188dd33d447293f8c495af515d3b"
+          ],
+          "retries": 0,
+          "canonical_winner": "A"
+        },
+        "reverse": {
+          "winner": "A",
+          "rationale": "AES-256",
+          "parse_method": "json",
+          "request_ids": [
+            "c6ff819554674f309b5915d201150574"
+          ],
+          "retries": 0,
+          "canonical_winner": "B"
+        },
+        "flipped": true,
+        "winner": "abstain"
+      }
+    },
+    {
+      "id": "q07",
+      "A": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate correctly stated that automatic workspace backups are typically retained for a specific period of time to "
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate correctly stated that the exact number of days a backup is retained can vary depending on the specific "
+        },
+        "completeness": {
+          "score": 4,
+          "rationale": "The candidate correctly stated that the number of days a backup is retained can vary depending on the specific "
+        },
+        "instruction_following": {
+          "score": 4,
+          "rationale": "The candidate correctly stated that the candidate should consult with IT professionals or security experts to determine "
+        },
+        "answer_relevance": {
+          "score": 4,
+          "rationale": "The candidate correctly stated that the candidate should consult with IT professionals or security experts to determine "
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate used a respectful and safe tone throughout the answer."
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "fcab571b42574ea39d6087f238f495e6"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 4.0,
+        "passed": true
+      },
+      "B": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate answer correctly states the reference fact: '30 days'."
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate answer is supported by the context/reference: '30 days'."
+        },
+        "completeness": {
+          "score": 0,
+          "rationale": "No additional information is requested in the question."
+        },
+        "instruction_following": {
+          "score": 4,
+          "rationale": "The candidate answer follows the system prompt and user constraints."
+        },
+        "answer_relevance": {
+          "score": 0,
+          "rationale": "No additional information is requested in the question."
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate answer is clear, respectful, and safe."
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "6e8251c032fa4ab4bf14f4bc5fc8b097"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 2.8,
+        "passed": false
+      },
+      "baseline": {
+        "status": "ok",
+        "forward": {
+          "winner": "A",
+          "rationale": "Automatic workspace backups are typically retained for a specific period of time to ensure data integrity and security. The exact number of days a backup is retained can vary. It's",
+          "parse_method": "json",
+          "request_ids": [
+            "b65490f83c82414f9e7cab5dd0837f72"
+          ],
+          "retries": 0,
+          "canonical_winner": "A"
+        },
+        "reverse": {
+          "winner": "A",
+          "rationale": "The exact number of days a backup is retained can vary depending on the specific requirements of the organization and the level of data protection needed. Generally, backups are 7-",
+          "parse_method": "json",
+          "request_ids": [
+            "6f9a49c31d544c98a67632b1c7725e79"
+          ],
+          "retries": 0,
+          "canonical_winner": "B"
+        },
+        "flipped": true,
+        "winner": "abstain"
+      },
+      "mitigated": {
+        "status": "ok",
+        "forward": {
+          "winner": "A",
+          "rationale": "Automatic workspace backups are typically retained for a specific period of time to ensure data integrity and security. The exact number of days a backup is retained can vary. It's",
+          "parse_method": "json",
+          "request_ids": [
+            "a034ce605563499e8c5aa3cadf2260a8"
+          ],
+          "retries": 0,
+          "canonical_winner": "A"
+        },
+        "reverse": {
+          "winner": "A",
+          "rationale": "The correct answer is A, as it is the only answer that directly addresses the question and is supported by the published product policy. The other answers, B and tie, are incorrect",
+          "parse_method": "json",
+          "request_ids": [
+            "5dd2075c4acc4466b561430650d86b17"
+          ],
+          "retries": 0,
+          "canonical_winner": "B"
+        },
+        "flipped": true,
+        "winner": "abstain"
+      }
+    },
+    {
+      "id": "q09",
+      "A": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate correctly stated the public API rate limit for each workspace, which is 120 requests per minute. This is a"
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate correctly stated the public API rate limit for each workspace, which is 120 requests per minute. This is a"
+        },
+        "completeness": {
+          "score": 0,
+          "rationale": "No supporting evidence is provided to demonstrate completeness. This is a"
+        },
+        "instruction_following": {
+          "score": 4,
+          "rationale": "The candidate correctly stated the public API rate limit for each workspace, which is 120 requests per minute. This is a"
+        },
+        "answer_relevance": {
+          "score": 0,
+          "rationale": "No supporting evidence is provided to demonstrate answer_relevance. This is a"
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate provided a respectful and safe tone. This is a"
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "45df7e8e48564e61bdc9cc2d760e652b"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 2.8,
+        "passed": false
+      },
+      "B": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate answer correctly states the public API rate limit for each workspace, which is 120 requests per minute per"
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate answer supports the reference fact by providing the correct information"
+        },
+        "completeness": {
+          "score": 0,
+          "rationale": "The candidate answer does not cover every requested part"
+        },
+        "instruction_following": {
+          "score": 0,
+          "rationale": "The candidate answer does not follow the supplied system prompt"
+        },
+        "answer_relevance": {
+          "score": 0,
+          "rationale": "The candidate answer does not directly address the user question"
+        },
+        "tone_safety": {
+          "score": 0,
+          "rationale": "The candidate answer has a confident style, which is not evidence"
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "1a3f644c567b4b81895c296e2fe2d39a"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 2.2,
+        "passed": false
+      },
+      "baseline": {
+        "status": "ok",
+        "forward": {
+          "winner": "A",
+          "rationale": "The public API rate limit for each workspace can vary depending on the specific service and the service provider. However, in general, the rate limit for public APIs can be quite 1",
+          "parse_method": "json",
+          "request_ids": [
+            "88f47da4123443cd84a595d35f78b0c7"
+          ],
+          "retries": 0,
+          "canonical_winner": "A"
+        },
+        "reverse": {
+          "winner": "A",
+          "rationale": "The public API permits 120 requests per minute per workspace. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting",
+          "parse_method": "json",
+          "request_ids": [
+            "01f78004855f498b8292a424c88c0858"
+          ],
+          "retries": 0,
+          "canonical_winner": "B"
+        },
+        "flipped": true,
+        "winner": "abstain"
+      },
+      "mitigated": {
+        "status": "ok",
+        "forward": {
+          "winner": "A",
+          "rationale": "The public API rate limit for each workspace can vary depending on the specific service and the service provider. However, in general, the rate limit for public APIs can be quite 1",
+          "parse_method": "json",
+          "request_ids": [
+            "3a646b85c36f42eca2d5c0e9f9fb71b8"
+          ],
+          "retries": 0,
+          "canonical_winner": "A"
+        },
+        "reverse": {
+          "winner": "A",
+          "rationale": "The public API permits 120 requests per minute per workspace. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting",
+          "parse_method": "json",
+          "request_ids": [
+            "e9e5333107f349169a619fc082867a17"
+          ],
+          "retries": 0,
+          "canonical_winner": "B"
+        },
+        "flipped": true,
+        "winner": "abstain"
+      }
+    },
+    {
+      "id": "q11",
+      "A": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate correctly states that the maximum size of a single uploaded file is 2GB (2 gigabytes). This is a verified,"
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate correctly states that the actual size of a single file can vary depending on the file type and the file"
+        },
+        "completeness": {
+          "score": 0,
+          "rationale": "The candidate does not mention the actual size of a single file, which is an important part of the answer"
+        },
+        "instruction_following": {
+          "score": 4,
+          "rationale": "The candidate follows the instructions by stating the reference fact correctly"
+        },
+        "answer_relevance": {
+          "score": 0,
+          "rationale": "The candidate does not directly address the user question"
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate provides a respectful and safe tone"
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "7fb431f94c5a443fbcdb99340b19a8b0"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 2.8,
+        "passed": false
+      },
+      "B": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate answer '1 megabyte' matches the reference answer '25 megabytes' and is correct. The candidate answer is a "
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate answer '1 megabyte' matches the reference answer '25 megabytes' and is correct. The candidate answer is a "
+        },
+        "completeness": {
+          "score": 0,
+          "rationale": "No claim in the candidate answer is supported by the context/reference. The candidate answer is a "
+        },
+        "instruction_following": {
+          "score": 4,
+          "rationale": "The candidate answer '1 megabyte' matches the reference answer '25 megabytes' and is correct. The candidate answer is a "
+        },
+        "answer_relevance": {
+          "score": 0,
+          "rationale": "No claim in the candidate answer is directly related to the user question. The candidate answer is a "
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate answer '1 megabyte' matches the reference answer '25 megabytes' and is correct. The candidate answer is a "
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "a42afa20658248029cdb3e0997436e60"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 2.8,
+        "passed": false
+      },
+      "baseline": {
+        "status": "ok",
+        "forward": {
+          "winner": "A",
+          "rationale": "The maximum size of a single uploaded file is typically 2GB (2 gigabytes). This is the maximum size that most file upload systems can handle. However, it's important to note that, ",
+          "parse_method": "json",
+          "request_ids": [
+            "a37c80bf4abc4ce8aed12c529fd97bee"
+          ],
+          "retries": 0,
+          "canonical_winner": "A"
+        },
+        "reverse": {
+          "winner": "A",
+          "rationale": "The maximum size of a single uploaded file is typically 2GB (2 gigabytes). This is the maximum size that most file upload systems can handle. However, it's important to note that, ",
+          "parse_method": "json",
+          "request_ids": [
+            "33de4150b77f48bc8389a5bf539420f9"
+          ],
+          "retries": 0,
+          "canonical_winner": "B"
+        },
+        "flipped": true,
+        "winner": "abstain"
+      },
+      "mitigated": {
+        "status": "ok",
+        "forward": {
+          "winner": "A",
+          "rationale": "The maximum size of a single uploaded file is typically 2GB (2 gigabytes). This is the maximum size that most file upload systems can handle. However, it's important to note that, ",
+          "parse_method": "json",
+          "request_ids": [
+            "3acea88a91ab404cb6cfdcf4b8982d2f"
+          ],
+          "retries": 0,
+          "canonical_winner": "A"
+        },
+        "reverse": {
+          "winner": "A",
+          "rationale": "The maximum size of a single uploaded file is typically 2GB (2 gigabytes). This is the maximum size that most file upload systems can handle. However, it's important to note that, ",
+          "parse_method": "json",
+          "request_ids": [
+            "41f5216959f94b918e9e80e2237e5e33"
+          ],
+          "retries": 0,
+          "canonical_winner": "B"
+        },
+        "flipped": true,
+        "winner": "abstain"
+      }
+    },
+    {
+      "id": "q13",
+      "A": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate correctly states that the standard support hours vary depending on the specific product or service being b"
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate correctly states that the support hours are typically between 8:00 AM and 5:00 PM Eastern Time"
+        },
+        "completeness": {
+          "score": 4,
+          "rationale": "The candidate correctly states that the support hours are typically between 9:00 AM and 5:00 PM Eastern Time"
+        },
+        "instruction_following": {
+          "score": 4,
+          "rationale": "The candidate correctly follows the instructions and states that the support hours vary depending on the specificproduct"
+        },
+        "answer_relevance": {
+          "score": 4,
+          "rationale": "The candidate directly addresses the user question and provides the correct information"
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate uses a respectful and safe tone"
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "8766db905a5146b0a60d3bbb57ea1577"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 4.0,
+        "passed": true
+      },
+      "B": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate answer correctly states the standard support hours, which is a verified fact. The reference answer also is"
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate answer matches the reference answer, which is a verified fact. The context/reference supports every claim"
+        },
+        "completeness": {
+          "score": 0,
+          "rationale": "The candidate answer does not cover every requested part. The context/reference does not mention the completeness score"
+        },
+        "instruction_following": {
+          "score": 4,
+          "rationale": "The candidate answer obeys the supplied system prompt and user constraints"
+        },
+        "answer_relevance": {
+          "score": 0,
+          "rationale": "The candidate answer does not directly address the user question"
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate answer is clear, respectful, and safe"
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "b9cff057f9274803b6b467d09fedf3bb"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 2.8,
+        "passed": false
+      },
+      "baseline": {
+        "status": "ok",
+        "forward": {
+          "winner": "A",
+          "rationale": "The answer is A because it is the most accurate and relevant response to the question. The answer A provides a general guideline for support hours, which can vary depending on the-",
+          "parse_method": "json",
+          "request_ids": [
+            "088234e4176249faa6f6e64fd23435da"
+          ],
+          "retries": 0,
+          "canonical_winner": "A"
+        },
+        "reverse": {
+          "winner": "A",
+          "rationale": "Standard support hours are typically between 8:00 AM and 5:00 PM Eastern Time. This answer is accurate based on the published product policy.",
+          "parse_method": "json",
+          "request_ids": [
+            "dea8d730361b48cdae709d5fe39875b8"
+          ],
+          "retries": 0,
+          "canonical_winner": "B"
+        },
+        "flipped": true,
+        "winner": "abstain"
+      },
+      "mitigated": {
+        "status": "ok",
+        "forward": {
+          "winner": "A",
+          "rationale": "The correct answer is A. The standard support hours are Monday through Friday from 09:00 to 18:00 UTC. This is the most accurate and complete answer based on the published product,",
+          "parse_method": "json",
+          "request_ids": [
+            "0113c649054f4a459bbe99a81c99e4df"
+          ],
+          "retries": 0,
+          "canonical_winner": "A"
+        },
+        "reverse": {
+          "winner": "A",
+          "rationale": "The answer 'Standard support hours can vary depending on the specific product or service being offered' is incorrect because it does not match the published product policy. The 'A'",
+          "parse_method": "json",
+          "request_ids": [
+            "65cd525b6b624ee4a5ca0fffde433459"
+          ],
+          "retries": 0,
+          "canonical_winner": "B"
+        },
+        "flipped": true,
+        "winner": "abstain"
+      }
+    },
+    {
+      "id": "q15",
+      "A": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate answer correctly states that the recovery window after account deletion is typically between 24 hours and "
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate answer correctly states that the recovery window is set by the account owner and can vary depending on the"
+        },
+        "completeness": {
+          "score": 4,
+          "rationale": "The candidate answer correctly states that the recovery window is usually set by the account owner and can vary"
+        },
+        "instruction_following": {
+          "score": 4,
+          "rationale": "The candidate answer correctly states that the recovery window is usually set by the account owner and can vary"
+        },
+        "answer_relevance": {
+          "score": 4,
+          "rationale": "The candidate answer correctly states that the recovery window is usually set by the account owner and can vary"
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate answer correctly states that the recovery window is usually set by the account owner and can vary"
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "ee631cd78db64e7482a24569fe72e059"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 4.0,
+        "passed": true
+      },
+      "B": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate answer '7 days' matches the reference answer '7 days' and is correct."
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate answer '7 days' matches the reference answer '7 days' and is faithful to the published product policy."
+        },
+        "completeness": {
+          "score": 0,
+          "rationale": "No claim in the candidate answer is supported by the context/reference."
+        },
+        "instruction_following": {
+          "score": 0,
+          "rationale": "No claim in the candidate answer obeys the supplied system prompt and user constraints."
+        },
+        "answer_relevance": {
+          "score": 0,
+          "rationale": "No claim in the candidate answer directly addresses the user question without irrelevant claims."
+        },
+        "tone_safety": {
+          "score": 0,
+          "rationale": "No claim in the candidate answer is clear, respectful, and safe."
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "ddd7089c81104b4b95424c47e45dc9b0"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 2.2,
+        "passed": false
+      },
+      "baseline": {
+        "status": "ok",
+        "forward": {
+          "winner": "A",
+          "rationale": "The recovery window after account deletion typically refers to the period during which the user can attempt to recover their account from a lost or stolen password. This window is,",
+          "parse_method": "json",
+          "request_ids": [
+            "097afe1c477e449fa54ec8ae37de663c"
+          ],
+          "retries": 0,
+          "canonical_winner": "A"
+        },
+        "reverse": {
+          "winner": "A",
+          "rationale": "The recovery window after account deletion typically refers to the period during which the user can attempt to recover their account from a lost or stolen password. This window is,",
+          "parse_method": "json",
+          "request_ids": [
+            "7fb0022d75e341e490bb283b5c7b97ff"
+          ],
+          "retries": 0,
+          "canonical_winner": "B"
+        },
+        "flipped": true,
+        "winner": "abstain"
+      },
+      "mitigated": {
+        "status": "ok",
+        "forward": {
+          "winner": "A",
+          "rationale": "The recovery window after account deletion typically refers to the period during which the user can attempt to recover their account from a lost or stolen password. This window is,",
+          "parse_method": "json",
+          "request_ids": [
+            "6eb18ff4d6f448a982b51d5c003a9add"
+          ],
+          "retries": 0,
+          "canonical_winner": "A"
+        },
+        "reverse": {
+          "winner": "A",
+          "rationale": "The recovery window after account deletion typically refers to the period during which the user can attempt to recover their account from a lost or stolen password. This window is,",
+          "parse_method": "json",
+          "request_ids": [
+            "b4c4cc54bcaf4d5d882bcddccf44aa0e"
+          ],
+          "retries": 0,
+          "canonical_winner": "B"
+        },
+        "flipped": true,
+        "winner": "abstain"
+      }
+    }
+  ],
+  "A": {
+    "cases": 8,
+    "valid_cases": 8,
+    "errors": 0,
+    "pass_rate": 0.5,
+    "mean_score": 3.35,
+    "per_criterion": {
+      "correctness": 4,
+      "faithfulness": 4,
+      "completeness": 2,
+      "instruction_following": 3.5,
+      "answer_relevance": 2,
+      "tone_safety": 4
+    },
+    "win_rate_all_pairs": 0.0
+  },
+  "B": {
+    "cases": 8,
+    "valid_cases": 8,
+    "errors": 0,
+    "pass_rate": 0.125,
+    "mean_score": 2.725,
+    "per_criterion": {
+      "correctness": 4,
+      "faithfulness": 4,
+      "completeness": 0.5,
+      "instruction_following": 2.5,
+      "answer_relevance": 0.5,
+      "tone_safety": 2.5
+    },
+    "win_rate_all_pairs": 0.0
+  },
+  "position_bias": {
+    "baseline": {
+      "flip_rate": 1.0,
+      "disagreements": 8,
+      "valid_pairs": 8,
+      "consensus_coverage": 0.0
+    },
+    "mitigated": {
+      "flip_rate": 1.0,
+      "disagreements": 8,
+      "valid_pairs": 8,
+      "consensus_coverage": 0.0
+    }
+  },
+  "winner": "inconclusive",
+  "winner_rule": "Higher two-order consensus win count. If every pair abstains, declare inconclusive. No winner is fabricated.",
+  "usage": {
+    "prompt_tokens": 25338,
+    "completion_tokens": 5183,
+    "total_tokens": 30521
+  },
+  "calls": 48,
+  "gold_reference_comparison": {
+    "A": {
+      "em": 0.0,
+      "f1": 0.041086007402041796
+    },
+    "B": {
+      "em": 0.5,
+      "f1": 0.7483060417843026
+    },
+    "winner": "B",
+    "n": 8,
+    "method": "Secondary exact-match and token-F1 gold-reference check. Both metrics must improve to name a winner. This is not an LLM-judge verdict."
+  }
+}

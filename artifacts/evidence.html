@@ -1,0 +1,207 @@
+<!doctype html><html><meta charset="utf-8"><title>Measured assignment evidence</title><style>body{background:#edf1f7;margin:24px;font-family:Segoe UI,Arial;color:#122e46}section{background:white;border:1px solid #cbd5e1;border-radius:12px;padding:28px;margin:24px 0;width:1120px;box-sizing:border-box}h1{font-size:24px;margin:0 0 8px}.meta{font-size:13px;color:#52677c;margin-bottom:16px}pre{font:13px/1.45 Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;margin:0;padding:18px;background:#f5f8fc;border-radius:8px}</style><section id="query"><h1>End-to-end RAG query</h1><div class="meta">Screenshot of measured records · source: artifacts/rag_results.json · values shown without alteration</div><pre>{
+  &quot;query_id&quot;: &quot;e512e8c9f0b64bfb8a8205f40f17395e&quot;,
+  &quot;question&quot;: &quot;How long do I have to request a refund after my first paid subscription?&quot;,
+  &quot;answer&quot;: &quot;14 days [1] [2]&quot;,
+  &quot;chunk_count&quot;: 2,
+  &quot;citations&quot;: [
+    {
+      &quot;label&quot;: 1,
+      &quot;chunk_id&quot;: &quot;10a7b0290787badf3416&quot;,
+      &quot;source&quot;: &quot;refunds.md&quot;,
+      &quot;page&quot;: 1
+    },
+    {
+      &quot;label&quot;: 2,
+      &quot;chunk_id&quot;: &quot;5053d9ca97550fc869d4&quot;,
+      &quot;source&quot;: &quot;refunds.md&quot;,
+      &quot;page&quot;: 1
+    }
+  ],
+  &quot;usage&quot;: {
+    &quot;completion_tokens&quot;: 21,
+    &quot;prompt_tokens&quot;: 400,
+    &quot;total_tokens&quot;: 421,
+    &quot;prompt_tokens_details&quot;: {
+      &quot;cached_tokens&quot;: 377
+    }
+  },
+  &quot;retrieval_ms&quot;: 15.083299949765205,
+  &quot;generation_ms&quot;: 955.4519000230357,
+  &quot;end_to_end_ms&quot;: 972.6257000584155
+}</pre></section><section id="idempotency"><h1>Idempotent re-ingestion</h1><div class="meta">Screenshot of measured records · source: artifacts/idempotency.json · values shown without alteration</div><pre>{
+  &quot;first&quot;: {
+    &quot;processed&quot;: 0,
+    &quot;skipped&quot;: 8,
+    &quot;inserted_chunks&quot;: 0,
+    &quot;replaced_chunks&quot;: 0,
+    &quot;before&quot;: 16,
+    &quot;after&quot;: 16,
+    &quot;latency_ms&quot;: 35.84050002973527
+  },
+  &quot;second&quot;: {
+    &quot;processed&quot;: 0,
+    &quot;skipped&quot;: 8,
+    &quot;inserted_chunks&quot;: 0,
+    &quot;replaced_chunks&quot;: 0,
+    &quot;before&quot;: 16,
+    &quot;after&quot;: 16,
+    &quot;latency_ms&quot;: 29.708399903029203
+  },
+  &quot;unchanged&quot;: true
+}</pre></section><section id="judge"><h1>Raw judge prompt + response</h1><div class="meta">Screenshot of measured records · source: artifacts/llm_audit.jsonl · values shown without alteration</div><pre>{
+  &quot;request_id&quot;: &quot;e4284f09ddaa46a6847c25075aeaa677&quot;,
+  &quot;tag&quot;: &quot;probe:baseline:arithmetic-correct:attempt0&quot;,
+  &quot;model&quot;: &quot;smollm2-1.7b-instruct-q4_k_m&quot;,
+  &quot;messages&quot;: [
+    {
+      &quot;role&quot;: &quot;system&quot;,
+      &quot;content&quot;: &quot;You are an independent evaluator. Grade the CANDIDATE ANSWER, not the question. The REFERENCE ANSWER contains verified correct facts. A candidate that states the reference fact correctly deserves a correctness score of 4. Return a JSON object with one object per rubric criterion, containing an integer score from 0 to 4 and a short evidence-based rationale.&quot;
+    },
+    {
+      &quot;role&quot;: &quot;user&quot;,
+      &quot;content&quot;: &quot;QUESTION:\nWhat is 2 + 2?\n\nCANDIDATE ANSWER TO GRADE:\n4\n\nREFERENCE ANSWER:\n4\n\nSUPPORTING CONTEXT:\n4\n\nORIGINAL INSTRUCTIONS:\nAnswer accurately and briefly using the reference facts.\n\nRUBRIC:\ncorrectness: Matches reference facts; no incorrect claim.\nfaithfulness: Every claim supported by context/reference. Unsupported padding lowers this score.\ncompleteness: Covers every requested part; length alone earns nothing.\ninstruction_following: Obeys the supplied system prompt and user constraints.\nanswer_relevance: Directly addresses the user question without irrelevant claims.\ntone_safety: Clear, respectful and safe. Confident style is not evidence.\n\nREQUIRED JSON FIELDS:\ncorrectness, faithfulness, completeness, instruction_following, answer_relevance, tone_safety&quot;
+    }
+  ],
+  &quot;raw_response&quot;: {
+    &quot;choices&quot;: [
+      {
+        &quot;finish_reason&quot;: &quot;stop&quot;,
+        &quot;index&quot;: 0,
+        &quot;message&quot;: {
+          &quot;role&quot;: &quot;assistant&quot;,
+          &quot;content&quot;: &quot;{\n  \&quot;correctness\&quot;: {\&quot;score\&quot;: 4, \&quot;rationale\&quot;: \&quot;The candidate correctly stated the reference fact, which is 4.\&quot;},\n  \&quot;faithfulness\&quot;: {\&quot;score\&quot;: 4, \&quot;rationale\&quot;: \&quot;The candidate provided the reference answer, which is 4.\&quot;},\n  \&quot;completeness\&quot;: {\&quot;score\&quot;: 0, \&quot;rationale\&quot;: \&quot;No additional information was provided in the context.\&quot;},\n  \&quot;instruction_following\&quot;: {\&quot;score\&quot;: 4, \&quot;rationale\&quot;: \&quot;The candidate followed the system prompt and user constraints correctly.\&quot;},\n  \&quot;answer_relevance\&quot;: {\&quot;score\&quot;: 0, \&quot;rationale\&quot;: \&quot;No relevant information was provided in the context.\&quot;},\n  \&quot;tone_safety\&quot;: {\&quot;score\&quot;: 4, \&quot;rationale\&quot;: \&quot;The candidate provided a clear, respectful, and safe response.\&quot;}\n}&quot;
+        }
+      }
+    ],
+    &quot;created&quot;: 1792221714,
+    &quot;model&quot;: &quot;smollm2-1.7b-instruct-q4_k_m&quot;,
+    &quot;system_fingerprint&quot;: &quot;b11706-f74e2fa6a&quot;,
+    &quot;object&quot;: &quot;chat.completion&quot;,
+    &quot;usage&quot;: {
+      &quot;completion_tokens&quot;: 178,
+      &quot;prompt_tokens&quot;: 296,
+      &quot;total_tokens&quot;: 474,
+      &quot;prompt_tokens_details&quot;: {
+        &quot;cached_tokens&quot;: 81
+      }
+    },
+    &quot;id&quot;: &quot;chatcmpl-fS9wxATpiFQrE8dFHmeZ7fNkuORiw8lr&quot;,
+    &quot;timings&quot;: {
+      &quot;cache_n&quot;: 81,
+      &quot;prompt_n&quot;: 215,
+      &quot;prompt_ms&quot;: 3972.412,
+      &quot;prompt_per_token_ms&quot;: 18.47633488372093,
+      &quot;prompt_per_second&quot;: 54.12328831953987,
+      &quot;predicted_n&quot;: 178,
+      &quot;predicted_ms&quot;: 16786.807,
+      &quot;predicted_per_token_ms&quot;: 94.8407175141243,
+      &quot;predicted_per_second&quot;: 10.543994459458549
+    }
+  },
+  &quot;latency_ms&quot;: 20819.281699950807
+}</pre></section><section id="position"><h1>Same pair in both orders</h1><div class="meta">Screenshot of measured records · source: artifacts/ab_comparison.json · values shown without alteration</div><pre>{
+  &quot;case_id&quot;: &quot;q01&quot;,
+  &quot;forward&quot;: {
+    &quot;winner&quot;: &quot;A&quot;,
+    &quot;canonical_winner&quot;: &quot;A&quot;,
+    &quot;rationale&quot;: &quot;The correct answer is A. The timeframe for requesting a refund after your first paid subscription can vary depending on the specific terms of your subscription agreement and the 14&quot;,
+    &quot;request_ids&quot;: [
+      &quot;71ccffeebfd0499c9db08d4cc2b9f0b1&quot;
+    ]
+  },
+  &quot;reverse&quot;: {
+    &quot;winner&quot;: &quot;A&quot;,
+    &quot;canonical_winner&quot;: &quot;B&quot;,
+    &quot;rationale&quot;: &quot;The correct answer is A, as it is the only answer that is directly related to the question and the published product policy. The other answer, B, is not supported by the published &quot;,
+    &quot;request_ids&quot;: [
+      &quot;69fbe45bac364175ae05faefd1106473&quot;
+    ]
+  },
+  &quot;flipped&quot;: true,
+  &quot;consensus_winner&quot;: &quot;abstain&quot;,
+  &quot;suite_position_bias&quot;: {
+    &quot;baseline&quot;: {
+      &quot;flip_rate&quot;: 1.0,
+      &quot;disagreements&quot;: 8,
+      &quot;valid_pairs&quot;: 8,
+      &quot;consensus_coverage&quot;: 0.0
+    },
+    &quot;mitigated&quot;: {
+      &quot;flip_rate&quot;: 1.0,
+      &quot;disagreements&quot;: 8,
+      &quot;valid_pairs&quot;: 8,
+      &quot;consensus_coverage&quot;: 0.0
+    }
+  }
+}</pre></section><section id="adversarial"><h1>Verbose-but-wrong adversarial verdict</h1><div class="meta">Screenshot of measured records · source: artifacts/judge_validation.json · values shown without alteration</div><pre>{
+  &quot;id&quot;: &quot;verbose-wrong&quot;,
+  &quot;gold_pass&quot;: false,
+  &quot;baseline&quot;: {
+    &quot;correctness&quot;: {
+      &quot;score&quot;: 4,
+      &quot;rationale&quot;: &quot;The candidate correctly stated the capital of France, which is Paris, and provided a reference fact to support this.&quot;
+    },
+    &quot;faithfulness&quot;: {
+      &quot;score&quot;: 4,
+      &quot;rationale&quot;: &quot;The candidate provided a reference fact that matches the reference answer, which is Paris.&quot;
+    },
+    &quot;completeness&quot;: {
+      &quot;score&quot;: 4,
+      &quot;rationale&quot;: &quot;The candidate provided a complete answer that covers every requested part.&quot;
+    },
+    &quot;instruction_following&quot;: {
+      &quot;score&quot;: 4,
+      &quot;rationale&quot;: &quot;The candidate followed the system prompt and user constraints correctly.&quot;
+    },
+    &quot;answer_relevance&quot;: {
+      &quot;score&quot;: 4,
+      &quot;rationale&quot;: &quot;The candidate directly addressed the user question without irrelevant claims.&quot;
+    },
+    &quot;tone_safety&quot;: {
+      &quot;score&quot;: 4,
+      &quot;rationale&quot;: &quot;The candidate provided a clear, respectful, and safe tone.&quot;
+    },
+    &quot;parse_method&quot;: &quot;json&quot;,
+    &quot;request_ids&quot;: [
+      &quot;b264806c50f544cb90bce8df30061346&quot;
+    ],
+    &quot;retries&quot;: 0,
+    &quot;status&quot;: &quot;ok&quot;,
+    &quot;overall&quot;: 4.0,
+    &quot;passed&quot;: true
+  },
+  &quot;mitigated&quot;: {
+    &quot;correctness&quot;: {
+      &quot;score&quot;: 4,
+      &quot;rationale&quot;: &quot;The candidate correctly stated the capital of France, which is Paris. The reference answer is verified as correct, and a&quot;
+    },
+    &quot;faithfulness&quot;: {
+      &quot;score&quot;: 4,
+      &quot;rationale&quot;: &quot;The candidate provided the correct reference answer, which is Paris. The context provided supports the claim, and there&quot;
+    },
+    &quot;completeness&quot;: {
+      &quot;score&quot;: 0,
+      &quot;rationale&quot;: &quot;There is no missing information in the candidate&#x27;s answer. The answer is complete and&quot;
+    },
+    &quot;instruction_following&quot;: {
+      &quot;score&quot;: 4,
+      &quot;rationale&quot;: &quot;The candidate follows the instructions provided and answers the user question directly. There is no irrelevant&quot;
+    },
+    &quot;answer_relevance&quot;: {
+      &quot;score&quot;: 0,
+      &quot;rationale&quot;: &quot;There is no irrelevant information in the candidate&#x27;s answer. The answer is directly addressing the user question&quot;
+    },
+    &quot;tone_safety&quot;: {
+      &quot;score&quot;: 4,
+      &quot;rationale&quot;: &quot;The candidate&#x27;s tone is respectful and safe. There is no evidence of any inappropriate language or&quot;
+    },
+    &quot;parse_method&quot;: &quot;json&quot;,
+    &quot;request_ids&quot;: [
+      &quot;aff370d7ef844b1da3f9ddffc8181d9d&quot;
+    ],
+    &quot;retries&quot;: 0,
+    &quot;status&quot;: &quot;ok&quot;,
+    &quot;overall&quot;: 2.8,
+    &quot;passed&quot;: false
+  }
+}</pre></section></html>

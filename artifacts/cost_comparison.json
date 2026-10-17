@@ -1,0 +1,113 @@
+{
+  "assumptions": {
+    "as_of": "2026-10-17",
+    "dimension": 384,
+    "bytes_per_float": 4,
+    "id_bytes": 20,
+    "metadata_and_text_bytes": 768,
+    "sqlite_disk_multiplier": 2,
+    "queries_per_month": 1000,
+    "monthly_update_fraction": 0.01,
+    "managed_storage_usd_per_gb_month": 0.33,
+    "managed_usd_per_million_read_units": 16,
+    "managed_usd_per_million_write_units": 4,
+    "managed_minimum_standard_usd": 50,
+    "managed_free_storage_gb": 2,
+    "managed_builder_storage_gb": 10,
+    "managed_builder_usd": 20,
+    "self_host_plans": [
+      {
+        "vectors": 100000,
+        "ram_gib": 1,
+        "disk_gib": 25,
+        "vcpu": 1,
+        "usd_per_month": 6
+      },
+      {
+        "vectors": 1000000,
+        "ram_gib": 2,
+        "disk_gib": 50,
+        "vcpu": 1,
+        "usd_per_month": 12
+      },
+      {
+        "vectors": 10000000,
+        "ram_gib": 4,
+        "disk_gib": 80,
+        "vcpu": 2,
+        "usd_per_month": 24
+      }
+    ],
+    "weekly_backup_fraction_of_vm": 0.2,
+    "sources": {
+      "managed_rates_and_plans": "https://www.pinecone.io/pricing/",
+      "managed_metering": "https://docs.pinecone.io/guides/manage-cost/understanding-cost",
+      "vm_and_backup_prices": "https://www.digitalocean.com/pricing/droplets"
+    },
+    "notes": [
+      "Scenario estimates, not deployed-scale measurements or provider quotes. USD before tax; US East geography: DigitalOcean NYC1 and Pinecone AWS us-east-1. Prices/rate assumptions frozen for reproducibility; verify provider calculator before purchasing.",
+      "One self-hosted node, one replica, no availability SLA; vendor handles managed replication. Reliability is not equivalent.",
+      "1000 serial queries/month, one namespace, k=3, no large fetch/export workload; 1% records updated monthly. Response egress stays below the stated plan allowances. No embedding, generator, judge, engineering labor, tax or migration costs in this store-only comparison.",
+      "Pinecone namespace GB uses decimal 1e9 bytes. RU/query=max(0.25,namespace_GB). Updates modeled conservatively as old+new record bytes in decimal KB; small-request minimum overhead is omitted assuming batches. Initial loading shown separately, not silently amortized into recurring totals.",
+      "At 100K the managed free tier can be cheaper than a VM. Table includes the cheapest eligible Starter/Builder/Standard scenario alongside Standard-only cost. Builder/Starter quota assumptions are suitable only for this light workload and should be checked before migration.",
+      "SQLite uses exact cosine scans, not an ANN index. At 10M the vector file exceeds RAM and latency can be unacceptable despite fitting on disk. Small-corpus latency must NOT be extrapolated to these scales. Move to pgvector/Qdrant ANN or managed infrastructure when latency or operations require it."
+    ]
+  },
+  "record_bytes": 2324,
+  "rows": [
+    {
+      "vectors": 100000,
+      "ram_gib": 1,
+      "disk_gib": 25,
+      "vcpu": 1,
+      "usd_per_month": 6,
+      "namespace_gb": 0.2324,
+      "estimated_sqlite_disk_gb": 0.4648,
+      "monthly_read_units": 250.0,
+      "monthly_write_units": 4648.0,
+      "managed_metered_before_minimum_usd": 0.099284,
+      "managed_standard_usd": 50,
+      "managed_cheapest_tier": "Starter",
+      "managed_cheapest_usd": 0,
+      "self_host_with_weekly_backup_usd": 7.199999999999999,
+      "savings_vs_cheapest_usd": -7.199999999999999,
+      "initial_managed_upsert_metered_usd": 0.9296
+    },
+    {
+      "vectors": 1000000,
+      "ram_gib": 2,
+      "disk_gib": 50,
+      "vcpu": 1,
+      "usd_per_month": 12,
+      "namespace_gb": 2.324,
+      "estimated_sqlite_disk_gb": 4.648,
+      "monthly_read_units": 2324.0,
+      "monthly_write_units": 46480.0,
+      "managed_metered_before_minimum_usd": 0.9900239999999999,
+      "managed_standard_usd": 50,
+      "managed_cheapest_tier": "Builder",
+      "managed_cheapest_usd": 20,
+      "self_host_with_weekly_backup_usd": 14.399999999999999,
+      "savings_vs_cheapest_usd": 5.600000000000001,
+      "initial_managed_upsert_metered_usd": 9.296
+    },
+    {
+      "vectors": 10000000,
+      "ram_gib": 4,
+      "disk_gib": 80,
+      "vcpu": 2,
+      "usd_per_month": 24,
+      "namespace_gb": 23.24,
+      "estimated_sqlite_disk_gb": 46.48,
+      "monthly_read_units": 23240.0,
+      "monthly_write_units": 464800.0,
+      "managed_metered_before_minimum_usd": 9.90024,
+      "managed_standard_usd": 50,
+      "managed_cheapest_tier": "Standard",
+      "managed_cheapest_usd": 50,
+      "self_host_with_weekly_backup_usd": 28.799999999999997,
+      "savings_vs_cheapest_usd": 21.200000000000003,
+      "initial_managed_upsert_metered_usd": 92.96
+    }
+  ]
+}

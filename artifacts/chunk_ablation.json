@@ -1,0 +1,41 @@
+[
+  {
+    "size_words": 60,
+    "overlap_words": 12,
+    "chunks": 32,
+    "annotatable_questions": 16,
+    "retrieval": {
+      "recall_at_k": 1.0,
+      "hit_rate": 1.0,
+      "mrr": 0.9375,
+      "ndcg_at_k": 0.9488487685181939,
+      "context_precision": 0.41666666666666663
+    }
+  },
+  {
+    "size_words": 120,
+    "overlap_words": 24,
+    "chunks": 16,
+    "annotatable_questions": 16,
+    "retrieval": {
+      "recall_at_k": 1.0,
+      "hit_rate": 1.0,
+      "mrr": 0.96875,
+      "ndcg_at_k": 0.9769331095982161,
+      "context_precision": 0.5416666666666666
+    }
+  },
+  {
+    "size_words": 180,
+    "overlap_words": 36,
+    "chunks": 8,
+    "annotatable_questions": 16,
+    "retrieval": {
+      "recall_at_k": 1.0,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "context_precision": 0.625
+    }
+  }
+]

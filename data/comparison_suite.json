@@ -1,0 +1,132 @@
+{
+  "cases": [
+    {
+      "id": "q01",
+      "input": "How long do I have to request a refund after my first paid subscription?",
+      "system_prompt": "Answer accurately using the published product policy.",
+      "expected_output": "14 days",
+      "context": "# Refund policy Category: billing Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Refund policy applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. Customers may request a full refund within 14 days of their first paid subscription. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. Approved refunds return to the original payment method within 5 business days. The service\nagreement. Keep the workspace identifier ready when opening a ticket. Approved refunds return to the original payment method within 5 business days. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+      "model_output": "The timeframe for requesting a refund after your first paid subscription can vary depending on the specific terms of your subscription agreement and the platform or service you are using. Generally, you should be able to request a refund within a reasonable timeframe after your first payment, typically within 30 days of the purchase. However, some platforms may have more stringent requirements or longer refund periods. It's best to check the terms of your subscription agreement or contact the platform directly for the most accurate information.",
+      "output_b": "14 days",
+      "config_a": "ungrounded-v1",
+      "config_b": "grounded-v2",
+      "generator_family": "qwen",
+      "generation_request_ids": [
+        "35f73df643df49ae839cf06df4ec367c",
+        "761224aeb81749b98730ca1e1be5e334"
+      ]
+    },
+    {
+      "id": "q03",
+      "input": "What is the monthly per-user price of the Team plan?",
+      "system_prompt": "Answer accurately using the published product policy.",
+      "expected_output": "12 dollars per user per month",
+      "context": "Subscription plans Subscription plans Category: billing Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Subscription plans applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. The Team plan costs 12 dollars per user per month when billed monthly. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. The Starter plan includes 3 shared notebooks per workspace. The service dashboard records the",
+      "model_output": "The monthly per-user price for the Team plan is $100. This pricing is based on the number of users in your team.",
+      "output_b": "The monthly per-user price of the Team plan is 12 dollars per user per month.",
+      "config_a": "ungrounded-v1",
+      "config_b": "grounded-v2",
+      "generator_family": "qwen",
+      "generation_request_ids": [
+        "9175284edb22442cba49455791458478",
+        "e620bbd4fb8a4b73b22d66d672080980"
+      ]
+    },
+    {
+      "id": "q05",
+      "input": "Which encryption protects workspace data at rest?",
+      "system_prompt": "Answer accurately using the published product policy.",
+      "expected_output": "AES-256",
+      "context": "Workspace security Category: security Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Workspace security applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. All workspace data is encrypted at rest using AES-256. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. Single sign-on with SAML is available only on the Enterprise plan. The service dashboard records the relevant activity so workspace\nsilently change a signed agreement. Keep the workspace identifier ready when opening a ticket. Workspace owners can export their notes as a ZIP archive containing Markdown files. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+      "model_output": "The encryption that protects workspace data at rest is typically referred to as \"data encryption\" or \"data security.\" This type of encryption is designed to protect sensitive information such as financial data, medical records, or personal information from unauthorized access or theft. The specific encryption method used will depend on the nature of the data and the level of security required. Some common encryption methods include:\n\n1. AES (Advanced Encryption Standard) - a widely used encryption algorithm that provides strong security and is widely used in various industries",
+      "output_b": "AES-256",
+      "config_a": "ungrounded-v1",
+      "config_b": "grounded-v2",
+      "generator_family": "qwen",
+      "generation_request_ids": [
+        "aab524ff18024fe383391f313fd555a6",
+        "8c49f5a0ff4a48f3aabc1f4289bf93de"
+      ]
+    },
+    {
+      "id": "q07",
+      "input": "For how many days are automatic workspace backups retained?",
+      "system_prompt": "Answer accurately using the published product policy.",
+      "expected_output": "30 days",
+      "context": "# Backup and recovery Category: operations Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Backup and recovery applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. Automatic workspace backups are retained for 30 days. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. The recovery point objective is 24 hours for standard workspaces. The service dashboard records the relevant activity so",
+      "model_output": "Automatic workspace backups are typically retained for a specific period of time to ensure data integrity and security. The exact number of days a backup is retained can vary depending on the specific requirements of the organization and the level of data protection needed. Generally, backups are retained for a period of 7 to 14 days, depending on the organization's needs and the level of data protection required. It's important to consult with IT professionals or security experts to determine the appropriate retention period for your specific situation.",
+      "output_b": "30 days",
+      "config_a": "ungrounded-v1",
+      "config_b": "grounded-v2",
+      "generator_family": "qwen",
+      "generation_request_ids": [
+        "751059bf87b04145b94ed6f196bab24e",
+        "a7504c5f4ce740858ffd3c616d7c79c4"
+      ]
+    },
+    {
+      "id": "q09",
+      "input": "What is the public API rate limit for each workspace?",
+      "system_prompt": "Answer accurately using the published product policy.",
+      "expected_output": "120 requests per minute",
+      "context": "Developer API limits Developer API limits Category: developer Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Developer API limits applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. The public API permits 120 requests per minute per workspace. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. API clients receiving HTTP 429 must wait for the Retry-After header interval before retrying.\nagreement. Keep the workspace identifier ready when opening a ticket. API clients receiving HTTP 429 must wait for the Retry-After header interval before retrying. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+      "model_output": "The public API rate limit for each workspace can vary depending on the specific service and the service provider. However, in general, the rate limit for public APIs can be quite restrictive. For example, some services may limit the number of requests per minute, while others may limit the number of requests per hour. It's best to check the official documentation or contact the service provider directly for the most accurate and up-to-date information.",
+      "output_b": "The public API permits 120 requests per minute per workspace.",
+      "config_a": "ungrounded-v1",
+      "config_b": "grounded-v2",
+      "generator_family": "qwen",
+      "generation_request_ids": [
+        "7b556e0750fa40eb834ac41bdb664f8d",
+        "fc2c3e1133be40fa85845e5e8415056f"
+      ]
+    },
+    {
+      "id": "q11",
+      "input": "How large can a single uploaded file be?",
+      "system_prompt": "Answer accurately using the published product policy.",
+      "expected_output": "25 megabytes",
+      "context": "Uploads and imports Category: product Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Uploads and imports applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. The maximum size of one uploaded file is 25 megabytes. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. Workspace imports accept CSV, Markdown, and plain text files. The service dashboard records the relevant activity so",
+      "model_output": "The maximum size of a single uploaded file is typically 2GB (2 gigabytes). This is the maximum size that most file upload systems can handle. However, it's important to note that the actual size of a single file can vary depending on the file type and the specific upload system being used.",
+      "output_b": "1 megabyte",
+      "config_a": "ungrounded-v1",
+      "config_b": "grounded-v2",
+      "generator_family": "qwen",
+      "generation_request_ids": [
+        "de3af663854147d186ebe8eaf5092480",
+        "4342dfaa1ff24ab6ad3ed7359f8c2ce4"
+      ]
+    },
+    {
+      "id": "q13",
+      "input": "What are the standard support hours?",
+      "system_prompt": "Answer accurately using the published product policy.",
+      "expected_output": "Monday through Friday from 09:00 to 18:00 UTC",
+      "context": "# Support coverage Category: operations Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Support coverage applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. Standard support operates Monday through Friday from 09:00 to 18:00 UTC. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. The first response target for a critical Enterprise incident is 1 hour. The service dashboard records the",
+      "model_output": "Standard support hours can vary depending on the specific product or service being offered. However, here are some general guidelines:\n\n1. Phone support: Typically, support hours are between 8:00 AM and 5:00 PM Eastern Time.\n\n2. Email support: Support hours are typically between 9:00 AM and 5:00 PM Eastern Time.\n\n3. Chat support: Support hours are typically between 9:00 AM and 5:00 PM Eastern",
+      "output_b": "Standard support operates Monday through Friday from 09:00 to 18:00 UTC.",
+      "config_a": "ungrounded-v1",
+      "config_b": "grounded-v2",
+      "generator_family": "qwen",
+      "generation_request_ids": [
+        "231a42d6f037480fa0ce86610a37a3dc",
+        "644c7766a3494f06abe8d633e935a26b"
+      ]
+    },
+    {
+      "id": "q15",
+      "input": "How long is the recovery window after account deletion?",
+      "system_prompt": "Answer accurately using the published product policy.",
+      "expected_output": "7 days",
+      "context": "Account deletion and exports Account deletion and exports Category: security Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Account deletion and exports applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. Deleted accounts enter a 7 day recovery window before permanent removal. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. Workspace owners can export their notes as a ZIP archive",
+      "model_output": "The recovery window after account deletion typically refers to the period during which the user can attempt to recover their account from a lost or stolen password. This window is usually set by the account owner and can vary depending on the specific account and the security measures in place. \n\nTypically, the recovery window is between 24 hours and 72 hours, depending on the account owner's preference and the security measures in place. However, it's important to note that the exact length of the recovery window",
+      "output_b": "7 days",
+      "config_a": "ungrounded-v1",
+      "config_b": "grounded-v2",
+      "generator_family": "qwen",
+      "generation_request_ids": [
+        "72b134231af24488b4aa938bfdd73eb3",
+        "9a9df50bb3be4f0a80951c2faea88f9a"
+      ]
+    }
+  ]
+}

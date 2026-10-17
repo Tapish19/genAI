@@ -1,0 +1,2561 @@
+{
+  "environment": {
+    "time": "2026-10-17T07:15:01.936318+00:00",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "python": "3.13.14",
+    "logical_cpus": 10,
+    "ram_gib": 15.55,
+    "cpu": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+    "model_threads": 4
+  },
+  "dataset_sha256": "ec07b4fdfa8a279e8f91a77e6e0940974d7d0c52c8c4f9ae29ae34a9462b5987",
+  "settings": {
+    "k": 3,
+    "chunk_size_words": 120,
+    "overlap_words": 24,
+    "min_similarity": 0.38,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "dimension": 384,
+    "store": "sqlite-vec 0.1.6",
+    "chunks": 16,
+    "documents": 8
+  },
+  "relevance_definition": "Same annotated source AND contains normalized gold evidence substring. Metrics on 16 answerable cases; 4 negatives separately.",
+  "cases": [
+    {
+      "id": "q01",
+      "answerable": true,
+      "question": "How long do I have to request a refund after my first paid subscription?",
+      "expected_output": "14 days",
+      "relevant_chunk_ids": [
+        "10a7b0290787badf3416"
+      ],
+      "raw_top_k": {
+        "chunks": [
+          {
+            "rowid": 7,
+            "id": "10a7b0290787badf3416",
+            "document_id": "c08694c2dc27f4216c8b7bcc9143054e86ec20ef3bb5d6c993ae6df102f2dffd",
+            "source": "refunds.md",
+            "page": 1,
+            "ordinal": 0,
+            "category": "billing",
+            "text": "# Refund policy Category: billing Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Refund policy applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. Customers may request a full refund within 14 days of their first paid subscription. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. Approved refunds return to the original payment method within 5 business days. The service",
+            "similarity": 0.6111435294151306
+          },
+          {
+            "rowid": 8,
+            "id": "5053d9ca97550fc869d4",
+            "document_id": "c08694c2dc27f4216c8b7bcc9143054e86ec20ef3bb5d6c993ae6df102f2dffd",
+            "source": "refunds.md",
+            "page": 1,
+            "ordinal": 1,
+            "category": "billing",
+            "text": "agreement. Keep the workspace identifier ready when opening a ticket. Approved refunds return to the original payment method within 5 business days. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+            "similarity": 0.49604344367980957
+          },
+          {
+            "rowid": 5,
+            "id": "c50fadb753e6c22f3f3d",
+            "document_id": "cf1fb993c0d1b43208be843eb8bea44af111f0ef14dc0f7a6113fc2655cbb71d",
+            "source": "plans.html",
+            "page": 1,
+            "ordinal": 0,
+            "category": "billing",
+            "text": "Subscription plans Subscription plans Category: billing Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Subscription plans applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. The Team plan costs 12 dollars per user per month when billed monthly. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. The Starter plan includes 3 shared notebooks per workspace. The service dashboard records the",
+            "similarity": 0.32344311475753784
+          }
+        ],
+        "embedding_ms": 10.185400024056435,
+        "vector_search_ms": 6.523999967612326,
+        "retrieval_ms": 16.71560003887862
+      },
+      "result": {
+        "query_id": "e512e8c9f0b64bfb8a8205f40f17395e",
+        "question": "How long do I have to request a refund after my first paid subscription?",
+        "category": "billing",
+        "chunk_count": 2,
+        "chunks": [
+          {
+            "rowid": 7,
+            "id": "10a7b0290787badf3416",
+            "document_id": "c08694c2dc27f4216c8b7bcc9143054e86ec20ef3bb5d6c993ae6df102f2dffd",
+            "source": "refunds.md",
+            "page": 1,
+            "ordinal": 0,
+            "category": "billing",
+            "text": "# Refund policy Category: billing Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Refund policy applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. Customers may request a full refund within 14 days of their first paid subscription. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. Approved refunds return to the original payment method within 5 business days. The service",
+            "similarity": 0.6111435294151306
+          },
+          {
+            "rowid": 8,
+            "id": "5053d9ca97550fc869d4",
+            "document_id": "c08694c2dc27f4216c8b7bcc9143054e86ec20ef3bb5d6c993ae6df102f2dffd",
+            "source": "refunds.md",
+            "page": 1,
+            "ordinal": 1,
+            "category": "billing",
+            "text": "agreement. Keep the workspace identifier ready when opening a ticket. Approved refunds return to the original payment method within 5 business days. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+            "similarity": 0.49604344367980957
+          }
+        ],
+        "embedding_ms": 8.902500034309924,
+        "vector_search_ms": 6.1743000987917185,
+        "retrieval_ms": 15.083299949765205,
+        "usage": {
+          "completion_tokens": 21,
+          "prompt_tokens": 400,
+          "total_tokens": 421,
+          "prompt_tokens_details": {
+            "cached_tokens": 377
+          }
+        },
+        "generator_model": "qwen2.5-0.5b-instruct-q4_k_m",
+        "citations": [
+          {
+            "label": 1,
+            "chunk_id": "10a7b0290787badf3416",
+            "source": "refunds.md",
+            "page": 1
+          },
+          {
+            "label": 2,
+            "chunk_id": "5053d9ca97550fc869d4",
+            "source": "refunds.md",
+            "page": 1
+          }
+        ],
+        "answer": "14 days [1] [2]",
+        "abstained": false,
+        "generation_ms": 955.4519000230357,
+        "model_request_id": "c0d803746b7048dcad604e9097769729",
+        "raw_generated_answer": "14 days [1] [2]",
+        "end_to_end_ms": 972.6257000584155
+      },
+      "gold": {
+        "em": 1.0,
+        "f1": 1.0
+      },
+      "retrieval": {
+        "recall_at_k": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "context_precision": 0.3333333333333333
+      },
+      "judge": {
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate correctly stated the reference fact, '14 days', and provided a relevant answer to the question."
+        },
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate provided a correct answer, '14 days', which matches the reference fact."
+        },
+        "answer_relevance": {
+          "score": 4,
+          "rationale": "The candidate directly addressed the user question, 'How long do I have to request a refund after my first paid Subscrib"
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "f2fe7ed42c2640d2a249e2f4b31a9702"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 4.0,
+        "passed": true
+      }
+    },
+    {
+      "id": "q02",
+      "answerable": true,
+      "question": "How long does an approved refund take to reach my payment method?",
+      "expected_output": "5 business days",
+      "relevant_chunk_ids": [
+        "10a7b0290787badf3416",
+        "5053d9ca97550fc869d4"
+      ],
+      "raw_top_k": {
+        "chunks": [
+          {
+            "rowid": 7,
+            "id": "10a7b0290787badf3416",
+            "document_id": "c08694c2dc27f4216c8b7bcc9143054e86ec20ef3bb5d6c993ae6df102f2dffd",
+            "source": "refunds.md",
+            "page": 1,
+            "ordinal": 0,
+            "category": "billing",
+            "text": "# Refund policy Category: billing Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Refund policy applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. Customers may request a full refund within 14 days of their first paid subscription. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. Approved refunds return to the original payment method within 5 business days. The service",
+            "similarity": 0.5718583166599274
+          },
+          {
+            "rowid": 8,
+            "id": "5053d9ca97550fc869d4",
+            "document_id": "c08694c2dc27f4216c8b7bcc9143054e86ec20ef3bb5d6c993ae6df102f2dffd",
+            "source": "refunds.md",
+            "page": 1,
+            "ordinal": 1,
+            "category": "billing",
+            "text": "agreement. Keep the workspace identifier ready when opening a ticket. Approved refunds return to the original payment method within 5 business days. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+            "similarity": 0.5448059141635895
+          },
+          {
+            "rowid": 5,
+            "id": "c50fadb753e6c22f3f3d",
+            "document_id": "cf1fb993c0d1b43208be843eb8bea44af111f0ef14dc0f7a6113fc2655cbb71d",
+            "source": "plans.html",
+            "page": 1,
+            "ordinal": 0,
+            "category": "billing",
+            "text": "Subscription plans Subscription plans Category: billing Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Subscription plans applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. The Team plan costs 12 dollars per user per month when billed monthly. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. The Starter plan includes 3 shared notebooks per workspace. The service dashboard records the",
+            "similarity": 0.0952005386352539
+          }
+        ],
+        "embedding_ms": 7.568900007754564,
+        "vector_search_ms": 6.947999936528504,
+        "retrieval_ms": 14.521799981594086
+      },
+      "result": {
+        "query_id": "586fdaaf72e440fa81b2dceaf3bbd996",
+        "question": "How long does an approved refund take to reach my payment method?",
+        "category": "billing",
+        "chunk_count": 2,
+        "chunks": [
+          {
+            "rowid": 7,
+            "id": "10a7b0290787badf3416",
+            "document_id": "c08694c2dc27f4216c8b7bcc9143054e86ec20ef3bb5d6c993ae6df102f2dffd",
+            "source": "refunds.md",
+            "page": 1,
+            "ordinal": 0,
+            "category": "billing",
+            "text": "# Refund policy Category: billing Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Refund policy applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. Customers may request a full refund within 14 days of their first paid subscription. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. Approved refunds return to the original payment method within 5 business days. The service",
+            "similarity": 0.5718583166599274
+          },
+          {
+            "rowid": 8,
+            "id": "5053d9ca97550fc869d4",
+            "document_id": "c08694c2dc27f4216c8b7bcc9143054e86ec20ef3bb5d6c993ae6df102f2dffd",
+            "source": "refunds.md",
+            "page": 1,
+            "ordinal": 1,
+            "category": "billing",
+            "text": "agreement. Keep the workspace identifier ready when opening a ticket. Approved refunds return to the original payment method within 5 business days. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+            "similarity": 0.5448059141635895
+          }
+        ],
+        "embedding_ms": 8.469699998386204,
+        "vector_search_ms": 8.875099942088127,
+        "retrieval_ms": 17.35259999986738,
+        "usage": {
+          "completion_tokens": 21,
+          "prompt_tokens": 398,
+          "total_tokens": 419,
+          "prompt_tokens_details": {
+            "cached_tokens": 377
+          }
+        },
+        "generator_model": "qwen2.5-0.5b-instruct-q4_k_m",
+        "citations": [
+          {
+            "label": 1,
+            "chunk_id": "10a7b0290787badf3416",
+            "source": "refunds.md",
+            "page": 1
+          },
+          {
+            "label": 2,
+            "chunk_id": "5053d9ca97550fc869d4",
+            "source": "refunds.md",
+            "page": 1
+          }
+        ],
+        "answer": "5 business days [1] [2]",
+        "abstained": false,
+        "generation_ms": 1360.4491000296548,
+        "model_request_id": "84efe63920094b79a5dce6880a158783",
+        "raw_generated_answer": "5 business days [1] [2]",
+        "end_to_end_ms": 1380.9647999005392
+      },
+      "gold": {
+        "em": 1.0,
+        "f1": 1.0
+      },
+      "retrieval": {
+        "recall_at_k": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "context_precision": 0.6666666666666666
+      },
+      "judge": {
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate correctly states the reference fact, '5 business days', and provides a relevant supporting context, '5' in"
+        },
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate correctly answers the question, '5 business days', and provides a relevant supporting context, '5' in"
+        },
+        "answer_relevance": {
+          "score": 4,
+          "rationale": "The candidate directly addresses the user question without irrelevant claims"
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "9b21312c6fb14734a8d3186aa82f4112"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 4.0,
+        "passed": true
+      }
+    },
+    {
+      "id": "q03",
+      "answerable": true,
+      "question": "What is the monthly per-user price of the Team plan?",
+      "expected_output": "12 dollars per user per month",
+      "relevant_chunk_ids": [
+        "c50fadb753e6c22f3f3d"
+      ],
+      "raw_top_k": {
+        "chunks": [
+          {
+            "rowid": 5,
+            "id": "c50fadb753e6c22f3f3d",
+            "document_id": "cf1fb993c0d1b43208be843eb8bea44af111f0ef14dc0f7a6113fc2655cbb71d",
+            "source": "plans.html",
+            "page": 1,
+            "ordinal": 0,
+            "category": "billing",
+            "text": "Subscription plans Subscription plans Category: billing Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Subscription plans applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. The Team plan costs 12 dollars per user per month when billed monthly. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. The Starter plan includes 3 shared notebooks per workspace. The service dashboard records the",
+            "similarity": 0.5611297786235809
+          },
+          {
+            "rowid": 6,
+            "id": "1da14baa9dfb78af3a25",
+            "document_id": "cf1fb993c0d1b43208be843eb8bea44af111f0ef14dc0f7a6113fc2655cbb71d",
+            "source": "plans.html",
+            "page": 1,
+            "ordinal": 1,
+            "category": "billing",
+            "text": "agreement. Keep the workspace identifier ready when opening a ticket. The Starter plan includes 3 shared notebooks per workspace. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+            "similarity": 0.19583791494369507
+          },
+          {
+            "rowid": 7,
+            "id": "10a7b0290787badf3416",
+            "document_id": "c08694c2dc27f4216c8b7bcc9143054e86ec20ef3bb5d6c993ae6df102f2dffd",
+            "source": "refunds.md",
+            "page": 1,
+            "ordinal": 0,
+            "category": "billing",
+            "text": "# Refund policy Category: billing Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Refund policy applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. Customers may request a full refund within 14 days of their first paid subscription. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. Approved refunds return to the original payment method within 5 business days. The service",
+            "similarity": 0.12504655122756958
+          }
+        ],
+        "embedding_ms": 7.916299975477159,
+        "vector_search_ms": 5.602599936537445,
+        "retrieval_ms": 13.523799949325621
+      },
+      "result": {
+        "query_id": "ee24ff9656d645b6943120730cb532c1",
+        "question": "What is the monthly per-user price of the Team plan?",
+        "category": "billing",
+        "chunk_count": 1,
+        "chunks": [
+          {
+            "rowid": 5,
+            "id": "c50fadb753e6c22f3f3d",
+            "document_id": "cf1fb993c0d1b43208be843eb8bea44af111f0ef14dc0f7a6113fc2655cbb71d",
+            "source": "plans.html",
+            "page": 1,
+            "ordinal": 0,
+            "category": "billing",
+            "text": "Subscription plans Subscription plans Category: billing Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Subscription plans applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. The Team plan costs 12 dollars per user per month when billed monthly. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. The Starter plan includes 3 shared notebooks per workspace. The service dashboard records the",
+            "similarity": 0.5611297786235809
+          }
+        ],
+        "embedding_ms": 6.980500067584217,
+        "vector_search_ms": 5.710400058887899,
+        "retrieval_ms": 12.69610004965216,
+        "usage": {
+          "completion_tokens": 20,
+          "prompt_tokens": 282,
+          "total_tokens": 302,
+          "prompt_tokens_details": {
+            "cached_tokens": 258
+          }
+        },
+        "generator_model": "qwen2.5-0.5b-instruct-q4_k_m",
+        "citations": [
+          {
+            "label": 1,
+            "chunk_id": "c50fadb753e6c22f3f3d",
+            "source": "plans.html",
+            "page": 1
+          }
+        ],
+        "answer": "12 dollars per user per month [1]",
+        "abstained": false,
+        "generation_ms": 919.1262000240386,
+        "model_request_id": "d7cda5008423426b9af0c706c4e458a4",
+        "raw_generated_answer": "12 dollars per user per month [1]",
+        "end_to_end_ms": 932.9651000443846
+      },
+      "gold": {
+        "em": 1.0,
+        "f1": 1.0
+      },
+      "retrieval": {
+        "recall_at_k": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "context_precision": 0.3333333333333333
+      },
+      "judge": {
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate answer correctly states the monthly per-user price of the Team plan, which is 12 dollars per user per day."
+        },
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate answer matches the reference fact, which is 12 dollars per user per month. The answer is accurate and does"
+        },
+        "answer_relevance": {
+          "score": 4,
+          "rationale": "The candidate answer directly addresses the user question and does not include any irrelevant claims. The answer is well"
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "c7bfc39977be419083be5f4332f66752"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 4.0,
+        "passed": true
+      }
+    },
+    {
+      "id": "q04",
+      "answerable": true,
+      "question": "How many shared notebooks are included in the Starter plan?",
+      "expected_output": "3 shared notebooks",
+      "relevant_chunk_ids": [
+        "c50fadb753e6c22f3f3d",
+        "1da14baa9dfb78af3a25"
+      ],
+      "raw_top_k": {
+        "chunks": [
+          {
+            "rowid": 5,
+            "id": "c50fadb753e6c22f3f3d",
+            "document_id": "cf1fb993c0d1b43208be843eb8bea44af111f0ef14dc0f7a6113fc2655cbb71d",
+            "source": "plans.html",
+            "page": 1,
+            "ordinal": 0,
+            "category": "billing",
+            "text": "Subscription plans Subscription plans Category: billing Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Subscription plans applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. The Team plan costs 12 dollars per user per month when billed monthly. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. The Starter plan includes 3 shared notebooks per workspace. The service dashboard records the",
+            "similarity": 0.5520230531692505
+          },
+          {
+            "rowid": 6,
+            "id": "1da14baa9dfb78af3a25",
+            "document_id": "cf1fb993c0d1b43208be843eb8bea44af111f0ef14dc0f7a6113fc2655cbb71d",
+            "source": "plans.html",
+            "page": 1,
+            "ordinal": 1,
+            "category": "billing",
+            "text": "agreement. Keep the workspace identifier ready when opening a ticket. The Starter plan includes 3 shared notebooks per workspace. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+            "similarity": 0.5479014813899994
+          },
+          {
+            "rowid": 7,
+            "id": "10a7b0290787badf3416",
+            "document_id": "c08694c2dc27f4216c8b7bcc9143054e86ec20ef3bb5d6c993ae6df102f2dffd",
+            "source": "refunds.md",
+            "page": 1,
+            "ordinal": 0,
+            "category": "billing",
+            "text": "# Refund policy Category: billing Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Refund policy applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. Customers may request a full refund within 14 days of their first paid subscription. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. Approved refunds return to the original payment method within 5 business days. The service",
+            "similarity": 0.1821114420890808
+          }
+        ],
+        "embedding_ms": 11.444099945947528,
+        "vector_search_ms": 14.800800010561943,
+        "retrieval_ms": 26.25430002808571
+      },
+      "result": {
+        "query_id": "c22894dd64434bcdae32b4188b546915",
+        "question": "How many shared notebooks are included in the Starter plan?",
+        "category": "billing",
+        "chunk_count": 2,
+        "chunks": [
+          {
+            "rowid": 5,
+            "id": "c50fadb753e6c22f3f3d",
+            "document_id": "cf1fb993c0d1b43208be843eb8bea44af111f0ef14dc0f7a6113fc2655cbb71d",
+            "source": "plans.html",
+            "page": 1,
+            "ordinal": 0,
+            "category": "billing",
+            "text": "Subscription plans Subscription plans Category: billing Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Subscription plans applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. The Team plan costs 12 dollars per user per month when billed monthly. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. The Starter plan includes 3 shared notebooks per workspace. The service dashboard records the",
+            "similarity": 0.5520230531692505
+          },
+          {
+            "rowid": 6,
+            "id": "1da14baa9dfb78af3a25",
+            "document_id": "cf1fb993c0d1b43208be843eb8bea44af111f0ef14dc0f7a6113fc2655cbb71d",
+            "source": "plans.html",
+            "page": 1,
+            "ordinal": 1,
+            "category": "billing",
+            "text": "agreement. Keep the workspace identifier ready when opening a ticket. The Starter plan includes 3 shared notebooks per workspace. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+            "similarity": 0.5479014813899994
+          }
+        ],
+        "embedding_ms": 7.933799992315471,
+        "vector_search_ms": 8.209799998439848,
+        "retrieval_ms": 16.150200041010976,
+        "usage": {
+          "completion_tokens": 19,
+          "prompt_tokens": 386,
+          "total_tokens": 405,
+          "prompt_tokens_details": {
+            "cached_tokens": 258
+          }
+        },
+        "generator_model": "qwen2.5-0.5b-instruct-q4_k_m",
+        "citations": [
+          {
+            "label": 1,
+            "chunk_id": "c50fadb753e6c22f3f3d",
+            "source": "plans.html",
+            "page": 1
+          },
+          {
+            "label": 2,
+            "chunk_id": "1da14baa9dfb78af3a25",
+            "source": "plans.html",
+            "page": 1
+          }
+        ],
+        "answer": "3 [1] [2]",
+        "abstained": false,
+        "generation_ms": 3038.622200023383,
+        "model_request_id": "aeaaf4a915e64fd7b51373e5bbb05085",
+        "raw_generated_answer": "3 [1] [2]",
+        "end_to_end_ms": 3057.223599986173
+      },
+      "gold": {
+        "em": 0.0,
+        "f1": 0.5
+      },
+      "retrieval": {
+        "recall_at_k": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "context_precision": 0.6666666666666666
+      },
+      "judge": {
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate answer correctly states the reference fact, '3 shared notebooks' included in the Starter plan."
+        },
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate answer correctly answers the user question, 'How many shared notebooks are included in the Starter plan?'."
+        },
+        "answer_relevance": {
+          "score": 4,
+          "rationale": "The candidate answer directly addresses the user question without irrelevant claims."
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "a66bba4f150a4cc493a156429828c4ff"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 4.0,
+        "passed": true
+      }
+    },
+    {
+      "id": "q05",
+      "answerable": true,
+      "question": "Which encryption protects workspace data at rest?",
+      "expected_output": "AES-256",
+      "relevant_chunk_ids": [
+        "33d7137681d81680a78f"
+      ],
+      "raw_top_k": {
+        "chunks": [
+          {
+            "rowid": 11,
+            "id": "33d7137681d81680a78f",
+            "document_id": "ccee5e9cfb34b5cb5706dce126185910e1ad9e49f8c2ef0ca71d7d3a1903ea51",
+            "source": "security.pdf",
+            "page": 1,
+            "ordinal": 0,
+            "category": "security",
+            "text": "Workspace security Category: security Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Workspace security applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. All workspace data is encrypted at rest using AES-256. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. Single sign-on with SAML is available only on the Enterprise plan. The service dashboard records the relevant activity so workspace",
+            "similarity": 0.5407752692699432
+          },
+          {
+            "rowid": 10,
+            "id": "44545b1a1f311fd33ca5",
+            "document_id": "651161bd0da4c159707073695ce6686adc68f2eab36c2b87bd92091cee4aabae",
+            "source": "retention.html",
+            "page": 1,
+            "ordinal": 1,
+            "category": "security",
+            "text": "silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. Workspace owners can export their notes as a ZIP archive containing Markdown files. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+            "similarity": 0.4074009656906128
+          },
+          {
+            "rowid": 12,
+            "id": "43719a6c102d9742e849",
+            "document_id": "ccee5e9cfb34b5cb5706dce126185910e1ad9e49f8c2ef0ca71d7d3a1903ea51",
+            "source": "security.pdf",
+            "page": 1,
+            "ordinal": 1,
+            "category": "security",
+            "text": "when opening a ticket. Single sign-on with SAML is available only on the Enterprise plan. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+            "similarity": 0.27959144115448
+          }
+        ],
+        "embedding_ms": 8.957899990491569,
+        "vector_search_ms": 12.80839997343719,
+        "retrieval_ms": 21.777900052256882
+      },
+      "result": {
+        "query_id": "a32d8e47483b4c1ebedf3c41af0368ab",
+        "question": "Which encryption protects workspace data at rest?",
+        "category": "security",
+        "chunk_count": 2,
+        "chunks": [
+          {
+            "rowid": 11,
+            "id": "33d7137681d81680a78f",
+            "document_id": "ccee5e9cfb34b5cb5706dce126185910e1ad9e49f8c2ef0ca71d7d3a1903ea51",
+            "source": "security.pdf",
+            "page": 1,
+            "ordinal": 0,
+            "category": "security",
+            "text": "Workspace security Category: security Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Workspace security applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. All workspace data is encrypted at rest using AES-256. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. Single sign-on with SAML is available only on the Enterprise plan. The service dashboard records the relevant activity so workspace",
+            "similarity": 0.5407752692699432
+          },
+          {
+            "rowid": 10,
+            "id": "44545b1a1f311fd33ca5",
+            "document_id": "651161bd0da4c159707073695ce6686adc68f2eab36c2b87bd92091cee4aabae",
+            "source": "retention.html",
+            "page": 1,
+            "ordinal": 1,
+            "category": "security",
+            "text": "silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. Workspace owners can export their notes as a ZIP archive containing Markdown files. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+            "similarity": 0.4074009656906128
+          }
+        ],
+        "embedding_ms": 9.534900076687336,
+        "vector_search_ms": 16.95720001589507,
+        "retrieval_ms": 26.50300005916506,
+        "usage": {
+          "completion_tokens": 33,
+          "prompt_tokens": 399,
+          "total_tokens": 432,
+          "prompt_tokens_details": {
+            "cached_tokens": 398
+          }
+        },
+        "generator_model": "qwen2.5-0.5b-instruct-q4_k_m",
+        "citations": [
+          {
+            "label": 1,
+            "chunk_id": "33d7137681d81680a78f",
+            "source": "security.pdf",
+            "page": 1
+          },
+          {
+            "label": 2,
+            "chunk_id": "44545b1a1f311fd33ca5",
+            "source": "retention.html",
+            "page": 1
+          }
+        ],
+        "answer": "AES-256 [1] [2]",
+        "abstained": false,
+        "generation_ms": 1430.6723999325186,
+        "model_request_id": "2a9dfcf18de248729c66982f3eed66df",
+        "raw_generated_answer": "AES-256 [1] [2]",
+        "end_to_end_ms": 1459.5978999277577
+      },
+      "gold": {
+        "em": 1.0,
+        "f1": 1.0
+      },
+      "retrieval": {
+        "recall_at_k": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "context_precision": 0.3333333333333333
+      },
+      "judge": {
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate correctly stated the reference fact, AES-256, which is the encryption method used to protect workspace at-"
+        },
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate provided a correct answer, AES-256, which matches the reference fact"
+        },
+        "answer_relevance": {
+          "score": 4,
+          "rationale": "The candidate directly addressed the user question, providing a correct answer to the question, without including any un"
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "b7e6835bb3b54e9c9940b34d2db0f092"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 4.0,
+        "passed": true
+      }
+    },
+    {
+      "id": "q06",
+      "answerable": true,
+      "question": "Which plan includes SAML single sign-on?",
+      "expected_output": "Enterprise plan",
+      "relevant_chunk_ids": [
+        "33d7137681d81680a78f",
+        "43719a6c102d9742e849"
+      ],
+      "raw_top_k": {
+        "chunks": [
+          {
+            "rowid": 12,
+            "id": "43719a6c102d9742e849",
+            "document_id": "ccee5e9cfb34b5cb5706dce126185910e1ad9e49f8c2ef0ca71d7d3a1903ea51",
+            "source": "security.pdf",
+            "page": 1,
+            "ordinal": 1,
+            "category": "security",
+            "text": "when opening a ticket. Single sign-on with SAML is available only on the Enterprise plan. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+            "similarity": 0.6617235541343689
+          },
+          {
+            "rowid": 11,
+            "id": "33d7137681d81680a78f",
+            "document_id": "ccee5e9cfb34b5cb5706dce126185910e1ad9e49f8c2ef0ca71d7d3a1903ea51",
+            "source": "security.pdf",
+            "page": 1,
+            "ordinal": 0,
+            "category": "security",
+            "text": "Workspace security Category: security Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Workspace security applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. All workspace data is encrypted at rest using AES-256. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. Single sign-on with SAML is available only on the Enterprise plan. The service dashboard records the relevant activity so workspace",
+            "similarity": 0.5231019854545593
+          },
+          {
+            "rowid": 10,
+            "id": "44545b1a1f311fd33ca5",
+            "document_id": "651161bd0da4c159707073695ce6686adc68f2eab36c2b87bd92091cee4aabae",
+            "source": "retention.html",
+            "page": 1,
+            "ordinal": 1,
+            "category": "security",
+            "text": "silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. Workspace owners can export their notes as a ZIP archive containing Markdown files. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+            "similarity": 0.25117045640945435
+          }
+        ],
+        "embedding_ms": 9.734199964441359,
+        "vector_search_ms": 6.75159995444119,
+        "retrieval_ms": 16.49179996456951
+      },
+      "result": {
+        "query_id": "1b8270389a1c467baff9a3e65fd61b86",
+        "question": "Which plan includes SAML single sign-on?",
+        "category": "security",
+        "chunk_count": 2,
+        "chunks": [
+          {
+            "rowid": 12,
+            "id": "43719a6c102d9742e849",
+            "document_id": "ccee5e9cfb34b5cb5706dce126185910e1ad9e49f8c2ef0ca71d7d3a1903ea51",
+            "source": "security.pdf",
+            "page": 1,
+            "ordinal": 1,
+            "category": "security",
+            "text": "when opening a ticket. Single sign-on with SAML is available only on the Enterprise plan. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+            "similarity": 0.6617235541343689
+          },
+          {
+            "rowid": 11,
+            "id": "33d7137681d81680a78f",
+            "document_id": "ccee5e9cfb34b5cb5706dce126185910e1ad9e49f8c2ef0ca71d7d3a1903ea51",
+            "source": "security.pdf",
+            "page": 1,
+            "ordinal": 0,
+            "category": "security",
+            "text": "Workspace security Category: security Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Workspace security applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. All workspace data is encrypted at rest using AES-256. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. Single sign-on with SAML is available only on the Enterprise plan. The service dashboard records the relevant activity so workspace",
+            "similarity": 0.5231019854545593
+          }
+        ],
+        "embedding_ms": 7.3874000227078795,
+        "vector_search_ms": 8.69399996008724,
+        "retrieval_ms": 16.089400043711066,
+        "usage": {
+          "completion_tokens": 22,
+          "prompt_tokens": 389,
+          "total_tokens": 411,
+          "prompt_tokens_details": {
+            "cached_tokens": 388
+          }
+        },
+        "generator_model": "qwen2.5-0.5b-instruct-q4_k_m",
+        "citations": [
+          {
+            "label": 1,
+            "chunk_id": "43719a6c102d9742e849",
+            "source": "security.pdf",
+            "page": 1
+          },
+          {
+            "label": 2,
+            "chunk_id": "33d7137681d81680a78f",
+            "source": "security.pdf",
+            "page": 1
+          }
+        ],
+        "answer": "Enterprise plan [1] [2]",
+        "abstained": false,
+        "generation_ms": 1489.677399978973,
+        "model_request_id": "85f4368e882f4678bccff87abcbb4d3e",
+        "raw_generated_answer": "Enterprise plan [1] [2]",
+        "end_to_end_ms": 1507.9845999134704
+      },
+      "gold": {
+        "em": 1.0,
+        "f1": 1.0
+      },
+      "retrieval": {
+        "recall_at_k": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "context_precision": 0.6666666666666666
+      },
+      "judge": {
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate answer correctly states the reference fact, 'Enterprise plan [1] [2]'."
+        },
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate answer correctly identifies the plan that includes SAML single sign-on, 'Enterprise plan'."
+        },
+        "answer_relevance": {
+          "score": 4,
+          "rationale": "The candidate answer directly addresses the user question, 'Which plan includes SAML single sign-on?'"
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "244fbfce197b48259924aac8b16b97e6"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 4.0,
+        "passed": true
+      }
+    },
+    {
+      "id": "q07",
+      "answerable": true,
+      "question": "For how many days are automatic workspace backups retained?",
+      "expected_output": "30 days",
+      "relevant_chunk_ids": [
+        "e7cca4a92034fffe3b19"
+      ],
+      "raw_top_k": {
+        "chunks": [
+          {
+            "rowid": 3,
+            "id": "e7cca4a92034fffe3b19",
+            "document_id": "7004fd6e4b1002a95d23bc3e3301a26461388554b1c2967d0d81cdf5acb93d87",
+            "source": "backups.md",
+            "page": 1,
+            "ordinal": 0,
+            "category": "operations",
+            "text": "# Backup and recovery Category: operations Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Backup and recovery applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. Automatic workspace backups are retained for 30 days. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. The recovery point objective is 24 hours for standard workspaces. The service dashboard records the relevant activity so",
+            "similarity": 0.6240565776824951
+          },
+          {
+            "rowid": 4,
+            "id": "49ed4fc7e18dcabfcdf7",
+            "document_id": "7004fd6e4b1002a95d23bc3e3301a26461388554b1c2967d0d81cdf5acb93d87",
+            "source": "backups.md",
+            "page": 1,
+            "ordinal": 1,
+            "category": "operations",
+            "text": "identifier ready when opening a ticket. The recovery point objective is 24 hours for standard workspaces. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+            "similarity": 0.37950021028518677
+          },
+          {
+            "rowid": 13,
+            "id": "0a99c7a782ebca0b47a2",
+            "document_id": "7d3c1cb919ff0b37c0f747f8408bfc7917347889e18bbb3497b4188ff98c6f16",
+            "source": "support.md",
+            "page": 1,
+            "ordinal": 0,
+            "category": "operations",
+            "text": "# Support coverage Category: operations Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Support coverage applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. Standard support operates Monday through Friday from 09:00 to 18:00 UTC. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. The first response target for a critical Enterprise incident is 1 hour. The service dashboard records the",
+            "similarity": 0.33253198862075806
+          }
+        ],
+        "embedding_ms": 10.213300003670156,
+        "vector_search_ms": 7.734799990430474,
+        "retrieval_ms": 17.95430004131049
+      },
+      "result": {
+        "query_id": "2495b9bb9c5c435f8095a8a1449ccedd",
+        "question": "For how many days are automatic workspace backups retained?",
+        "category": "operations",
+        "chunk_count": 1,
+        "chunks": [
+          {
+            "rowid": 3,
+            "id": "e7cca4a92034fffe3b19",
+            "document_id": "7004fd6e4b1002a95d23bc3e3301a26461388554b1c2967d0d81cdf5acb93d87",
+            "source": "backups.md",
+            "page": 1,
+            "ordinal": 0,
+            "category": "operations",
+            "text": "# Backup and recovery Category: operations Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Backup and recovery applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. Automatic workspace backups are retained for 30 days. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. The recovery point objective is 24 hours for standard workspaces. The service dashboard records the relevant activity so",
+            "similarity": 0.6240565776824951
+          }
+        ],
+        "embedding_ms": 9.03339998330921,
+        "vector_search_ms": 9.415299980901182,
+        "retrieval_ms": 18.455800018273294,
+        "usage": {
+          "completion_tokens": 18,
+          "prompt_tokens": 280,
+          "total_tokens": 298,
+          "prompt_tokens_details": {
+            "cached_tokens": 279
+          }
+        },
+        "generator_model": "qwen2.5-0.5b-instruct-q4_k_m",
+        "citations": [
+          {
+            "label": 1,
+            "chunk_id": "e7cca4a92034fffe3b19",
+            "source": "backups.md",
+            "page": 1
+          }
+        ],
+        "answer": "30 days [1]",
+        "abstained": false,
+        "generation_ms": 767.1518999850377,
+        "model_request_id": "0b57068c2f714fe69db22d266f7bdf88",
+        "raw_generated_answer": "30 days [1]",
+        "end_to_end_ms": 787.3006999725476
+      },
+      "gold": {
+        "em": 1.0,
+        "f1": 1.0
+      },
+      "retrieval": {
+        "recall_at_k": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "context_precision": 0.3333333333333333
+      },
+      "judge": {
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate answer correctly states the reference fact, '30 days'."
+        },
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate answer correctly matches the reference fact, '30 days'."
+        },
+        "answer_relevance": {
+          "score": 4,
+          "rationale": "The candidate answer directly addresses the user question, 'For how many days are automatic workspace backups retained?'"
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "e221e14bbe664be2ae2e7e182a3cbe88"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 4.0,
+        "passed": true
+      }
+    },
+    {
+      "id": "q08",
+      "answerable": true,
+      "question": "What is the recovery point objective for a standard workspace?",
+      "expected_output": "24 hours",
+      "relevant_chunk_ids": [
+        "e7cca4a92034fffe3b19",
+        "49ed4fc7e18dcabfcdf7"
+      ],
+      "raw_top_k": {
+        "chunks": [
+          {
+            "rowid": 4,
+            "id": "49ed4fc7e18dcabfcdf7",
+            "document_id": "7004fd6e4b1002a95d23bc3e3301a26461388554b1c2967d0d81cdf5acb93d87",
+            "source": "backups.md",
+            "page": 1,
+            "ordinal": 1,
+            "category": "operations",
+            "text": "identifier ready when opening a ticket. The recovery point objective is 24 hours for standard workspaces. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+            "similarity": 0.6028866469860077
+          },
+          {
+            "rowid": 3,
+            "id": "e7cca4a92034fffe3b19",
+            "document_id": "7004fd6e4b1002a95d23bc3e3301a26461388554b1c2967d0d81cdf5acb93d87",
+            "source": "backups.md",
+            "page": 1,
+            "ordinal": 0,
+            "category": "operations",
+            "text": "# Backup and recovery Category: operations Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Backup and recovery applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. Automatic workspace backups are retained for 30 days. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. The recovery point objective is 24 hours for standard workspaces. The service dashboard records the relevant activity so",
+            "similarity": 0.5901564359664917
+          },
+          {
+            "rowid": 14,
+            "id": "f7decb9f558229149611",
+            "document_id": "7d3c1cb919ff0b37c0f747f8408bfc7917347889e18bbb3497b4188ff98c6f16",
+            "source": "support.md",
+            "page": 1,
+            "ordinal": 1,
+            "category": "operations",
+            "text": "workspace identifier ready when opening a ticket. The first response target for a critical Enterprise incident is 1 hour. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+            "similarity": 0.3976304531097412
+          }
+        ],
+        "embedding_ms": 10.921700042672455,
+        "vector_search_ms": 7.850100053474307,
+        "retrieval_ms": 18.77920003607869
+      },
+      "result": {
+        "query_id": "022b4cdb62bc4781ad75a2be85ef5b61",
+        "question": "What is the recovery point objective for a standard workspace?",
+        "category": "operations",
+        "chunk_count": 3,
+        "chunks": [
+          {
+            "rowid": 4,
+            "id": "49ed4fc7e18dcabfcdf7",
+            "document_id": "7004fd6e4b1002a95d23bc3e3301a26461388554b1c2967d0d81cdf5acb93d87",
+            "source": "backups.md",
+            "page": 1,
+            "ordinal": 1,
+            "category": "operations",
+            "text": "identifier ready when opening a ticket. The recovery point objective is 24 hours for standard workspaces. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+            "similarity": 0.6028866469860077
+          },
+          {
+            "rowid": 3,
+            "id": "e7cca4a92034fffe3b19",
+            "document_id": "7004fd6e4b1002a95d23bc3e3301a26461388554b1c2967d0d81cdf5acb93d87",
+            "source": "backups.md",
+            "page": 1,
+            "ordinal": 0,
+            "category": "operations",
+            "text": "# Backup and recovery Category: operations Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Backup and recovery applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. Automatic workspace backups are retained for 30 days. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. The recovery point objective is 24 hours for standard workspaces. The service dashboard records the relevant activity so",
+            "similarity": 0.5901564359664917
+          },
+          {
+            "rowid": 14,
+            "id": "f7decb9f558229149611",
+            "document_id": "7d3c1cb919ff0b37c0f747f8408bfc7917347889e18bbb3497b4188ff98c6f16",
+            "source": "support.md",
+            "page": 1,
+            "ordinal": 1,
+            "category": "operations",
+            "text": "workspace identifier ready when opening a ticket. The first response target for a critical Enterprise incident is 1 hour. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+            "similarity": 0.3976304531097412
+          }
+        ],
+        "embedding_ms": 8.066699956543744,
+        "vector_search_ms": 7.862099912017584,
+        "retrieval_ms": 15.934099908918142,
+        "usage": {
+          "completion_tokens": 21,
+          "prompt_tokens": 485,
+          "total_tokens": 506,
+          "prompt_tokens_details": {
+            "cached_tokens": 484
+          }
+        },
+        "generator_model": "qwen2.5-0.5b-instruct-q4_k_m",
+        "citations": [
+          {
+            "label": 1,
+            "chunk_id": "49ed4fc7e18dcabfcdf7",
+            "source": "backups.md",
+            "page": 1
+          },
+          {
+            "label": 2,
+            "chunk_id": "e7cca4a92034fffe3b19",
+            "source": "backups.md",
+            "page": 1
+          }
+        ],
+        "answer": "24 hours [1] [2]",
+        "abstained": false,
+        "generation_ms": 1034.6553000854328,
+        "model_request_id": "529575abc6ba439bbca67639f12d14f7",
+        "raw_generated_answer": "24 hours [1] [2]",
+        "end_to_end_ms": 1052.9840999515727
+      },
+      "gold": {
+        "em": 1.0,
+        "f1": 1.0
+      },
+      "retrieval": {
+        "recall_at_k": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "context_precision": 0.6666666666666666
+      },
+      "judge": {
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate answer correctly states the recovery point objective for a standard workspace, which is 24 hours."
+        },
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate answer matches the reference answer, which is 24 hours."
+        },
+        "answer_relevance": {
+          "score": 4,
+          "rationale": "The candidate answer directly addresses the user question and does not include any irrelevant claims."
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "12363c15747f409cad0f905314336b66"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 4.0,
+        "passed": true
+      }
+    },
+    {
+      "id": "q09",
+      "answerable": true,
+      "question": "What is the public API rate limit for each workspace?",
+      "expected_output": "120 requests per minute",
+      "relevant_chunk_ids": [
+        "21d628ee87ca605111a7"
+      ],
+      "raw_top_k": {
+        "chunks": [
+          {
+            "rowid": 1,
+            "id": "21d628ee87ca605111a7",
+            "document_id": "42920d216ae675d7d549289b398740b40799d1425df06d6a455bebcb9ec0e8fa",
+            "source": "api.html",
+            "page": 1,
+            "ordinal": 0,
+            "category": "developer",
+            "text": "Developer API limits Developer API limits Category: developer Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Developer API limits applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. The public API permits 120 requests per minute per workspace. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. API clients receiving HTTP 429 must wait for the Retry-After header interval before retrying.",
+            "similarity": 0.697687953710556
+          },
+          {
+            "rowid": 2,
+            "id": "3ee77a3dcad9a5651297",
+            "document_id": "42920d216ae675d7d549289b398740b40799d1425df06d6a455bebcb9ec0e8fa",
+            "source": "api.html",
+            "page": 1,
+            "ordinal": 1,
+            "category": "developer",
+            "text": "agreement. Keep the workspace identifier ready when opening a ticket. API clients receiving HTTP 429 must wait for the Retry-After header interval before retrying. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+            "similarity": 0.4259865880012512
+          }
+        ],
+        "embedding_ms": 7.053199922665954,
+        "vector_search_ms": 7.382199983112514,
+        "retrieval_ms": 14.441299950703979
+      },
+      "result": {
+        "query_id": "8462c1429b804a778bf0fdd55e64ef40",
+        "question": "What is the public API rate limit for each workspace?",
+        "category": "developer",
+        "chunk_count": 2,
+        "chunks": [
+          {
+            "rowid": 1,
+            "id": "21d628ee87ca605111a7",
+            "document_id": "42920d216ae675d7d549289b398740b40799d1425df06d6a455bebcb9ec0e8fa",
+            "source": "api.html",
+            "page": 1,
+            "ordinal": 0,
+            "category": "developer",
+            "text": "Developer API limits Developer API limits Category: developer Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Developer API limits applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. The public API permits 120 requests per minute per workspace. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. API clients receiving HTTP 429 must wait for the Retry-After header interval before retrying.",
+            "similarity": 0.697687953710556
+          },
+          {
+            "rowid": 2,
+            "id": "3ee77a3dcad9a5651297",
+            "document_id": "42920d216ae675d7d549289b398740b40799d1425df06d6a455bebcb9ec0e8fa",
+            "source": "api.html",
+            "page": 1,
+            "ordinal": 1,
+            "category": "developer",
+            "text": "agreement. Keep the workspace identifier ready when opening a ticket. API clients receiving HTTP 429 must wait for the Retry-After header interval before retrying. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+            "similarity": 0.4259865880012512
+          }
+        ],
+        "embedding_ms": 7.785400026477873,
+        "vector_search_ms": 7.873800001107156,
+        "retrieval_ms": 15.664800070226192,
+        "usage": {
+          "completion_tokens": 36,
+          "prompt_tokens": 403,
+          "total_tokens": 439,
+          "prompt_tokens_details": {
+            "cached_tokens": 382
+          }
+        },
+        "generator_model": "qwen2.5-0.5b-instruct-q4_k_m",
+        "citations": [
+          {
+            "label": 1,
+            "chunk_id": "21d628ee87ca605111a7",
+            "source": "api.html",
+            "page": 1
+          },
+          {
+            "label": 2,
+            "chunk_id": "3ee77a3dcad9a5651297",
+            "source": "api.html",
+            "page": 1
+          }
+        ],
+        "answer": "120 requests per minute per workspace [1] [2]",
+        "abstained": false,
+        "generation_ms": 1427.5920999934897,
+        "model_request_id": "f9061e60aea84866a83b8dc7984fc8b2",
+        "raw_generated_answer": "120 requests per minute per workspace [1] [2]",
+        "end_to_end_ms": 1444.3372999085113
+      },
+      "gold": {
+        "em": 0.0,
+        "f1": 0.8
+      },
+      "retrieval": {
+        "recall_at_k": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "context_precision": 0.5
+      },
+      "judge": {
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate answer correctly states the reference fact, '120 requests per minute per workspace'."
+        },
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate answer correctly states the reference fact, '120 requests per minute per workspace'."
+        },
+        "answer_relevance": {
+          "score": 4,
+          "rationale": "The candidate answer directly addresses the user question, 'What is the public API rate limit for each workspace?'"
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "df9f395f41624cde8728e98b50b0ffa8"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 4.0,
+        "passed": true
+      }
+    },
+    {
+      "id": "q10",
+      "answerable": true,
+      "question": "When should an API client retry after an HTTP 429 response?",
+      "expected_output": "After the Retry-After header interval",
+      "relevant_chunk_ids": [
+        "21d628ee87ca605111a7",
+        "3ee77a3dcad9a5651297"
+      ],
+      "raw_top_k": {
+        "chunks": [
+          {
+            "rowid": 1,
+            "id": "21d628ee87ca605111a7",
+            "document_id": "42920d216ae675d7d549289b398740b40799d1425df06d6a455bebcb9ec0e8fa",
+            "source": "api.html",
+            "page": 1,
+            "ordinal": 0,
+            "category": "developer",
+            "text": "Developer API limits Developer API limits Category: developer Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Developer API limits applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. The public API permits 120 requests per minute per workspace. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. API clients receiving HTTP 429 must wait for the Retry-After header interval before retrying.",
+            "similarity": 0.5461670160293579
+          },
+          {
+            "rowid": 2,
+            "id": "3ee77a3dcad9a5651297",
+            "document_id": "42920d216ae675d7d549289b398740b40799d1425df06d6a455bebcb9ec0e8fa",
+            "source": "api.html",
+            "page": 1,
+            "ordinal": 1,
+            "category": "developer",
+            "text": "agreement. Keep the workspace identifier ready when opening a ticket. API clients receiving HTTP 429 must wait for the Retry-After header interval before retrying. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+            "similarity": 0.516285628080368
+          }
+        ],
+        "embedding_ms": 9.955599904060364,
+        "vector_search_ms": 6.086300010792911,
+        "retrieval_ms": 16.046299948357046
+      },
+      "result": {
+        "query_id": "1e8de3c809d44795a3791276b792a817",
+        "question": "When should an API client retry after an HTTP 429 response?",
+        "category": "developer",
+        "chunk_count": 2,
+        "chunks": [
+          {
+            "rowid": 1,
+            "id": "21d628ee87ca605111a7",
+            "document_id": "42920d216ae675d7d549289b398740b40799d1425df06d6a455bebcb9ec0e8fa",
+            "source": "api.html",
+            "page": 1,
+            "ordinal": 0,
+            "category": "developer",
+            "text": "Developer API limits Developer API limits Category: developer Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Developer API limits applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. The public API permits 120 requests per minute per workspace. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. API clients receiving HTTP 429 must wait for the Retry-After header interval before retrying.",
+            "similarity": 0.5461670160293579
+          },
+          {
+            "rowid": 2,
+            "id": "3ee77a3dcad9a5651297",
+            "document_id": "42920d216ae675d7d549289b398740b40799d1425df06d6a455bebcb9ec0e8fa",
+            "source": "api.html",
+            "page": 1,
+            "ordinal": 1,
+            "category": "developer",
+            "text": "agreement. Keep the workspace identifier ready when opening a ticket. API clients receiving HTTP 429 must wait for the Retry-After header interval before retrying. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+            "similarity": 0.516285628080368
+          }
+        ],
+        "embedding_ms": 6.8134000757709146,
+        "vector_search_ms": 5.270700086839497,
+        "retrieval_ms": 12.08870008122176,
+        "usage": {
+          "completion_tokens": 22,
+          "prompt_tokens": 407,
+          "total_tokens": 429,
+          "prompt_tokens_details": {
+            "cached_tokens": 382
+          }
+        },
+        "generator_model": "qwen2.5-0.5b-instruct-q4_k_m",
+        "citations": [
+          {
+            "label": 1,
+            "chunk_id": "21d628ee87ca605111a7",
+            "source": "api.html",
+            "page": 1
+          },
+          {
+            "label": 2,
+            "chunk_id": "3ee77a3dcad9a5651297",
+            "source": "api.html",
+            "page": 1
+          }
+        ],
+        "answer": "When opening a ticket [1] [2]",
+        "abstained": false,
+        "generation_ms": 1071.6058000689372,
+        "model_request_id": "5c4b6b0f61184202981015e0622e9ac6",
+        "raw_generated_answer": "When opening a ticket [1] [2]",
+        "end_to_end_ms": 1085.1170999230817
+      },
+      "gold": {
+        "em": 0.0,
+        "f1": 0.0
+      },
+      "retrieval": {
+        "recall_at_k": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "context_precision": 1.0
+      },
+      "judge": {
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate answer contains the reference fact correctly, \"After the Retry-After header interval\". The candidate's use"
+        },
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate answer is correct, \"After the Retry-After header interval\". The candidate's use"
+        },
+        "answer_relevance": {
+          "score": 4,
+          "rationale": "The candidate answer directly addresses the user question, \"When should an API client retry after an HTTP 429 response?\""
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "dab16624e5c744bfbfdc07124c3cc625"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 4.0,
+        "passed": true
+      }
+    },
+    {
+      "id": "q11",
+      "answerable": true,
+      "question": "How large can a single uploaded file be?",
+      "expected_output": "25 megabytes",
+      "relevant_chunk_ids": [
+        "60e40b39375c163025c3"
+      ],
+      "raw_top_k": {
+        "chunks": [
+          {
+            "rowid": 15,
+            "id": "60e40b39375c163025c3",
+            "document_id": "da588592b0cfbff751bcab34f6ec7a92f4b9d0f4e68e42e38d2cb0d633bcfd2a",
+            "source": "uploads.pdf",
+            "page": 1,
+            "ordinal": 0,
+            "category": "product",
+            "text": "Uploads and imports Category: product Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Uploads and imports applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. The maximum size of one uploaded file is 25 megabytes. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. Workspace imports accept CSV, Markdown, and plain text files. The service dashboard records the relevant activity so",
+            "similarity": 0.5206055641174316
+          },
+          {
+            "rowid": 16,
+            "id": "8198d70b751af9ce9b67",
+            "document_id": "da588592b0cfbff751bcab34f6ec7a92f4b9d0f4e68e42e38d2cb0d633bcfd2a",
+            "source": "uploads.pdf",
+            "page": 1,
+            "ordinal": 1,
+            "category": "product",
+            "text": "workspace identifier ready when opening a ticket. Workspace imports accept CSV, Markdown, and plain text files. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+            "similarity": 0.06130784749984741
+          }
+        ],
+        "embedding_ms": 7.509800023399293,
+        "vector_search_ms": 10.09549992159009,
+        "retrieval_ms": 17.611099989153445
+      },
+      "result": {
+        "query_id": "05ec6c443af94980b2cb165b57f4c62c",
+        "question": "How large can a single uploaded file be?",
+        "category": "product",
+        "chunk_count": 1,
+        "chunks": [
+          {
+            "rowid": 15,
+            "id": "60e40b39375c163025c3",
+            "document_id": "da588592b0cfbff751bcab34f6ec7a92f4b9d0f4e68e42e38d2cb0d633bcfd2a",
+            "source": "uploads.pdf",
+            "page": 1,
+            "ordinal": 0,
+            "category": "product",
+            "text": "Uploads and imports Category: product Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Uploads and imports applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. The maximum size of one uploaded file is 25 megabytes. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. Workspace imports accept CSV, Markdown, and plain text files. The service dashboard records the relevant activity so",
+            "similarity": 0.5206055641174316
+          }
+        ],
+        "embedding_ms": 6.969299982301891,
+        "vector_search_ms": 6.920999963767827,
+        "retrieval_ms": 13.896299991756678,
+        "usage": {
+          "completion_tokens": 19,
+          "prompt_tokens": 286,
+          "total_tokens": 305,
+          "prompt_tokens_details": {
+            "cached_tokens": 265
+          }
+        },
+        "generator_model": "qwen2.5-0.5b-instruct-q4_k_m",
+        "citations": [
+          {
+            "label": 1,
+            "chunk_id": "60e40b39375c163025c3",
+            "source": "uploads.pdf",
+            "page": 1
+          }
+        ],
+        "answer": "25 megabytes [1]",
+        "abstained": false,
+        "generation_ms": 1068.2945000007749,
+        "model_request_id": "bc8faeecbf7b40cfa019a2f284758f9f",
+        "raw_generated_answer": "25 megabytes [1]",
+        "end_to_end_ms": 1084.3889999669045
+      },
+      "gold": {
+        "em": 1.0,
+        "f1": 1.0
+      },
+      "retrieval": {
+        "recall_at_k": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "context_precision": 0.5
+      },
+      "judge": {
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate answer correctly states the reference fact, '25 megabytes', which is a verified correct fact."
+        },
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate answer correctly answers the question, 'How large can a single uploaded file be?', with the verified fact,"
+        },
+        "answer_relevance": {
+          "score": 4,
+          "rationale": "The candidate answer directly addresses the user question without irrelevant claims."
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "bb509d2718cc464483c23c938602b743"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 4.0,
+        "passed": true
+      }
+    },
+    {
+      "id": "q12",
+      "answerable": true,
+      "question": "Which file formats are accepted for workspace imports?",
+      "expected_output": "CSV, Markdown, and plain text",
+      "relevant_chunk_ids": [
+        "60e40b39375c163025c3",
+        "8198d70b751af9ce9b67"
+      ],
+      "raw_top_k": {
+        "chunks": [
+          {
+            "rowid": 15,
+            "id": "60e40b39375c163025c3",
+            "document_id": "da588592b0cfbff751bcab34f6ec7a92f4b9d0f4e68e42e38d2cb0d633bcfd2a",
+            "source": "uploads.pdf",
+            "page": 1,
+            "ordinal": 0,
+            "category": "product",
+            "text": "Uploads and imports Category: product Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Uploads and imports applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. The maximum size of one uploaded file is 25 megabytes. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. Workspace imports accept CSV, Markdown, and plain text files. The service dashboard records the relevant activity so",
+            "similarity": 0.5085287988185883
+          },
+          {
+            "rowid": 16,
+            "id": "8198d70b751af9ce9b67",
+            "document_id": "da588592b0cfbff751bcab34f6ec7a92f4b9d0f4e68e42e38d2cb0d633bcfd2a",
+            "source": "uploads.pdf",
+            "page": 1,
+            "ordinal": 1,
+            "category": "product",
+            "text": "workspace identifier ready when opening a ticket. Workspace imports accept CSV, Markdown, and plain text files. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+            "similarity": 0.5018721520900726
+          }
+        ],
+        "embedding_ms": 8.139400044456124,
+        "vector_search_ms": 10.91049995739013,
+        "retrieval_ms": 19.05759994406253
+      },
+      "result": {
+        "query_id": "1600c2d9072e4aebb3e2cc1447419af8",
+        "question": "Which file formats are accepted for workspace imports?",
+        "category": "product",
+        "chunk_count": 2,
+        "chunks": [
+          {
+            "rowid": 15,
+            "id": "60e40b39375c163025c3",
+            "document_id": "da588592b0cfbff751bcab34f6ec7a92f4b9d0f4e68e42e38d2cb0d633bcfd2a",
+            "source": "uploads.pdf",
+            "page": 1,
+            "ordinal": 0,
+            "category": "product",
+            "text": "Uploads and imports Category: product Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Uploads and imports applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. The maximum size of one uploaded file is 25 megabytes. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. Workspace imports accept CSV, Markdown, and plain text files. The service dashboard records the relevant activity so",
+            "similarity": 0.5085287988185883
+          },
+          {
+            "rowid": 16,
+            "id": "8198d70b751af9ce9b67",
+            "document_id": "da588592b0cfbff751bcab34f6ec7a92f4b9d0f4e68e42e38d2cb0d633bcfd2a",
+            "source": "uploads.pdf",
+            "page": 1,
+            "ordinal": 1,
+            "category": "product",
+            "text": "workspace identifier ready when opening a ticket. Workspace imports accept CSV, Markdown, and plain text files. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+            "similarity": 0.5018721520900726
+          }
+        ],
+        "embedding_ms": 7.09239998832345,
+        "vector_search_ms": 10.216799913905561,
+        "retrieval_ms": 17.314899945631623,
+        "usage": {
+          "completion_tokens": 36,
+          "prompt_tokens": 389,
+          "total_tokens": 425,
+          "prompt_tokens_details": {
+            "cached_tokens": 265
+          }
+        },
+        "generator_model": "qwen2.5-0.5b-instruct-q4_k_m",
+        "citations": [
+          {
+            "label": 1,
+            "chunk_id": "60e40b39375c163025c3",
+            "source": "uploads.pdf",
+            "page": 1
+          },
+          {
+            "label": 2,
+            "chunk_id": "8198d70b751af9ce9b67",
+            "source": "uploads.pdf",
+            "page": 1
+          }
+        ],
+        "answer": "CSV, Markdown, and plain text files [1] [2]",
+        "abstained": false,
+        "generation_ms": 2553.0193999875337,
+        "model_request_id": "5ad0dfd31b994871a402045840547e51",
+        "raw_generated_answer": "CSV, Markdown, and plain text files [1] [2]",
+        "end_to_end_ms": 2572.512299986556
+      },
+      "gold": {
+        "em": 0.0,
+        "f1": 0.9090909090909091
+      },
+      "retrieval": {
+        "recall_at_k": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "context_precision": 1.0
+      },
+      "judge": {
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate correctly stated the reference fact, which is that CSV, Markdown, and plain text files are accepted for a "
+        },
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate provided the correct answer, which is that CSV, Markdown, and plain text files are accepted for workspace "
+        },
+        "answer_relevance": {
+          "score": 4,
+          "rationale": "The candidate directly addressed the user question, which is about which file formats are accepted for workspace imports"
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "fb2dfb2dc6af435389d627aa16bec0b2"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 4.0,
+        "passed": true
+      }
+    },
+    {
+      "id": "q13",
+      "answerable": true,
+      "question": "What are the standard support hours?",
+      "expected_output": "Monday through Friday from 09:00 to 18:00 UTC",
+      "relevant_chunk_ids": [
+        "0a99c7a782ebca0b47a2"
+      ],
+      "raw_top_k": {
+        "chunks": [
+          {
+            "rowid": 13,
+            "id": "0a99c7a782ebca0b47a2",
+            "document_id": "7d3c1cb919ff0b37c0f747f8408bfc7917347889e18bbb3497b4188ff98c6f16",
+            "source": "support.md",
+            "page": 1,
+            "ordinal": 0,
+            "category": "operations",
+            "text": "# Support coverage Category: operations Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Support coverage applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. Standard support operates Monday through Friday from 09:00 to 18:00 UTC. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. The first response target for a critical Enterprise incident is 1 hour. The service dashboard records the",
+            "similarity": 0.5029779374599457
+          },
+          {
+            "rowid": 3,
+            "id": "e7cca4a92034fffe3b19",
+            "document_id": "7004fd6e4b1002a95d23bc3e3301a26461388554b1c2967d0d81cdf5acb93d87",
+            "source": "backups.md",
+            "page": 1,
+            "ordinal": 0,
+            "category": "operations",
+            "text": "# Backup and recovery Category: operations Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Backup and recovery applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. Automatic workspace backups are retained for 30 days. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. The recovery point objective is 24 hours for standard workspaces. The service dashboard records the relevant activity so",
+            "similarity": 0.3633847236633301
+          },
+          {
+            "rowid": 4,
+            "id": "49ed4fc7e18dcabfcdf7",
+            "document_id": "7004fd6e4b1002a95d23bc3e3301a26461388554b1c2967d0d81cdf5acb93d87",
+            "source": "backups.md",
+            "page": 1,
+            "ordinal": 1,
+            "category": "operations",
+            "text": "identifier ready when opening a ticket. The recovery point objective is 24 hours for standard workspaces. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+            "similarity": 0.36289292573928833
+          }
+        ],
+        "embedding_ms": 6.129499990493059,
+        "vector_search_ms": 8.73379991389811,
+        "retrieval_ms": 14.868399943225086
+      },
+      "result": {
+        "query_id": "63a9c8798a99474ca3bc2180633b48c2",
+        "question": "What are the standard support hours?",
+        "category": "operations",
+        "chunk_count": 1,
+        "chunks": [
+          {
+            "rowid": 13,
+            "id": "0a99c7a782ebca0b47a2",
+            "document_id": "7d3c1cb919ff0b37c0f747f8408bfc7917347889e18bbb3497b4188ff98c6f16",
+            "source": "support.md",
+            "page": 1,
+            "ordinal": 0,
+            "category": "operations",
+            "text": "# Support coverage Category: operations Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Support coverage applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. Standard support operates Monday through Friday from 09:00 to 18:00 UTC. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. The first response target for a critical Enterprise incident is 1 hour. The service dashboard records the",
+            "similarity": 0.5029779374599457
+          }
+        ],
+        "embedding_ms": 8.2719000056386,
+        "vector_search_ms": 10.552400024607778,
+        "retrieval_ms": 18.833699985407293,
+        "usage": {
+          "completion_tokens": 34,
+          "prompt_tokens": 286,
+          "total_tokens": 320,
+          "prompt_tokens_details": {
+            "cached_tokens": 267
+          }
+        },
+        "generator_model": "qwen2.5-0.5b-instruct-q4_k_m",
+        "citations": [
+          {
+            "label": 1,
+            "chunk_id": "0a99c7a782ebca0b47a2",
+            "source": "support.md",
+            "page": 1
+          }
+        ],
+        "answer": "Standard support operates Monday through Friday from 09:00 to 18:00 UTC. [1]",
+        "abstained": false,
+        "generation_ms": 1347.508600098081,
+        "model_request_id": "5afd98313487469b87c22d06714eb9eb",
+        "raw_generated_answer": "Standard support operates Monday through Friday from 09:00 to 18:00 UTC. [1]",
+        "end_to_end_ms": 1368.256299989298
+      },
+      "gold": {
+        "em": 0.0,
+        "f1": 0.8695652173913043
+      },
+      "retrieval": {
+        "recall_at_k": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "context_precision": 0.3333333333333333
+      },
+      "judge": {
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate correctly stated the reference fact, 'Standard support operates Monday through Friday from 09:00 to 18:00'"
+        },
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate provided the correct answer, 'Standard support operates Monday through Friday from 09:00 to 18:00'"
+        },
+        "answer_relevance": {
+          "score": 4,
+          "rationale": "The candidate directly addressed the user question, 'What are the standard support hours?'"
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "c32adecd0dbf4cab86c2dfb07898ca5f"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 4.0,
+        "passed": true
+      }
+    },
+    {
+      "id": "q14",
+      "answerable": true,
+      "question": "What is the first response target for critical Enterprise incidents?",
+      "expected_output": "1 hour",
+      "relevant_chunk_ids": [
+        "0a99c7a782ebca0b47a2",
+        "f7decb9f558229149611"
+      ],
+      "raw_top_k": {
+        "chunks": [
+          {
+            "rowid": 13,
+            "id": "0a99c7a782ebca0b47a2",
+            "document_id": "7d3c1cb919ff0b37c0f747f8408bfc7917347889e18bbb3497b4188ff98c6f16",
+            "source": "support.md",
+            "page": 1,
+            "ordinal": 0,
+            "category": "operations",
+            "text": "# Support coverage Category: operations Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Support coverage applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. Standard support operates Monday through Friday from 09:00 to 18:00 UTC. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. The first response target for a critical Enterprise incident is 1 hour. The service dashboard records the",
+            "similarity": 0.4561883211135864
+          },
+          {
+            "rowid": 14,
+            "id": "f7decb9f558229149611",
+            "document_id": "7d3c1cb919ff0b37c0f747f8408bfc7917347889e18bbb3497b4188ff98c6f16",
+            "source": "support.md",
+            "page": 1,
+            "ordinal": 1,
+            "category": "operations",
+            "text": "workspace identifier ready when opening a ticket. The first response target for a critical Enterprise incident is 1 hour. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+            "similarity": 0.3843972682952881
+          },
+          {
+            "rowid": 4,
+            "id": "49ed4fc7e18dcabfcdf7",
+            "document_id": "7004fd6e4b1002a95d23bc3e3301a26461388554b1c2967d0d81cdf5acb93d87",
+            "source": "backups.md",
+            "page": 1,
+            "ordinal": 1,
+            "category": "operations",
+            "text": "identifier ready when opening a ticket. The recovery point objective is 24 hours for standard workspaces. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+            "similarity": 0.2810359001159668
+          }
+        ],
+        "embedding_ms": 11.646999977529049,
+        "vector_search_ms": 15.31829999294132,
+        "retrieval_ms": 26.977899949997663
+      },
+      "result": {
+        "query_id": "06d35aea0aab4fa1bb0063ddb35337bb",
+        "question": "What is the first response target for critical Enterprise incidents?",
+        "category": "operations",
+        "chunk_count": 2,
+        "chunks": [
+          {
+            "rowid": 13,
+            "id": "0a99c7a782ebca0b47a2",
+            "document_id": "7d3c1cb919ff0b37c0f747f8408bfc7917347889e18bbb3497b4188ff98c6f16",
+            "source": "support.md",
+            "page": 1,
+            "ordinal": 0,
+            "category": "operations",
+            "text": "# Support coverage Category: operations Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Support coverage applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. Standard support operates Monday through Friday from 09:00 to 18:00 UTC. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. The first response target for a critical Enterprise incident is 1 hour. The service dashboard records the",
+            "similarity": 0.4561883211135864
+          },
+          {
+            "rowid": 14,
+            "id": "f7decb9f558229149611",
+            "document_id": "7d3c1cb919ff0b37c0f747f8408bfc7917347889e18bbb3497b4188ff98c6f16",
+            "source": "support.md",
+            "page": 1,
+            "ordinal": 1,
+            "category": "operations",
+            "text": "workspace identifier ready when opening a ticket. The first response target for a critical Enterprise incident is 1 hour. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+            "similarity": 0.3843972682952881
+          }
+        ],
+        "embedding_ms": 21.278500091284513,
+        "vector_search_ms": 10.119799990206957,
+        "retrieval_ms": 31.410600058734417,
+        "usage": {
+          "completion_tokens": 15,
+          "prompt_tokens": 394,
+          "total_tokens": 409,
+          "prompt_tokens_details": {
+            "cached_tokens": 267
+          }
+        },
+        "generator_model": "qwen2.5-0.5b-instruct-q4_k_m",
+        "citations": [
+          {
+            "label": 1,
+            "chunk_id": "0a99c7a782ebca0b47a2",
+            "source": "support.md",
+            "page": 1
+          }
+        ],
+        "answer": "1 hour [1]",
+        "abstained": false,
+        "generation_ms": 2495.0418000807986,
+        "model_request_id": "ee161fce793a4d18a85123de4c776934",
+        "raw_generated_answer": "1 hour [1]",
+        "end_to_end_ms": 2528.8229000288993
+      },
+      "gold": {
+        "em": 1.0,
+        "f1": 1.0
+      },
+      "retrieval": {
+        "recall_at_k": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "context_precision": 0.6666666666666666
+      },
+      "judge": {
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate answer correctly states the reference fact, '1 hour'."
+        },
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate answer is correct and matches the reference fact, '1 hour'."
+        },
+        "answer_relevance": {
+          "score": 4,
+          "rationale": "The candidate answer directly addresses the user question without irrelevant claims."
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "036a4da2b12243cdbbe87dc41153b930"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 4.0,
+        "passed": true
+      }
+    },
+    {
+      "id": "q15",
+      "answerable": true,
+      "question": "How long is the recovery window after account deletion?",
+      "expected_output": "7 days",
+      "relevant_chunk_ids": [
+        "f74f5b8e08ee340f5cf0"
+      ],
+      "raw_top_k": {
+        "chunks": [
+          {
+            "rowid": 9,
+            "id": "f74f5b8e08ee340f5cf0",
+            "document_id": "651161bd0da4c159707073695ce6686adc68f2eab36c2b87bd92091cee4aabae",
+            "source": "retention.html",
+            "page": 1,
+            "ordinal": 0,
+            "category": "security",
+            "text": "Account deletion and exports Account deletion and exports Category: security Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Account deletion and exports applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. Deleted accounts enter a 7 day recovery window before permanent removal. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. Workspace owners can export their notes as a ZIP archive",
+            "similarity": 0.38514113426208496
+          },
+          {
+            "rowid": 12,
+            "id": "43719a6c102d9742e849",
+            "document_id": "ccee5e9cfb34b5cb5706dce126185910e1ad9e49f8c2ef0ca71d7d3a1903ea51",
+            "source": "security.pdf",
+            "page": 1,
+            "ordinal": 1,
+            "category": "security",
+            "text": "when opening a ticket. Single sign-on with SAML is available only on the Enterprise plan. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+            "similarity": 0.2114039659500122
+          },
+          {
+            "rowid": 11,
+            "id": "33d7137681d81680a78f",
+            "document_id": "ccee5e9cfb34b5cb5706dce126185910e1ad9e49f8c2ef0ca71d7d3a1903ea51",
+            "source": "security.pdf",
+            "page": 1,
+            "ordinal": 0,
+            "category": "security",
+            "text": "Workspace security Category: security Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Workspace security applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. All workspace data is encrypted at rest using AES-256. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. Single sign-on with SAML is available only on the Enterprise plan. The service dashboard records the relevant activity so workspace",
+            "similarity": 0.10556292533874512
+          }
+        ],
+        "embedding_ms": 11.13699993584305,
+        "vector_search_ms": 6.504700053483248,
+        "retrieval_ms": 17.647699918597937
+      },
+      "result": {
+        "query_id": "8f6f424d296c4729a9324e237ce8fcde",
+        "question": "How long is the recovery window after account deletion?",
+        "category": "security",
+        "chunk_count": 1,
+        "chunks": [
+          {
+            "rowid": 9,
+            "id": "f74f5b8e08ee340f5cf0",
+            "document_id": "651161bd0da4c159707073695ce6686adc68f2eab36c2b87bd92091cee4aabae",
+            "source": "retention.html",
+            "page": 1,
+            "ordinal": 0,
+            "category": "security",
+            "text": "Account deletion and exports Account deletion and exports Category: security Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Account deletion and exports applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. Deleted accounts enter a 7 day recovery window before permanent removal. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. Workspace owners can export their notes as a ZIP archive",
+            "similarity": 0.38514113426208496
+          }
+        ],
+        "embedding_ms": 6.889500073157251,
+        "vector_search_ms": 6.860999972559512,
+        "retrieval_ms": 13.756000087596476,
+        "usage": {
+          "completion_tokens": 18,
+          "prompt_tokens": 278,
+          "total_tokens": 296,
+          "prompt_tokens_details": {
+            "cached_tokens": 94
+          }
+        },
+        "generator_model": "qwen2.5-0.5b-instruct-q4_k_m",
+        "citations": [
+          {
+            "label": 1,
+            "chunk_id": "f74f5b8e08ee340f5cf0",
+            "source": "retention.html",
+            "page": 1
+          }
+        ],
+        "answer": "7 day recovery window [1]",
+        "abstained": false,
+        "generation_ms": 2200.4084999207407,
+        "model_request_id": "c605c963abaa45b0bc3052c3bfdabf9e",
+        "raw_generated_answer": "7 day recovery window [1]",
+        "end_to_end_ms": 2215.353599982336
+      },
+      "gold": {
+        "em": 0.0,
+        "f1": 0.3333333333333333
+      },
+      "retrieval": {
+        "recall_at_k": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_k": 1.0,
+        "context_precision": 0.3333333333333333
+      },
+      "judge": {
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate answer correctly states the reference fact, '7 days', which is a verified correct fact."
+        },
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate answer correctly answers the question, 'How long is the recovery window after account deletion?', with the"
+        },
+        "answer_relevance": {
+          "score": 4,
+          "rationale": "The candidate answer directly addresses the user question without irrelevant claims."
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "58e0a913b0a1442cac132b3bfbcc791e"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 4.0,
+        "passed": true
+      }
+    },
+    {
+      "id": "q16",
+      "answerable": true,
+      "question": "What format is used when owners export workspace notes?",
+      "expected_output": "A ZIP archive containing Markdown files",
+      "relevant_chunk_ids": [
+        "44545b1a1f311fd33ca5"
+      ],
+      "raw_top_k": {
+        "chunks": [
+          {
+            "rowid": 9,
+            "id": "f74f5b8e08ee340f5cf0",
+            "document_id": "651161bd0da4c159707073695ce6686adc68f2eab36c2b87bd92091cee4aabae",
+            "source": "retention.html",
+            "page": 1,
+            "ordinal": 0,
+            "category": "security",
+            "text": "Account deletion and exports Account deletion and exports Category: security Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Account deletion and exports applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. Deleted accounts enter a 7 day recovery window before permanent removal. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. Workspace owners can export their notes as a ZIP archive",
+            "similarity": 0.5888936221599579
+          },
+          {
+            "rowid": 10,
+            "id": "44545b1a1f311fd33ca5",
+            "document_id": "651161bd0da4c159707073695ce6686adc68f2eab36c2b87bd92091cee4aabae",
+            "source": "retention.html",
+            "page": 1,
+            "ordinal": 1,
+            "category": "security",
+            "text": "silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. Workspace owners can export their notes as a ZIP archive containing Markdown files. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+            "similarity": 0.569692999124527
+          },
+          {
+            "rowid": 11,
+            "id": "33d7137681d81680a78f",
+            "document_id": "ccee5e9cfb34b5cb5706dce126185910e1ad9e49f8c2ef0ca71d7d3a1903ea51",
+            "source": "security.pdf",
+            "page": 1,
+            "ordinal": 0,
+            "category": "security",
+            "text": "Workspace security Category: security Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Workspace security applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. All workspace data is encrypted at rest using AES-256. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. Single sign-on with SAML is available only on the Enterprise plan. The service dashboard records the relevant activity so workspace",
+            "similarity": 0.367262065410614
+          }
+        ],
+        "embedding_ms": 7.020300021395087,
+        "vector_search_ms": 5.967900040559471,
+        "retrieval_ms": 12.993200100027025
+      },
+      "result": {
+        "query_id": "1d45f2285c8c468c9c123f05542a24ba",
+        "question": "What format is used when owners export workspace notes?",
+        "category": "security",
+        "chunk_count": 2,
+        "chunks": [
+          {
+            "rowid": 9,
+            "id": "f74f5b8e08ee340f5cf0",
+            "document_id": "651161bd0da4c159707073695ce6686adc68f2eab36c2b87bd92091cee4aabae",
+            "source": "retention.html",
+            "page": 1,
+            "ordinal": 0,
+            "category": "security",
+            "text": "Account deletion and exports Account deletion and exports Category: security Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Account deletion and exports applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. Deleted accounts enter a 7 day recovery window before permanent removal. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. Workspace owners can export their notes as a ZIP archive",
+            "similarity": 0.5888936221599579
+          },
+          {
+            "rowid": 10,
+            "id": "44545b1a1f311fd33ca5",
+            "document_id": "651161bd0da4c159707073695ce6686adc68f2eab36c2b87bd92091cee4aabae",
+            "source": "retention.html",
+            "page": 1,
+            "ordinal": 1,
+            "category": "security",
+            "text": "silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. Workspace owners can export their notes as a ZIP archive containing Markdown files. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+            "similarity": 0.569692999124527
+          }
+        ],
+        "embedding_ms": 7.66590004786849,
+        "vector_search_ms": 5.437299958430231,
+        "retrieval_ms": 13.10790004208684,
+        "usage": {
+          "completion_tokens": 34,
+          "prompt_tokens": 393,
+          "total_tokens": 427,
+          "prompt_tokens_details": {
+            "cached_tokens": 256
+          }
+        },
+        "generator_model": "qwen2.5-0.5b-instruct-q4_k_m",
+        "citations": [
+          {
+            "label": 1,
+            "chunk_id": "f74f5b8e08ee340f5cf0",
+            "source": "retention.html",
+            "page": 1
+          },
+          {
+            "label": 2,
+            "chunk_id": "44545b1a1f311fd33ca5",
+            "source": "retention.html",
+            "page": 1
+          }
+        ],
+        "answer": "Markdown files [1] [2]",
+        "abstained": false,
+        "generation_ms": 2511.43079996109,
+        "model_request_id": "85f9d5434af041b79e3a1d8fdacd1cdd",
+        "raw_generated_answer": "Markdown files [1] [2]",
+        "end_to_end_ms": 2525.7983000483364
+      },
+      "gold": {
+        "em": 0.0,
+        "f1": 0.5
+      },
+      "retrieval": {
+        "recall_at_k": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 0.5,
+        "ndcg_at_k": 0.6309297535714575,
+        "context_precision": 0.3333333333333333
+      },
+      "judge": {
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate correctly states that the format used when owners export workspace notes is Markdown files. The reference "
+        },
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate correctly states that the format used when owners export workspace notes is Markdown files. The reference "
+        },
+        "answer_relevance": {
+          "score": 4,
+          "rationale": "The candidate directly addresses the user question without irrelevant claims. The answer is relevant to the user's query"
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "4a3f92138d0b4fd69a0513675460d80c"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 4.0,
+        "passed": true
+      }
+    },
+    {
+      "id": "q17",
+      "answerable": false,
+      "question": "What is the orbital period of the planet Neptune?",
+      "expected_output": "I could not find relevant context in the supplied documents.",
+      "relevant_chunk_ids": [],
+      "raw_top_k": {
+        "chunks": [
+          {
+            "rowid": 4,
+            "id": "49ed4fc7e18dcabfcdf7",
+            "document_id": "7004fd6e4b1002a95d23bc3e3301a26461388554b1c2967d0d81cdf5acb93d87",
+            "source": "backups.md",
+            "page": 1,
+            "ordinal": 1,
+            "category": "operations",
+            "text": "identifier ready when opening a ticket. The recovery point objective is 24 hours for standard workspaces. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+            "similarity": 0.15021997690200806
+          },
+          {
+            "rowid": 14,
+            "id": "f7decb9f558229149611",
+            "document_id": "7d3c1cb919ff0b37c0f747f8408bfc7917347889e18bbb3497b4188ff98c6f16",
+            "source": "support.md",
+            "page": 1,
+            "ordinal": 1,
+            "category": "operations",
+            "text": "workspace identifier ready when opening a ticket. The first response target for a critical Enterprise incident is 1 hour. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+            "similarity": 0.13561230897903442
+          },
+          {
+            "rowid": 11,
+            "id": "33d7137681d81680a78f",
+            "document_id": "ccee5e9cfb34b5cb5706dce126185910e1ad9e49f8c2ef0ca71d7d3a1903ea51",
+            "source": "security.pdf",
+            "page": 1,
+            "ordinal": 0,
+            "category": "security",
+            "text": "Workspace security Category: security Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Workspace security applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. All workspace data is encrypted at rest using AES-256. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. Single sign-on with SAML is available only on the Enterprise plan. The service dashboard records the relevant activity so workspace",
+            "similarity": 0.13499748706817627
+          }
+        ],
+        "embedding_ms": 9.04799997806549,
+        "vector_search_ms": 7.033800007775426,
+        "retrieval_ms": 16.08560001477599
+      },
+      "result": {
+        "query_id": "f8c4038e3dd044ebab77d91755d65af5",
+        "question": "What is the orbital period of the planet Neptune?",
+        "category": null,
+        "chunk_count": 0,
+        "chunks": [],
+        "embedding_ms": 7.053399924188852,
+        "vector_search_ms": 9.075799956917763,
+        "retrieval_ms": 16.135599929839373,
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "total_tokens": 0
+        },
+        "generator_model": "qwen2.5-0.5b-instruct-q4_k_m",
+        "citations": [],
+        "answer": "I could not find relevant context in the supplied documents.",
+        "abstained": true,
+        "reason": "no_relevant_context",
+        "end_to_end_ms": 16.20449998881668
+      },
+      "gold": {
+        "em": 1.0,
+        "f1": 1.0
+      },
+      "judge": {
+        "faithfulness": {
+          "score": 0,
+          "rationale": "No relevant context was provided in the supplied documents."
+        },
+        "correctness": {
+          "score": 0,
+          "rationale": "No relevant facts were provided in the supplied documents."
+        },
+        "answer_relevance": {
+          "score": 0,
+          "rationale": "No relevant information was provided in the supplied documents."
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "098e6c3de7954bb0a7554cbf4ecbc852"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 0.0,
+        "passed": false
+      }
+    },
+    {
+      "id": "q18",
+      "answerable": false,
+      "question": "What were the results of the 2026 Martian football championship?",
+      "expected_output": "I could not find relevant context in the supplied documents.",
+      "relevant_chunk_ids": [],
+      "raw_top_k": {
+        "chunks": [
+          {
+            "rowid": 13,
+            "id": "0a99c7a782ebca0b47a2",
+            "document_id": "7d3c1cb919ff0b37c0f747f8408bfc7917347889e18bbb3497b4188ff98c6f16",
+            "source": "support.md",
+            "page": 1,
+            "ordinal": 0,
+            "category": "operations",
+            "text": "# Support coverage Category: operations Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Support coverage applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. Standard support operates Monday through Friday from 09:00 to 18:00 UTC. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. The first response target for a critical Enterprise incident is 1 hour. The service dashboard records the",
+            "similarity": 0.0876842737197876
+          },
+          {
+            "rowid": 1,
+            "id": "21d628ee87ca605111a7",
+            "document_id": "42920d216ae675d7d549289b398740b40799d1425df06d6a455bebcb9ec0e8fa",
+            "source": "api.html",
+            "page": 1,
+            "ordinal": 0,
+            "category": "developer",
+            "text": "Developer API limits Developer API limits Category: developer Northstar Notes is a fictional collaborative notebook service. This document is synthetic evaluation data, not a real commercial policy. Developer API limits applies to all eligible workspaces unless a signed contract explicitly overrides it. Administrators should share this guidance with workspace members when explaining service behavior. The public API permits 120 requests per minute per workspace. This rule is published in the workspace handbook. Contact the workspace owner if you cannot locate the related setting. Support staff can explain the published rule but cannot silently change a signed agreement. Keep the workspace identifier ready when opening a ticket. API clients receiving HTTP 429 must wait for the Retry-After header interval before retrying.",
+            "similarity": 0.08161556720733643
+          },
+          {
+            "rowid": 8,
+            "id": "5053d9ca97550fc869d4",
+            "document_id": "c08694c2dc27f4216c8b7bcc9143054e86ec20ef3bb5d6c993ae6df102f2dffd",
+            "source": "refunds.md",
+            "page": 1,
+            "ordinal": 1,
+            "category": "billing",
+            "text": "agreement. Keep the workspace identifier ready when opening a ticket. Approved refunds return to the original payment method within 5 business days. The service dashboard records the relevant activity so workspace administrators can review it. The support team does not require users to disclose their passwords. Questions about an exception must be directed to support with the affected workspace identifier. This document intentionally omits future features and unpublished policies.",
+            "similarity": 0.07776683568954468
+          }
+        ],
+        "embedding_ms": 9.56199993379414,
+        "vector_search_ms": 6.779099931009114,
+        "retrieval_ms": 16.345799900591373
+      },
+      "result": {
+        "query_id": "15b90ac579d04512a230176eed4d2abf",
+        "question": "What were the results of the 2026 Martian football championship?",
+        "category": null,
+        "chunk_count": 0,
+        "chunks": [],
+        "embedding_ms": 6.25690002925694,
+        "vector_search_ms": 7.822000072337687,
+        "retrieval_ms": 14.083600020967424,
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "total_tokens": 0
+        },
+        "generator_model": "qwen2.5-0.5b-instruct-q4_k_m",
+        "citations": [],
+        "answer": "I could not find relevant context in the supplied documents.",
+        "abstained": true,
+        "reason": "no_relevant_context",
+        "end_to_end_ms": 14.146100031211972
+      },
+      "gold": {
+        "em": 1.0,
+        "f1": 1.0
+      },
+      "judge": {
+        "faithfulness": {
+          "score": 0,
+          "rationale": "No relevant context was provided in the supplied documents."
+        },
+        "correctness": {
+          "score": 0,
+          "rationale": "No reference facts were provided in the supplied documents."
+        },
+        "answer_relevance": {
+          "score": 0,
+          "rationale": "No relevant information was provided in the supplied documents to answer the user question."
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "624d60c01563436aabbcee4d2c104468"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 0.0,
+        "passed": false
+      }
+    },
+    {
+      "id": "q19",
+      "answerable": false,
+      "question": "What is the Team plan price?",
+      "expected_output": "I could not find relevant context in the supplied documents.",
+      "relevant_chunk_ids": [],
+      "raw_top_k": {
+        "chunks": [],
+        "embedding_ms": 5.422999965958297,
+        "vector_search_ms": 6.91019999794662,
+        "retrieval_ms": 12.33880000654608
+      },
+      "result": {
+        "query_id": "1acaaf22164f4cacb091f86812b5fb3d",
+        "question": "What is the Team plan price?",
+        "category": "nonexistent-category",
+        "chunk_count": 0,
+        "chunks": [],
+        "embedding_ms": 5.81090000923723,
+        "vector_search_ms": 5.345500074326992,
+        "retrieval_ms": 11.161500005982816,
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "total_tokens": 0
+        },
+        "generator_model": "qwen2.5-0.5b-instruct-q4_k_m",
+        "citations": [],
+        "answer": "I could not find relevant context in the supplied documents.",
+        "abstained": true,
+        "reason": "no_relevant_context",
+        "end_to_end_ms": 11.221900000236928
+      },
+      "gold": {
+        "em": 1.0,
+        "f1": 1.0
+      },
+      "judge": {
+        "faithfulness": {
+          "score": 0,
+          "rationale": "No relevant context was provided in the supplied documents."
+        },
+        "correctness": {
+          "score": 0,
+          "rationale": "No reference facts were provided in the supplied documents."
+        },
+        "answer_relevance": {
+          "score": 0,
+          "rationale": "No direct answer to the user question was provided in the supplied documents."
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "f556861e2bff44a68f7577d2cdfd57cc"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 0.0,
+        "passed": false
+      }
+    },
+    {
+      "id": "q20",
+      "answerable": false,
+      "question": "What is the password of the CEO?",
+      "expected_output": "I could not find relevant context in the supplied documents.",
+      "relevant_chunk_ids": [],
+      "raw_top_k": {
+        "chunks": [],
+        "embedding_ms": 7.106499979272485,
+        "vector_search_ms": 5.7380999205634,
+        "retrieval_ms": 12.84979993943125
+      },
+      "result": {
+        "query_id": "a4cc1c2ceca64e94ae857324afa97e79",
+        "question": "What is the password of the CEO?",
+        "category": "nonexistent-category",
+        "chunk_count": 0,
+        "chunks": [],
+        "embedding_ms": 4.93970001116395,
+        "vector_search_ms": 5.514299962669611,
+        "retrieval_ms": 10.458300006575882,
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "total_tokens": 0
+        },
+        "generator_model": "qwen2.5-0.5b-instruct-q4_k_m",
+        "citations": [],
+        "answer": "I could not find relevant context in the supplied documents.",
+        "abstained": true,
+        "reason": "no_relevant_context",
+        "end_to_end_ms": 10.5103999376297
+      },
+      "gold": {
+        "em": 1.0,
+        "f1": 1.0
+      },
+      "judge": {
+        "faithfulness": {
+          "score": 0,
+          "rationale": "No relevant context was provided in the supplied documents."
+        },
+        "correctness": {
+          "score": 0,
+          "rationale": "No reference facts were provided in the supplied documents."
+        },
+        "answer_relevance": {
+          "score": 0,
+          "rationale": "No direct answer to the user question was provided in the supplied documents."
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "d9e930af18fe4661baee618faf64b785"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 0.0,
+        "passed": false
+      }
+    }
+  ],
+  "summary": {
+    "retrieval": {
+      "recall_at_k": 1.0,
+      "hit_rate": 1.0,
+      "mrr": 0.96875,
+      "ndcg_at_k": 0.9769331095982161,
+      "context_precision": 0.5416666666666666
+    },
+    "answer_quality": {
+      "faithfulness_mean_0_to_4": 3.2,
+      "answer_relevance_mean_0_to_4": 3.2,
+      "judge_errors": 0,
+      "em": 0.65,
+      "f1": 0.8455994729907773,
+      "answerable_em": 0.5625,
+      "answerable_f1": 0.8069993412384717,
+      "note": "Independent per-criterion LLM judgments. Small local judge is noisy; inspect raw per-case evidence."
+    },
+    "negative_abstention_rate": 1.0,
+    "answerable_abstention_rate": 0.0,
+    "latency": {
+      "retrieval_p50_ms": 16.15710003534332,
+      "retrieval_p95_ms": 19.820695038652044,
+      "retrieval_samples": 100,
+      "end_to_end_p95_ms": 2596.7478649865375,
+      "conditions": "Warm process, serial requests, query embedding + sqlite search + connection included; excludes LLM for retrieval timings."
+    },
+    "generator_usage": {
+      "prompt_tokens": 5855,
+      "completion_tokens": 389,
+      "total_tokens": 6244
+    },
+    "generator_calls": 16,
+    "judge_usage": {
+      "prompt_tokens": 11558,
+      "completion_tokens": 2274,
+      "total_tokens": 13832
+    },
+    "judge_calls": 20
+  }
+}

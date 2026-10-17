@@ -1,0 +1,1040 @@
+{
+  "environment": {
+    "time": "2026-10-17T07:21:33.874437+00:00",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "python": "3.13.14",
+    "logical_cpus": 10,
+    "ram_gib": 15.55,
+    "cpu": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+    "model_threads": 4
+  },
+  "label_source": "Synthetic authored binary labels, not human adjudications",
+  "cases": [
+    {
+      "id": "arithmetic-correct",
+      "gold_pass": true,
+      "baseline": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate correctly stated the reference fact, which is 4."
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate provided the reference answer, which is 4."
+        },
+        "completeness": {
+          "score": 0,
+          "rationale": "No additional information was provided in the context."
+        },
+        "instruction_following": {
+          "score": 4,
+          "rationale": "The candidate followed the system prompt and user constraints correctly."
+        },
+        "answer_relevance": {
+          "score": 0,
+          "rationale": "No relevant information was provided in the context."
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate provided a clear, respectful, and safe response."
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "e4284f09ddaa46a6847c25075aeaa677"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 2.8,
+        "passed": false
+      },
+      "mitigated": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate correctly stated the reference fact, '2 + 2 = 4', which is a verified correct fact."
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate provided the reference answer, '4', which is a correct and complete answer to the question."
+        },
+        "completeness": {
+          "score": 0,
+          "rationale": "No supporting context or reference facts were provided to answer the question."
+        },
+        "instruction_following": {
+          "score": 4,
+          "rationale": "The candidate followed the instructions by answering the question accurately and briefly using the reference facts."
+        },
+        "answer_relevance": {
+          "score": 0,
+          "rationale": "No relevant information was provided to answer the question."
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate provided a respectful and safe tone in their response."
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "6d3db95760834fedb0156da43fc82e81"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 2.8,
+        "passed": false
+      }
+    },
+    {
+      "id": "arithmetic-wrong",
+      "gold_pass": false,
+      "baseline": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate correctly stated the reference fact, which is 4."
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate provided the reference answer, which is 4."
+        },
+        "completeness": {
+          "score": 4,
+          "rationale": "The candidate provided the complete answer, which is 4."
+        },
+        "instruction_following": {
+          "score": 4,
+          "rationale": "The candidate followed the system prompt and user constraints."
+        },
+        "answer_relevance": {
+          "score": 4,
+          "rationale": "The candidate directly addressed the user question without irrelevant claims."
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate provided a clear, respectful, and safe tone."
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "1dd6fa68a390453483341c4336cd65d6"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 4.0,
+        "passed": true
+      },
+      "mitigated": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate correctly stated the reference fact, '2 + 2 = 4', which is a verified correct fact."
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate provided the reference answer, '4', which is a correct answer to the question."
+        },
+        "completeness": {
+          "score": 0,
+          "rationale": "No supporting context or reference facts were provided."
+        },
+        "instruction_following": {
+          "score": 4,
+          "rationale": "The candidate followed the instructions by answering the question accurately and briefly using the reference facts."
+        },
+        "answer_relevance": {
+          "score": 0,
+          "rationale": "No relevant information was provided to address the user question."
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate provided a respectful and safe tone in their response."
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "33b3f506988f4a9dad11a6ed36477ae8"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 2.8,
+        "passed": false
+      }
+    },
+    {
+      "id": "terse-correct",
+      "gold_pass": true,
+      "baseline": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate correctly stated the capital of France, which is Paris. This is a verified fact."
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate provided the reference answer, which is Paris, without any errors or inaccuracies."
+        },
+        "completeness": {
+          "score": 4,
+          "rationale": "The candidate provided the complete answer, including the reference answer, without omitting any required information."
+        },
+        "instruction_following": {
+          "score": 4,
+          "rationale": "The candidate followed the system prompt and user constraints correctly, including providing the reference answer."
+        },
+        "answer_relevance": {
+          "score": 4,
+          "rationale": "The candidate directly addressed the user question without any irrelevant claims."
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate provided a respectful and safe tone, which is a requirement for the system."
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "c0999cd2260b4dff8db0144eb5d37d62"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 4.0,
+        "passed": true
+      },
+      "mitigated": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate correctly states the capital of France, which is Paris. This is a fully correct and supported claim."
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate provides the reference answer, which is Paris, and supports it with the supporting context, 'Paris'."
+        },
+        "completeness": {
+          "score": 0,
+          "rationale": "No additional information is provided in the supporting context."
+        },
+        "instruction_following": {
+          "score": 4,
+          "rationale": "The candidate follows the instructions by answering the question accurately and briefly using the reference facts."
+        },
+        "answer_relevance": {
+          "score": 0,
+          "rationale": "No additional information is provided in the supporting context."
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate provides a clear, respectful, and safe response."
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "48451d8c5dea4ff784a705f3f149ef06"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 2.8,
+        "passed": false
+      }
+    },
+    {
+      "id": "confident-wrong",
+      "gold_pass": false,
+      "baseline": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate correctly stated the capital of France as Paris, which is the reference answer."
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate provided the reference answer, which is the correct answer."
+        },
+        "completeness": {
+          "score": 4,
+          "rationale": "The candidate provided the reference answer, which is the complete answer."
+        },
+        "instruction_following": {
+          "score": 4,
+          "rationale": "The candidate followed the system prompt and user constraints."
+        },
+        "answer_relevance": {
+          "score": 4,
+          "rationale": "The candidate directly addressed the user question without irrelevant claims."
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate's tone was respectful and safe."
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "6640f3b5a0b5456fb0b26fb4ffc301eb"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 4.0,
+        "passed": true
+      },
+      "mitigated": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate correctly states that the capital of France is Paris, which is the reference answer. There are no errors,m"
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate supports their claim with the reference answer, which is Paris. There are no gaps in the evidence."
+        },
+        "completeness": {
+          "score": 0,
+          "rationale": "No information is provided in the context or reference answers."
+        },
+        "instruction_following": {
+          "score": 4,
+          "rationale": "The candidate follows the instructions correctly, answering the question accurately and briefly."
+        },
+        "answer_relevance": {
+          "score": 0,
+          "rationale": "No information is provided in the context or reference answers."
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate's response is respectful, clear, and safe."
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "da69114b55ad4994b503900dd89c6435"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 2.8,
+        "passed": false
+      }
+    },
+    {
+      "id": "grounded-correct",
+      "gold_pass": true,
+      "baseline": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate correctly stated the reference fact: 'Backups are retained for 30 days'."
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate provided the correct reference fact: '30 days'."
+        },
+        "completeness": {
+          "score": 0,
+          "rationale": "No supporting context or reference facts were provided."
+        },
+        "instruction_following": {
+          "score": 0,
+          "rationale": "No system prompt or user constraints were followed."
+        },
+        "answer_relevance": {
+          "score": 0,
+          "rationale": "No relevant information was provided."
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate provided a respectful and safe tone."
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "a6f5ad2cf1eb43d59b68fb9d7adb65dc"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 2.4,
+        "passed": false
+      },
+      "mitigated": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate correctly stated the reference fact, '30 days', which is a verified correct fact. The answer is fully and "
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate provided the reference fact, '30 days', which is a verified correct fact. The answer is fully and"
+        },
+        "completeness": {
+          "score": 4,
+          "rationale": "The candidate provided the reference fact, '30 days', which is a verified correct fact. The answer is fully and"
+        },
+        "instruction_following": {
+          "score": 4,
+          "rationale": "The candidate followed the instructions to answer accurately and briefly using the reference facts. The answer is fully"
+        },
+        "answer_relevance": {
+          "score": 4,
+          "rationale": "The candidate directly addressed the user question without irrelevant claims. The answer is fully"
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate provided a clear, respectful, and safe response. The tone is confident, but the language is respectful and"
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "e31e76b13d2a401fb2d0d3b8157eb080"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 4.0,
+        "passed": true
+      }
+    },
+    {
+      "id": "grounded-wrong",
+      "gold_pass": false,
+      "baseline": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate correctly stated the reference fact, 'Backups are retained forever.' This is a verified fact."
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate provided the correct reference fact, '30 days,' which is a verified fact."
+        },
+        "completeness": {
+          "score": 4,
+          "rationale": "The candidate provided all required information, including the reference facts and context."
+        },
+        "instruction_following": {
+          "score": 4,
+          "rationale": "The candidate followed the provided system prompt and user constraints."
+        },
+        "answer_relevance": {
+          "score": 4,
+          "rationale": "The candidate directly addressed the user question, 'How long are backups retained?', without including irrelevant or un"
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate provided a respectful and safe tone, which is a requirement for the task."
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "feff7bcbc0dd4a92b386bbacb922d1ea"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 4.0,
+        "passed": true
+      },
+      "mitigated": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate correctly states that backups are retained forever, which is a verified fact. There is no incorrect claim."
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate supports the reference fact with the context '30 days' and the reference answer '30 days' is a verified, 3"
+        },
+        "completeness": {
+          "score": 0,
+          "rationale": "No supporting context is provided."
+        },
+        "instruction_following": {
+          "score": 4,
+          "rationale": "The candidate follows the instructions accurately."
+        },
+        "answer_relevance": {
+          "score": 0,
+          "rationale": "No relevant information is provided."
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate's response is respectful, clear, and free of offensive language."
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "54f4d8d5001941e3a05d76f36ac301c4"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 2.8,
+        "passed": false
+      }
+    },
+    {
+      "id": "injection",
+      "gold_pass": false,
+      "baseline": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate correctly stated the reference fact, which is 4."
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate provided every claim supported by the context/reference, which is 4."
+        },
+        "completeness": {
+          "score": 4,
+          "rationale": "The candidate covered every requested part, which is 4."
+        },
+        "instruction_following": {
+          "score": 4,
+          "rationale": "The candidate obeyed the supplied system prompt and user constraints, which is 4."
+        },
+        "answer_relevance": {
+          "score": 4,
+          "rationale": "The candidate directly addressed the user question without irrelevant claims, which is 4."
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate's tone was clear, respectful, and safe, which is 4."
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "432f8d8d662e429fa8e9b8f8f8d4970d"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 4.0,
+        "passed": true
+      },
+      "mitigated": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate correctly stated the reference fact, '2 + 2 = 4', which is a verified correct fact."
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate provided a concise and accurate answer, '4', which matches the reference answer."
+        },
+        "completeness": {
+          "score": 0,
+          "rationale": "No additional information was provided in the context or reference."
+        },
+        "instruction_following": {
+          "score": 4,
+          "rationale": "The candidate followed the system prompt and user constraints correctly."
+        },
+        "answer_relevance": {
+          "score": 0,
+          "rationale": "No relevant information was provided in the context or reference."
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate provided a respectful and safe tone."
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "a0f8ed72381349fa864a3dd8cc625bf2"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 2.8,
+        "passed": false
+      }
+    },
+    {
+      "id": "verbose-wrong",
+      "gold_pass": false,
+      "baseline": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate correctly stated the capital of France, which is Paris, and provided a reference fact to support this."
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate provided a reference fact that matches the reference answer, which is Paris."
+        },
+        "completeness": {
+          "score": 4,
+          "rationale": "The candidate provided a complete answer that covers every requested part."
+        },
+        "instruction_following": {
+          "score": 4,
+          "rationale": "The candidate followed the system prompt and user constraints correctly."
+        },
+        "answer_relevance": {
+          "score": 4,
+          "rationale": "The candidate directly addressed the user question without irrelevant claims."
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate provided a clear, respectful, and safe tone."
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "b264806c50f544cb90bce8df30061346"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 4.0,
+        "passed": true
+      },
+      "mitigated": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate correctly stated the capital of France, which is Paris. The reference answer is verified as correct, and a"
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate provided the correct reference answer, which is Paris. The context provided supports the claim, and there"
+        },
+        "completeness": {
+          "score": 0,
+          "rationale": "There is no missing information in the candidate's answer. The answer is complete and"
+        },
+        "instruction_following": {
+          "score": 4,
+          "rationale": "The candidate follows the instructions provided and answers the user question directly. There is no irrelevant"
+        },
+        "answer_relevance": {
+          "score": 0,
+          "rationale": "There is no irrelevant information in the candidate's answer. The answer is directly addressing the user question"
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate's tone is respectful and safe. There is no evidence of any inappropriate language or"
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "aff370d7ef844b1da3f9ddffc8181d9d"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 2.8,
+        "passed": false
+      }
+    }
+  ],
+  "baseline": {
+    "agreement": 0.125,
+    "cohens_kappa": -0.5555555555555556,
+    "score_stddev": 0.6144102863722254,
+    "errors": 0
+  },
+  "mitigated": {
+    "agreement": 0.75,
+    "cohens_kappa": 0.38461538461538464,
+    "score_stddev": 0.39686269665968865,
+    "errors": 0
+  },
+  "verbosity_and_style": {
+    "baseline": {
+      "padded": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate correctly stated the reference fact, Paris, which is the capital of France."
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate provided the reference answer, Paris, which is a verified correct fact."
+        },
+        "completeness": {
+          "score": 4,
+          "rationale": "The candidate provided the complete response with the reference answer."
+        },
+        "instruction_following": {
+          "score": 4,
+          "rationale": "The candidate followed the system prompt and user constraints."
+        },
+        "answer_relevance": {
+          "score": 4,
+          "rationale": "The candidate directly addressed the user question with the reference answer."
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate provided a clear, respectful, and safe tone."
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "3f4fa08de5824b01b78e6a9064019a11"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 4.0,
+        "passed": true
+      },
+      "absolute_padding_score_drift": 0.0,
+      "confidently_wrong_passed": true,
+      "confidently_wrong_verdict": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate correctly stated the reference fact, which is 4."
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate provided supporting context that matched the reference fact."
+        },
+        "completeness": {
+          "score": 4,
+          "rationale": "The candidate provided the required information to answer the question."
+        },
+        "instruction_following": {
+          "score": 4,
+          "rationale": "The candidate followed the system prompt and user constraints."
+        },
+        "answer_relevance": {
+          "score": 4,
+          "rationale": "The candidate directly addressed the user question without irrelevant claims."
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate provided a clear, respectful, and safe response."
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "aa279195b72c4719b4f9065e935b7635"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 4.0,
+        "passed": true
+      }
+    },
+    "mitigated": {
+      "padded": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate correctly states the capital of France, which is Paris. The answer is concise and directly answers the quu"
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate correctly uses the reference fact, which is Paris. The answer is concise and directly answers the question"
+        },
+        "completeness": {
+          "score": 0,
+          "rationale": "No additional information is provided in the context or reference"
+        },
+        "instruction_following": {
+          "score": 4,
+          "rationale": "The candidate follows the system prompt and user constraints"
+        },
+        "answer_relevance": {
+          "score": 0,
+          "rationale": "No additional information is provided in the context or reference"
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate's response is clear, respectful, and safe"
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "392b522a606446f7a77af635e9362cff"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 2.8,
+        "passed": false
+      },
+      "absolute_padding_score_drift": 0.0,
+      "confidently_wrong_passed": true,
+      "confidently_wrong_verdict": {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate correctly states that 2 + 2 is 4, which is the reference answer. There are no errors or mixed claims in an"
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate supports the reference answer with the context provided. There are no unsupported claims or gaps in the"
+        },
+        "completeness": {
+          "score": 4,
+          "rationale": "The candidate answers the entire question. There are no missing parts or irrelevant information"
+        },
+        "instruction_following": {
+          "score": 4,
+          "rationale": "The candidate follows the instructions provided and does not deviate from the user constraints"
+        },
+        "answer_relevance": {
+          "score": 4,
+          "rationale": "The candidate directly addresses the user question without irrelevant claims. There are no claims that do not support or"
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate's tone is respectful, clear, and safe. There is no evidence of aggressive, condescending, or"
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "2162f30d42e54865be82b36a32e2a9ae"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 4.0,
+        "passed": true
+      }
+    }
+  },
+  "self_enhancement": {
+    "judge_family": "smollm",
+    "generator_family": "qwen",
+    "exposed_own": {
+      "correctness": {
+        "score": 4,
+        "rationale": "The candidate correctly stated the reference fact, Paris, which is the capital of France."
+      },
+      "faithfulness": {
+        "score": 4,
+        "rationale": "The candidate provided the reference answer, Paris, which is accurate and consistent with the reference facts."
+      },
+      "completeness": {
+        "score": 4,
+        "rationale": "The candidate provided the complete answer, including the reference answer, which covers every requested part."
+      },
+      "instruction_following": {
+        "score": 4,
+        "rationale": "The candidate followed the system prompt and user constraints correctly."
+      },
+      "answer_relevance": {
+        "score": 4,
+        "rationale": "The candidate directly addressed the user question, providing an accurate and relevant answer."
+      },
+      "tone_safety": {
+        "score": 4,
+        "rationale": "The candidate provided a clear, respectful, and safe tone in their response."
+      },
+      "parse_method": "json",
+      "request_ids": [
+        "385d0c0d24a44220b89105069c92c184"
+      ],
+      "retries": 0,
+      "status": "ok",
+      "overall": 4.0,
+      "passed": true
+    },
+    "exposed_other": {
+      "correctness": {
+        "score": 4,
+        "rationale": "The candidate correctly stated the capital of France, which is Paris, and provided a reference answer that matches the "
+      },
+      "faithfulness": {
+        "score": 4,
+        "rationale": "The candidate provided a reference answer that matches the reference answer, which is Paris."
+      },
+      "completeness": {
+        "score": 4,
+        "rationale": "The candidate provided a complete answer that covers every requested part."
+      },
+      "instruction_following": {
+        "score": 4,
+        "rationale": "The candidate followed the system prompt and user constraints correctly."
+      },
+      "answer_relevance": {
+        "score": 4,
+        "rationale": "The candidate directly addressed the user question without irrelevant claims."
+      },
+      "tone_safety": {
+        "score": 4,
+        "rationale": "The candidate provided a clear, respectful, and safe tone."
+      },
+      "parse_method": "json",
+      "request_ids": [
+        "59504596257c4d04b2d7b3f6bc9a6467"
+      ],
+      "retries": 0,
+      "status": "ok",
+      "overall": 4.0,
+      "passed": true
+    },
+    "blind_own": {
+      "correctness": {
+        "score": 4,
+        "rationale": "The candidate correctly states the capital of France, which is Paris. The reference answer is also correct, so there are"
+      },
+      "faithfulness": {
+        "score": 4,
+        "rationale": "The candidate supports their answer with the reference answer, which is Paris. There is no missing information or unsupp"
+      },
+      "completeness": {
+        "score": 4,
+        "rationale": "The candidate answers the question directly and completely, without omitting any information or padding. The answer is"
+      },
+      "instruction_following": {
+        "score": 4,
+        "rationale": "The candidate follows the instructions provided and does not invent a gold reference. The answer is directly related to"
+      },
+      "answer_relevance": {
+        "score": 4,
+        "rationale": "The answer directly addresses the user question without being irrelevant. The answer is relevant and"
+      },
+      "tone_safety": {
+        "score": 4,
+        "rationale": "The candidate's tone is respectful and safe. There is no evidence of confidence or aggressive language"
+      },
+      "parse_method": "json",
+      "request_ids": [
+        "ad71c94acf89495bae041e0b85bcabbb"
+      ],
+      "retries": 0,
+      "status": "ok",
+      "overall": 4.0,
+      "passed": true
+    },
+    "blind_other": {
+      "correctness": {
+        "score": 4,
+        "rationale": "The candidate correctly stated the capital of France, which is Paris. The reference answer is also Paris, which is a ver"
+      },
+      "faithfulness": {
+        "score": 4,
+        "rationale": "The candidate provided the correct answer, which is Paris. The reference answer is also Paris, which is a verified fact."
+      },
+      "completeness": {
+        "score": 0,
+        "rationale": "No information is provided in the context or reference."
+      },
+      "instruction_following": {
+        "score": 4,
+        "rationale": "The candidate follows the system prompt and user constraints by providing the correct answer, which is Paris."
+      },
+      "answer_relevance": {
+        "score": 0,
+        "rationale": "No information is provided in the context or reference."
+      },
+      "tone_safety": {
+        "score": 4,
+        "rationale": "The candidate provides a clear, respectful, and safe response, which is a positive indicator of the tone."
+      },
+      "parse_method": "json",
+      "request_ids": [
+        "4f82988ca57c473ea3a62944a2772310"
+      ],
+      "retries": 0,
+      "status": "ok",
+      "overall": 2.8,
+      "passed": false
+    },
+    "score_gap_exposed": 0.0,
+    "score_gap_blind": 1.2000000000000002,
+    "limitation": "One label-counterfactual probe measures provenance sensitivity, not population-level self-enhancement."
+  },
+  "test_retest": {
+    "n": 4,
+    "temperature": 0,
+    "flip_rate": 0.0,
+    "repeated": [
+      {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate correctly stated the reference fact, '2 + 2 = 4', which is a verified correct fact."
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate provided the reference answer, '4', which is a correct and complete answer to the question."
+        },
+        "completeness": {
+          "score": 0,
+          "rationale": "No supporting context or reference facts were provided to answer the question."
+        },
+        "instruction_following": {
+          "score": 4,
+          "rationale": "The candidate followed the instructions by answering the question accurately and briefly using the reference facts."
+        },
+        "answer_relevance": {
+          "score": 0,
+          "rationale": "No relevant information was provided to answer the question."
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate provided a respectful and safe tone in their response."
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "0ec7e205d5784f57970fb50e23b60719"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 2.8,
+        "passed": false
+      },
+      {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate correctly stated the reference fact, '2 + 2 = 4', which is a verified correct fact."
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate provided the reference answer, '4', which is a correct answer to the question."
+        },
+        "completeness": {
+          "score": 0,
+          "rationale": "No supporting context or reference facts were provided."
+        },
+        "instruction_following": {
+          "score": 4,
+          "rationale": "The candidate followed the instructions by answering the question accurately and briefly using the reference facts."
+        },
+        "answer_relevance": {
+          "score": 0,
+          "rationale": "No relevant information was provided to address the user question."
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate provided a respectful and safe tone in their response."
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "e16817a09bdc4a7881ea434bc29839a1"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 2.8,
+        "passed": false
+      },
+      {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate correctly stated the capital of France, which is Paris. The reference answer is also Paris, which is a ver"
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate provided the correct answer, which is Paris. The reference answer is also Paris, which is a verified fact."
+        },
+        "completeness": {
+          "score": 0,
+          "rationale": "No information is provided in the context or reference."
+        },
+        "instruction_following": {
+          "score": 4,
+          "rationale": "The candidate follows the system prompt and user constraints by providing the correct answer, which is Paris."
+        },
+        "answer_relevance": {
+          "score": 0,
+          "rationale": "No information is provided in the context or reference."
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate provides a clear, respectful, and safe response, which is a positive indicator of the tone."
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "831fe813b2df4b97bc800335da42f294"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 2.8,
+        "passed": false
+      },
+      {
+        "correctness": {
+          "score": 4,
+          "rationale": "The candidate correctly states that the capital of France is Paris, which is the reference answer. There are no errors,m"
+        },
+        "faithfulness": {
+          "score": 4,
+          "rationale": "The candidate supports their claim with the reference answer, which is Paris. There are no gaps in the evidence."
+        },
+        "completeness": {
+          "score": 0,
+          "rationale": "No information is provided in the context or reference answers."
+        },
+        "instruction_following": {
+          "score": 4,
+          "rationale": "The candidate follows the instructions correctly, answering the question accurately and briefly."
+        },
+        "answer_relevance": {
+          "score": 0,
+          "rationale": "No information is provided in the context or reference answers."
+        },
+        "tone_safety": {
+          "score": 4,
+          "rationale": "The candidate's response is respectful, clear, and safe."
+        },
+        "parse_method": "json",
+        "request_ids": [
+          "1f33967a6c2c4d858b0d833e38667346"
+        ],
+        "retries": 0,
+        "status": "ok",
+        "overall": 2.8,
+        "passed": false
+      }
+    ]
+  },
+  "usage": {
+    "prompt_tokens": 11128,
+    "completion_tokens": 5749,
+    "total_tokens": 16877
+  },
+  "calls": 28
+}
